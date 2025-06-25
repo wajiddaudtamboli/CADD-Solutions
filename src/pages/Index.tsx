@@ -10,7 +10,8 @@ import EnhancedProjects from '@/components/sections/EnhancedProjects';
 import OurValues from '@/components/sections/OurValues';
 import Testimonials from '@/components/sections/Testimonials';
 import ReviewSummary from '@/components/sections/ReviewSummary';
-import Contact from '@/components/sections/Contact';
+import FAQ from '@/components/sections/FAQ';
+import EnhancedContact from '@/components/sections/EnhancedContact';
 import Footer from '@/components/layout/Footer';
 import Chatbot from '@/components/Chatbot';
 import { ScrollToTop } from '@/components/ui/scroll-to-top';
@@ -32,7 +33,8 @@ const Index = () => {
       <OurValues />
       <Testimonials />
       <ReviewSummary />
-      <Contact />
+      <FAQ />
+      <EnhancedContact />
       <Footer />
       <Chatbot />
       <ScrollToTop />
