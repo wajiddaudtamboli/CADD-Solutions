@@ -1,0 +1,53 @@
+
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "products": "Courses",
+    "projects": "Projects",
+    "contact": "Contact",
+    "about": "About Us"
+  },
+  "hero": {
+    "title": "Master CAD & Engineering Skills",
+    "subtitle": "Professional training in AutoCAD, CREO, CATIA, SolidWorks, Python, Machine Learning, and more. Transform your career with industry-focused courses.",
+    "getStarted": "Get Started",
+    "watchDemo": "Watch Demo",
+    "studentsCount": "Students Trained",
+    "coursesCount": "Courses",
+    "successRate": "Success Rate"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive training programs designed to meet industry demands and boost your career",
+    "cadTraining": "CAD Design Training",
+    "cadDescription": "Master AutoCAD, CREO, CATIA, SolidWorks, and NX CAD with hands-on projects",
+    "caeAnalysis": "CAE & Analysis",
+    "caeDescription": "Learn advanced engineering analysis with industry-standard software",
+    "civilArch": "Civil & Architecture",
+    "civilDescription": "Building design and construction technology training",
+    "programming": "Programming & Development",
+    "programmingDescription": "Software development and programming languages",
+    "dataScience": "Data Science & ML",
+    "dataDescription": "Modern data analytics and machine learning techniques",
+    "projectMgmt": "Project Management",
+    "projectDescription": "Professional project planning and management tools"
+  },
+  "footer": {
+    "company": "CADD Solutions",
+    "description": "Professional training institute for CAD, CAE, Programming, and Engineering design courses.",
+    "quickLinks": "Quick Links",
+    "popularCourses": "Popular Courses",
+    "contactInfo": "Contact Info",
+    "rights": "All rights reserved. | Designed with ❤️ for engineering excellence"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "enrollNow": "Enroll Now",
+    "viewDetails": "View Details",
+    "sendMessage": "Send Message",
+    "loading": "Loading...",
+    "error": "Error occurred",
+    "success": "Success"
+  }
+}

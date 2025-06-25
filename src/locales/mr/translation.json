@@ -1,0 +1,53 @@
+
+{
+  "nav": {
+    "home": "मुख्यपृष्ठ",
+    "services": "सेवा",
+    "products": "अभ्यासक्रम",
+    "projects": "प्रकल्प",
+    "contact": "संपर्क",
+    "about": "आमच्याबद्दल"
+  },
+  "hero": {
+    "title": "CAD आणि अभियांत्रिकी कौशल्यांमध्ये प्रभुत्व मिळवा",
+    "subtitle": "AutoCAD, CREO, CATIA, SolidWorks, Python, Machine Learning, आणि बरेच काही मध्ये व्यावसायिक प्रशिक्षण। उद्योग-केंद्रित अभ्यासक्रमांसह आपले करिअर बदला।",
+    "getStarted": "सुरुवात करा",
+    "watchDemo": "डेमो पहा",
+    "studentsCount": "प्रशिक्षित विद्यार्थी",
+    "coursesCount": "अभ्यासक्रम",
+    "successRate": "यश दर"
+  },
+  "services": {
+    "title": "आमच्या सेवा",
+    "subtitle": "उद्योगाच्या गरजा पूर्ण करण्यासाठी आणि आपले करिअर वाढवण्यासाठी डिझाइन केलेले सर्वसमावेशक प्रशिक्षण कार्यक्रम",
+    "cadTraining": "CAD डिझाइन प्रशिक्षण",
+    "cadDescription": "प्रत्यक्ष प्रकल्पांसह AutoCAD, CREO, CATIA, SolidWorks, आणि NX CAD मध्ये प्रभुत्व मिळवा",
+    "caeAnalysis": "CAE आणि विश्लेषण",
+    "caeDescription": "उद्योग-मानक सॉफ्टवेअरसह प्रगत अभियांत्रिकी विश्लेषण शिका",
+    "civilArch": "नागरी आणि वास्तुकला",
+    "civilDescription": "इमारत डिझाइन आणि बांधकाम तंत्रज्ञान प्रशिक्षण",
+    "programming": "प्रोग्रामिंग आणि विकास",
+    "programmingDescription": "सॉफ्टवेअर विकास आणि प्रोग्रामिंग भाषा",
+    "dataScience": "डेटा सायन्स आणि ML",
+    "dataDescription": "आधुनिक डेटा अॅनालिटिक्स आणि मशीन लर्निंग तंत्रे",
+    "projectMgmt": "प्रकल्प व्यवस्थापन",
+    "projectDescription": "व्यावसायिक प्रकल्प नियोजन आणि व्यवस्थापन साधने"
+  },
+  "footer": {
+    "company": "CADD Solutions",
+    "description": "CAD, CAE, प्रोग्रामिंग, आणि अभियांत्रिकी डिझाइन अभ्यासक्रमांसाठी व्यावसायिक प्रशिक्षण संस्था।",
+    "quickLinks": "द्रुत दुवे",
+    "popularCourses": "लोकप्रिय अभ्यासक्रम",
+    "contactInfo": "संपर्क माहिती",
+    "rights": "सर्व हक्क राखीव। | अभियांत्रिकी उत्कृष्टतेसाठी ❤️ सह डिझाइन केले"
+  },
+  "common": {
+    "learnMore": "अधिक जाणून घ्या",
+    "enrollNow": "आता नोंदणी करा",
+    "viewDetails": "तपशील पहा",
+    "sendMessage": "संदेश पाठवा",
+    "loading": "लोड होत आहे...",
+    "error": "त्रुटी झाली",
+    "success": "यश"
+  }
+}

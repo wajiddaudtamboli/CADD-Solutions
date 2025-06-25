@@ -3,10 +3,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Hero = () => {
+  const { translations } = useLanguage();
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50 pt-20">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-blue-900 pt-20 transition-colors duration-300">
       <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
         <motion.div
@@ -16,21 +19,26 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <motion.h1 
-            className="text-4xl lg:text-6xl font-bold text-gray-800 leading-tight"
+            className="text-4xl lg:text-6xl font-bold text-gray-800 dark:text-white leading-tight transition-colors"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Master <span className="text-blue-600">CAD & Engineering</span> Skills
+            {translations.hero.title.split('CAD & Engineering').map((part, index) => (
+              <span key={index}>
+                {part}
+                {index === 0 && <span className="text-blue-600 dark:text-blue-400">CAD & Engineering</span>}
+              </span>
+            ))}
           </motion.h1>
           
           <motion.p 
-            className="text-xl text-gray-600 leading-relaxed"
+            className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed transition-colors"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            Professional training in AutoCAD, CREO, CATIA, SolidWorks, Python, Machine Learning, and more. Transform your career with industry-focused courses.
+            {translations.hero.subtitle}
           </motion.p>
 
           <motion.div 
@@ -39,11 +47,11 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg flex items-center gap-2">
-              Get Started <ArrowRight size={20} />
+            <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-3 rounded-lg flex items-center gap-2 transition-colors">
+              {translations.hero.getStarted} <ArrowRight size={20} />
             </Button>
-            <Button variant="outline" className="px-8 py-3 rounded-lg flex items-center gap-2">
-              <Play size={20} /> Watch Demo
+            <Button variant="outline" className="px-8 py-3 rounded-lg flex items-center gap-2 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800 transition-colors">
+              <Play size={20} /> {translations.hero.watchDemo}
             </Button>
           </motion.div>
 
@@ -54,16 +62,16 @@ const Hero = () => {
             transition={{ delay: 0.8 }}
           >
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600">500+</div>
-              <div className="text-sm text-gray-600">Students Trained</div>
+              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">500+</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400 transition-colors">{translations.hero.studentsCount}</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600">15+</div>
-              <div className="text-sm text-gray-600">Courses</div>
+              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">15+</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400 transition-colors">{translations.hero.coursesCount}</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600">95%</div>
-              <div className="text-sm text-gray-600">Success Rate</div>
+              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">95%</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400 transition-colors">{translations.hero.successRate}</div>
             </div>
           </motion.div>
         </motion.div>
@@ -80,7 +88,7 @@ const Hero = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <div className="video-container border-8 border-white rounded-2xl overflow-hidden shadow-2xl bg-white">
+            <div className="video-container border-8 border-white dark:border-gray-700 rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-gray-800 transition-colors">
               <video 
                 className="w-full h-auto object-cover"
                 autoPlay 
@@ -93,7 +101,7 @@ const Hero = () => {
               </video>
             </div>
             <motion.div 
-              className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-purple-400 rounded-3xl -z-10"
+              className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-purple-400 dark:from-blue-500 dark:to-purple-500 rounded-3xl -z-10 transition-colors"
               animate={{ rotate: [0, 1, -1, 0] }}
               transition={{ duration: 6, repeat: Infinity }}
             />

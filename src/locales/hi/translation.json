@@ -1,0 +1,53 @@
+
+{
+  "nav": {
+    "home": "होम",
+    "services": "सेवाएं",
+    "products": "कोर्स",
+    "projects": "प्रोजेक्ट्स",
+    "contact": "संपर्क",
+    "about": "हमारे बारे में"
+  },
+  "hero": {
+    "title": "CAD और इंजीनियरिंग स्किल्स में महारत हासिल करें",
+    "subtitle": "AutoCAD, CREO, CATIA, SolidWorks, Python, Machine Learning, और अधिक में प्रोफेशनल ट्रेनिंग। इंडस्ट्री-फोकस्ड कोर्सेज के साथ अपना करियर बदलें।",
+    "getStarted": "शुरू करें",
+    "watchDemo": "डेमो देखें",
+    "studentsCount": "प्रशिक्षित छात्र",
+    "coursesCount": "कोर्सेज",
+    "successRate": "सफलता दर"
+  },
+  "services": {
+    "title": "हमारी सेवाएं",
+    "subtitle": "उद्योग की मांगों को पूरा करने और आपके करियर को बढ़ावा देने के लिए डिज़ाइन किए गए व्यापक प्रशिक्षण कार्यक्रम",
+    "cadTraining": "CAD डिज़ाइन प्रशिक्षण",
+    "cadDescription": "हैंड्स-ऑन प्रोजेक्ट्स के साथ AutoCAD, CREO, CATIA, SolidWorks, और NX CAD में महारत हासिल करें",
+    "caeAnalysis": "CAE और विश्लेषण",
+    "caeDescription": "उद्योग-मानक सॉफ्टवेयर के साथ उन्नत इंजीनियरिंग विश्लेषण सीखें",
+    "civilArch": "सिविल और आर्किटेक्चर",
+    "civilDescription": "भवन डिज़ाइन और निर्माण प्रौद्योगिकी प्रशिक्षण",
+    "programming": "प्रोग्रामिंग और विकास",
+    "programmingDescription": "सॉफ्टवेयर विकास और प्रोग्रामिंग भाषाएं",
+    "dataScience": "डेटा साइंस और ML",
+    "dataDescription": "आधुनिक डेटा एनालिटिक्स और मशीन लर्निंग तकनीकें",
+    "projectMgmt": "प्रोजेक्ट प्रबंधन",
+    "projectDescription": "पेशेवर प्रोजेक्ट योजना और प्रबंधन उपकरण"
+  },
+  "footer": {
+    "company": "CADD Solutions",
+    "description": "CAD, CAE, प्रोग्रामिंग, और इंजीनियरिंग डिज़ाइन कोर्सेज के लिए पेशेवर प्रशिक्षण संस्थान।",
+    "quickLinks": "त्वरित लिंक",
+    "popularCourses": "लोकप्रिय कोर्सेज",
+    "contactInfo": "संपर्क जानकारी",
+    "rights": "सभी अधिकार सुरक्षित। | इंजीनियरिंग उत्कृष्टता के लिए ❤️ के साथ डिज़ाइन किया गया"
+  },
+  "common": {
+    "learnMore": "और जानें",
+    "enrollNow": "अभी दाखिला लें",
+    "viewDetails": "विवरण देखें",
+    "sendMessage": "संदेश भेजें",
+    "loading": "लोड हो रहा है...",
+    "error": "त्रुटि हुई",
+    "success": "सफलता"
+  }
+}
