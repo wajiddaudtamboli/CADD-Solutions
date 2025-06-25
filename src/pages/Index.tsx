@@ -1,13 +1,36 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import Navigation from '@/components/layout/Navigation';
+import Hero from '@/components/sections/Hero';
+import Services from '@/components/sections/Services';
+import Products from '@/components/sections/Products';
+import Projects from '@/components/sections/Projects';
+import Testimonials from '@/components/sections/Testimonials';
+import Contact from '@/components/sections/Contact';
+import ReviewSummary from '@/components/sections/ReviewSummary';
+import Footer from '@/components/layout/Footer';
+import Chatbot from '@/components/Chatbot';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <motion.div 
+      className="min-h-screen"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Navigation />
+      <Hero />
+      <Services />
+      <Products />
+      <Projects />
+      <Testimonials />
+      <ReviewSummary />
+      <Contact />
+      <Footer />
+      <Chatbot />
+    </motion.div>
   );
 };
 
