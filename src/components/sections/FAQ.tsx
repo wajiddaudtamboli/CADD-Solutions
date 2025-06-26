@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronUp, Phone, Mail, MessageCircle, HelpCircle } from 'lucide-react';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
+import { ChevronDown, Phone, Mail, MessageCircle, HelpCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const FAQ = () => {
@@ -58,7 +58,7 @@ const FAQ = () => {
     );
   };
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -68,24 +68,24 @@ const FAQ = () => {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
+        ease: [0.4, 0, 0.2, 1]
       }
     }
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-slate-50 via-amber-50/30 to-orange-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 dark:from-gray-900 dark:via-yellow-900/20 dark:to-amber-900/20 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-      <div className="absolute top-0 right-0 w-96 h-96 bg-amber-300/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-300/20 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-yellow-300/20 to-amber-400/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-orange-300/20 to-red-400/20 rounded-full blur-3xl"></div>
       
       <div className="section-container relative z-10">
         <motion.div
@@ -96,14 +96,14 @@ const FAQ = () => {
           className="section-header"
         >
           <div className="flex items-center justify-center mb-6">
-            <div className="p-4 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl shadow-lg">
+            <div className="p-4 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-2xl shadow-lg">
               <HelpCircle className="w-8 h-8 text-white" />
             </div>
           </div>
-          <h2 className="heading-secondary mb-6">
+          <h2 className="heading-secondary mb-6 text-center">
             Frequently Asked Questions
           </h2>
-          <p className="text-lead mb-4">
+          <p className="text-lead mb-4 text-center">
             Get comprehensive answers to the most common questions about our professional training programs
           </p>
           <div className="flex items-center justify-center gap-2 text-amber-600 dark:text-amber-400">
@@ -161,7 +161,7 @@ const FAQ = () => {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                         className="overflow-hidden"
                       >
                         <div className="px-6 md:px-8 pb-6 md:pb-8 pt-2">
@@ -239,7 +239,7 @@ const FAQ = () => {
               
               <div className="mt-8 pt-6 border-t border-white/20">
                 <p className="text-white/80 text-sm">
-                  💡 Pro tip: Schedule a free consultation call to discuss your career goals
+                  Professional tip: Schedule a free consultation call to discuss your career goals
                 </p>
               </div>
             </CardContent>

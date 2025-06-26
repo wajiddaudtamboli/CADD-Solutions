@@ -11,20 +11,20 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 45 100% 50%;
+    --primary: 43 96% 56%;
     --primary-foreground: 0 0% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 45 100% 95%;
-    --accent-foreground: 45 100% 20%;
+    --accent: 43 96% 90%;
+    --accent-foreground: 43 96% 20%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 45 100% 50%;
-    --radius: 0.5rem;
+    --ring: 43 96% 56%;
+    --radius: 0.75rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -32,37 +32,37 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 45 100% 50%;
+    --sidebar-ring: 43 96% 56%;
   }
 
   .dark {
-    --background: 24 8% 8%;
-    --foreground: 45 20% 95%;
-    --card: 24 8% 8%;
-    --card-foreground: 45 20% 95%;
-    --popover: 24 8% 8%;
-    --popover-foreground: 45 20% 95%;
-    --primary: 45 100% 60%;
-    --primary-foreground: 24 8% 8%;
-    --secondary: 33 12% 15%;
-    --secondary-foreground: 45 20% 95%;
-    --muted: 33 12% 15%;
-    --muted-foreground: 45 12% 65%;
-    --accent: 33 12% 15%;
-    --accent-foreground: 45 20% 95%;
+    --background: 0 0% 17%;
+    --foreground: 43 30% 95%;
+    --card: 0 0% 17%;
+    --card-foreground: 43 30% 95%;
+    --popover: 0 0% 17%;
+    --popover-foreground: 43 30% 95%;
+    --primary: 43 96% 65%;
+    --primary-foreground: 0 0% 17%;
+    --secondary: 15 25% 25%;
+    --secondary-foreground: 43 30% 95%;
+    --muted: 15 25% 25%;
+    --muted-foreground: 43 20% 65%;
+    --accent: 15 25% 25%;
+    --accent-foreground: 43 30% 95%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 33 12% 15%;
-    --input: 33 12% 15%;
-    --ring: 45 100% 60%;
-    --sidebar-background: 24 8% 8%;
-    --sidebar-foreground: 45 12% 85%;
-    --sidebar-primary: 45 100% 60%;
-    --sidebar-primary-foreground: 24 8% 8%;
-    --sidebar-accent: 33 12% 15%;
-    --sidebar-accent-foreground: 45 12% 85%;
-    --sidebar-border: 33 12% 15%;
-    --sidebar-ring: 45 100% 60%;
+    --border: 15 25% 25%;
+    --input: 15 25% 25%;
+    --ring: 43 96% 65%;
+    --sidebar-background: 0 0% 17%;
+    --sidebar-foreground: 43 20% 85%;
+    --sidebar-primary: 43 96% 65%;
+    --sidebar-primary-foreground: 0 0% 17%;
+    --sidebar-accent: 15 25% 25%;
+    --sidebar-accent-foreground: 43 20% 85%;
+    --sidebar-border: 15 25% 25%;
+    --sidebar-ring: 43 96% 65%;
   }
 }
 
@@ -73,8 +73,9 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    line-height: 1.6;
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.7;
+    letter-spacing: -0.01em;
   }
 
   html {
@@ -82,161 +83,215 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold leading-tight;
-    margin-bottom: 0.75rem;
+    @apply font-bold leading-tight tracking-tight;
+    margin-bottom: 1rem;
   }
 
   p {
-    @apply leading-relaxed;
-    margin-bottom: 1rem;
+    @apply leading-relaxed tracking-wide;
+    margin-bottom: 1.25rem;
   }
 }
 
 @layer utilities {
-  /* Modern Professional Design System */
-  .section-container {
-    @apply max-w-7xl mx-auto px-6 py-16 lg:py-24;
+  /* Professional Design System with Royal Gold & Deep Burgundy */
+  
+  /* Container & Layout */
+  .professional-section {
+    @apply py-24 lg:py-32 px-6 lg:px-8;
   }
 
-  .section-header {
-    @apply text-center mb-16;
+  .professional-container {
+    @apply max-w-7xl mx-auto;
   }
 
-  .heading-primary {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-6;
-    background: linear-gradient(135deg, #f59e0b, #d97706, #92400e);
+  .professional-grid {
+    @apply grid gap-12 lg:gap-16;
+  }
+
+  .professional-grid-2 {
+    @apply lg:grid-cols-2;
+  }
+
+  .professional-grid-3 {
+    @apply lg:grid-cols-3;
+  }
+
+  .professional-grid-4 {
+    @apply lg:grid-cols-4;
+  }
+
+  /* Typography with Professional Alignment */
+  .professional-heading {
+    @apply text-4xl lg:text-6xl xl:text-7xl font-bold text-center mb-8;
+    background: linear-gradient(135deg, #D4AF37, #722F37, #B8860B);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
   }
 
-  .heading-secondary {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6;
-    background: linear-gradient(135deg, #f59e0b, #d97706);
+  .professional-subheading {
+    @apply text-2xl lg:text-4xl xl:text-5xl font-bold mb-6;
+    background: linear-gradient(135deg, #D4AF37, #722F37);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
   }
 
-  .heading-tertiary {
-    @apply text-2xl md:text-3xl font-semibold mb-4 text-gray-800 dark:text-white;
+  .professional-text {
+    @apply text-lg lg:text-xl text-gray-700 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto;
+    letter-spacing: 0.01em;
   }
 
-  .text-lead {
-    @apply text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto;
+  .text-professionally-aligned {
+    @apply text-center;
   }
 
-  .card-modern {
-    @apply bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1;
+  /* Spacing & Margins */
+  .professional-margin {
+    @apply mt-16 lg:mt-24;
   }
 
-  .btn-primary {
-    @apply bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-semibold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105;
+  .professional-padding {
+    @apply p-8 lg:p-12;
   }
 
-  .btn-secondary {
-    @apply bg-white/90 dark:bg-gray-800/90 text-amber-700 dark:text-amber-400 border-2 border-amber-600 dark:border-amber-400 hover:bg-amber-50 dark:hover:bg-gray-700 font-semibold py-4 px-8 rounded-xl transition-all duration-300;
+  .professional-spacing {
+    @apply space-y-8 lg:space-y-12;
   }
 
-  .icon-container {
-    @apply w-16 h-16 mx-auto mb-6 p-4 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 text-white shadow-lg;
+  .professional-spacing-sm {
+    @apply space-y-6 lg:space-y-8;
   }
 
-  .grid-responsive {
-    @apply grid gap-8;
+  /* Professional Cards */
+  .professional-card {
+    @apply bg-white/95 dark:bg-gray-800/95 backdrop-blur-lg rounded-3xl shadow-2xl border border-amber-200/30 dark:border-amber-600/30 hover:shadow-3xl hover:border-amber-300/50 dark:hover:border-amber-500/50 transition-all duration-500 hover:-translate-y-2;
   }
 
-  .grid-2 {
-    @apply md:grid-cols-2;
+  /* Professional Buttons */
+  .professional-button {
+    @apply bg-gradient-to-r from-amber-500 via-yellow-600 to-amber-700 hover:from-amber-600 hover:via-yellow-700 hover:to-amber-800 text-white font-semibold py-4 px-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98];
   }
 
-  .grid-3 {
-    @apply md:grid-cols-2 lg:grid-cols-3;
+  .professional-button-secondary {
+    @apply bg-white/95 dark:bg-gray-800/95 text-amber-700 dark:text-amber-400 border-2 border-amber-600 dark:border-amber-400 hover:bg-amber-50 dark:hover:bg-gray-700/80 font-semibold py-4 px-8 rounded-2xl transition-all duration-300 hover:shadow-xl;
   }
 
-  .grid-4 {
-    @apply md:grid-cols-2 lg:grid-cols-4;
+  /* Media Frames - Responsive */
+  .media-frame {
+    @apply relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white dark:border-gray-700 bg-white dark:bg-gray-800;
+    aspect-ratio: 16/9;
   }
 
-  /* Enhanced Backgrounds */
-  .bg-gradient-light {
-    background: linear-gradient(135deg, #fefce8 0%, #fef3c7 50%, #fed7aa 100%);
+  .media-frame img,
+  .media-frame video,
+  .media-frame iframe {
+    @apply w-full h-full object-cover rounded-xl;
   }
 
-  .bg-gradient-primary {
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #92400e 100%);
+  .media-frame::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-amber-400/10 to-orange-500/10 z-10 pointer-events-none rounded-xl;
   }
 
-  .bg-gradient-mesh {
-    background: radial-gradient(at 40% 20%, #fbbf24 0px, transparent 50%),
-                radial-gradient(at 80% 0%, #f59e0b 0px, transparent 50%),
-                radial-gradient(at 0% 50%, #d97706 0px, transparent 50%),
-                radial-gradient(at 80% 50%, #b45309 0px, transparent 50%),
-                radial-gradient(at 0% 100%, #92400e 0px, transparent 50%),
-                radial-gradient(at 80% 100%, #451a03 0px, transparent 50%),
-                radial-gradient(at 0% 0%, #fbbf24 0px, transparent 50%);
+  /* Responsive Media Frames */
+  @media (max-width: 640px) {
+    .media-frame {
+      aspect-ratio: 4/3;
+      @apply border-2 rounded-xl;
+    }
   }
 
-  .dark .bg-gradient-light {
-    background: linear-gradient(135deg, #1f2937 0%, #374151 50%, #4b5563 100%);
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .media-frame {
+      aspect-ratio: 3/2;
+      @apply border-3 rounded-2xl;
+    }
   }
 
-  .dark .bg-gradient-mesh {
-    background: radial-gradient(at 40% 20%, #d97706 0px, transparent 50%),
-                radial-gradient(at 80% 0%, #b45309 0px, transparent 50%),
-                radial-gradient(at 0% 50%, #92400e 0px, transparent 50%),
-                radial-gradient(at 80% 50%, #451a03 0px, transparent 50%),
-                radial-gradient(at 0% 100%, #1c1917 0px, transparent 50%),
-                radial-gradient(at 80% 100%, #0c0a09 0px, transparent 50%),
-                radial-gradient(at 0% 0%, #d97706 0px, transparent 50%);
+  @media (min-width: 1025px) {
+    .media-frame {
+      aspect-ratio: 16/10;
+      @apply border-4 rounded-3xl;
+    }
   }
 
-  /* Background Patterns */
+  /* Professional Icon Containers */
+  .professional-icon {
+    @apply w-6 h-6 text-amber-600 dark:text-amber-400;
+  }
+
+  .professional-icon-lg {
+    @apply w-8 h-8 text-amber-600 dark:text-amber-400;
+  }
+
+  .icon-container-professional {
+    @apply w-20 h-20 mx-auto mb-8 p-5 rounded-3xl bg-gradient-to-br from-amber-400 via-yellow-500 to-orange-500 text-white shadow-2xl flex items-center justify-center;
+  }
+
+  /* Professional Gradients */
+  .gradient-bg-royal {
+    background: linear-gradient(135deg, #D4AF37 0%, #722F37 50%, #B8860B 100%);
+  }
+
+  .gradient-bg-golden {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
+  }
+
+  .gradient-bg-burgundy {
+    background: linear-gradient(135deg, #722F37 0%, #8B0000 50%, #A0522D 100%);
+  }
+
+  /* Professional Background Patterns */
+  .bg-professional-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(114, 47, 55, 0.1) 0%, transparent 50%),
+      linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(114, 47, 55, 0.05) 100%);
+  }
+
   .bg-grid-pattern {
     background-image: 
-      linear-gradient(rgba(245, 158, 11, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(245, 158, 11, 0.1) 1px, transparent 1px);
-    background-size: 40px 40px;
+      linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
   }
 
   .bg-dot-pattern {
-    background-image: radial-gradient(circle, rgba(245, 158, 11, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
+    background-image: radial-gradient(circle, rgba(212, 175, 55, 0.15) 2px, transparent 2px);
+    background-size: 30px 30px;
   }
 
-  /* Enhanced Animations */
-  .animate-fade-up {
-    animation: fadeUp 0.8s ease-out;
+  /* Professional Animations */
+  .animate-professional-fade {
+    animation: professionalFade 0.8s ease-out;
   }
 
-  .animate-scale-in {
-    animation: scaleIn 0.6s ease-out;
+  .animate-professional-scale {
+    animation: professionalScale 0.6s ease-out;
   }
 
-  .animate-slide-in-right {
-    animation: slideInRight 0.8s ease-out;
+  .animate-professional-slide {
+    animation: professionalSlide 0.8s ease-out;
   }
 
-  .animate-slide-in-left {
-    animation: slideInLeft 0.8s ease-out;
+  .animate-professional-float {
+    animation: professionalFloat 4s ease-in-out infinite;
   }
 
-  .animate-bounce-gentle {
-    animation: bounceGentle 2s ease-in-out infinite;
+  .animate-professional-pulse {
+    animation: professionalPulse 2s ease-in-out infinite;
   }
 
-  .animate-pulse-slow {
-    animation: pulseSlow 3s ease-in-out infinite;
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  @keyframes fadeUp {
+  @keyframes professionalFade {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(40px);
     }
     to {
       opacity: 1;
@@ -244,10 +299,10 @@
     }
   }
 
-  @keyframes scaleIn {
+  @keyframes professionalScale {
     from {
       opacity: 0;
-      transform: scale(0.95);
+      transform: scale(0.9);
     }
     to {
       opacity: 1;
@@ -255,10 +310,10 @@
     }
   }
 
-  @keyframes slideInRight {
+  @keyframes professionalSlide {
     from {
       opacity: 0;
-      transform: translateX(50px);
+      transform: translateX(-60px);
     }
     to {
       opacity: 1;
@@ -266,149 +321,169 @@
     }
   }
 
-  @keyframes slideInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes bounceGentle {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  @keyframes pulseSlow {
-    0%, 100% {
-      opacity: 0.6;
-    }
-    50% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes float {
+  @keyframes professionalFloat {
     0%, 100% {
       transform: translateY(0px);
     }
     50% {
-      transform: translateY(-20px);
+      transform: translateY(-15px);
     }
   }
 
-  /* Interactive Elements */
-  .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+  @keyframes professionalPulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
   }
 
-  .hover-glow {
-    @apply transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/25;
+  /* Professional Interactive Elements */
+  .hover-professional {
+    @apply transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02];
   }
 
-  .glass-effect {
-    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  .hover-professional-glow {
+    @apply transition-all duration-300 hover:shadow-2xl hover:shadow-amber-500/25 dark:hover:shadow-amber-400/25;
   }
 
-  .dark .glass-effect {
-    @apply bg-gray-800/10 backdrop-blur-md border border-gray-700/20;
+  /* Professional Glass Effect */
+  .glass-professional {
+    @apply bg-white/20 dark:bg-gray-800/20 backdrop-blur-xl border border-white/30 dark:border-gray-700/30;
   }
 
-  /* Responsive Spacing */
-  .space-section {
-    @apply space-y-20 md:space-y-32;
-  }
-
-  .space-content {
-    @apply space-y-8 md:space-y-12;
-  }
-
-  /* Modern scrollbar */
-  .scrollbar-thin {
+  /* Professional Scrollbar */
+  .scrollbar-professional {
     scrollbar-width: thin;
-    scrollbar-color: rgb(245 158 11) rgb(254 252 232);
+    scrollbar-color: rgb(212 175 55) rgb(254 252 232);
   }
 
-  .dark .scrollbar-thin {
-    scrollbar-color: rgb(217 119 6) rgb(31 41 55);
+  .dark .scrollbar-professional {
+    scrollbar-color: rgb(212 175 55) rgb(44 44 44);
   }
 
-  .scrollbar-thin::-webkit-scrollbar {
-    width: 6px;
+  .scrollbar-professional::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
   }
 
-  .scrollbar-thin::-webkit-scrollbar-track {
+  .scrollbar-professional::-webkit-scrollbar-track {
     background: rgb(254 252 232);
   }
 
-  .dark .scrollbar-thin::-webkit-scrollbar-track {
-    background: rgb(31 41 55);
+  .dark .scrollbar-professional::-webkit-scrollbar-track {
+    background: rgb(44 44 44);
   }
 
-  .scrollbar-thin::-webkit-scrollbar-thumb {
-    background: rgb(245 158 11);
-    border-radius: 3px;
+  .scrollbar-professional::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #D4AF37, #722F37);
+    border-radius: 4px;
   }
 
-  .dark .scrollbar-thin::-webkit-scrollbar-thumb {
-    background: rgb(217 119 6);
+  .scrollbar-professional::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #B8860B, #8B0000);
   }
 
-  /* Text Effects */
-  .text-gradient {
-    background: linear-gradient(135deg, #f59e0b, #d97706);
+  /* Professional Text Effects */
+  .text-gradient-professional {
+    background: linear-gradient(135deg, #D4AF37, #722F37, #B8860B);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .text-gradient-primary {
-    background: linear-gradient(135deg, #f59e0b, #d97706, #92400e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .text-shadow-professional {
+    text-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
   }
 
-  /* Button Hover Effects */
-  .btn-hover-slide::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
-  }
-
-  .btn-hover-slide:hover::before {
-    left: 100%;
-  }
-
-  /* Loading States */
-  .skeleton {
-    @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
-  }
-
-  .shimmer {
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  /* Professional Loading States */
+  .skeleton-professional {
+    @apply animate-pulse bg-gradient-to-r from-amber-200 via-yellow-200 to-amber-200 dark:from-amber-800 dark:via-yellow-800 dark:to-amber-800 rounded-xl;
     background-size: 200% 100%;
-    animation: shimmer 1.5s infinite;
+    animation: shimmerProfessional 1.5s infinite;
   }
 
-  @keyframes shimmer {
+  @keyframes shimmerProfessional {
     0% {
       background-position: -200% 0;
     }
     100% {
       background-position: 200% 0;
+    }
+  }
+
+  /* Professional Focus States */
+  .focus-professional {
+    @apply focus:outline-none focus:ring-4 focus:ring-amber-500/30 focus:border-amber-500;
+  }
+
+  /* Professional Shadow Utilities */
+  .shadow-professional {
+    box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.1), 0 10px 10px -5px rgba(212, 175, 55, 0.04);
+  }
+
+  .shadow-professional-lg {
+    box-shadow: 0 20px 40px -10px rgba(212, 175, 55, 0.15), 0 10px 20px -5px rgba(212, 175, 55, 0.08);
+  }
+
+  .shadow-professional-xl {
+    box-shadow: 0 25px 50px -15px rgba(212, 175, 55, 0.2), 0 15px 30px -10px rgba(212, 175, 55, 0.1);
+  }
+
+  /* Professional Layout Utilities */
+  .container-professional {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+
+  .section-professional {
+    @apply py-20 lg:py-32;
+  }
+
+  .content-professional {
+    @apply space-y-12 lg:space-y-16;
+  }
+
+  /* Professional Responsive Utilities */
+  @media (max-width: 640px) {
+    .professional-heading {
+      @apply text-3xl;
+    }
+    
+    .professional-subheading {
+      @apply text-xl;
+    }
+    
+    .professional-text {
+      @apply text-base;
+    }
+    
+    .professional-padding {
+      @apply p-6;
+    }
+    
+    .professional-spacing {
+      @apply space-y-6;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .professional-heading {
+      @apply text-5xl;
+    }
+    
+    .professional-subheading {
+      @apply text-3xl;
+    }
+    
+    .professional-padding {
+      @apply p-8;
+    }
+    
+    .professional-spacing {
+      @apply space-y-8;
     }
   }
 }
