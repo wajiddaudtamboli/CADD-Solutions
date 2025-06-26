@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Upload, Image, FolderOpen, GraduationCap, Users, X, UserPlus, Calendar, ClipboardList, BarChart3, Settings, FileText, CheckSquare } from 'lucide-react';
+import { Upload, Image, FolderOpen, GraduationCap, Users, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -24,7 +24,7 @@ const Admin = () => {
       setLoginError('');
       toast({
         title: "Login Successful",
-        description: "Welcome to CADD Solutions Admin Dashboard!",
+        description: "Welcome to Admin Dashboard!",
       });
     } else {
       setLoginError('Invalid credentials. Please try again.');
@@ -36,36 +36,36 @@ const Admin = () => {
     }
   };
 
-  const handleFeatureAccess = (feature: string) => {
+  const handleFileUpload = (type: string) => {
     toast({
-      title: `${feature} Access`,
-      description: `${feature} management system is now available for professional use.`,
+      title: "Upload Feature",
+      description: `${type} upload functionality would be implemented here.`,
     });
   };
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-amber-50 dark:from-gray-900 dark:to-yellow-900 flex items-center justify-center transition-colors duration-300">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-blue-900 flex items-center justify-center transition-colors duration-300">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
           className="w-full max-w-md"
         >
-          <Card className="professional-card shadow-2xl">
-            <CardHeader className="text-professionally-aligned">
-              <CardTitle className="text-3xl font-bold text-gray-800 dark:text-white">🏆 Admin Login</CardTitle>
-              <CardDescription className="dark:text-gray-300 text-lg">Enter your credentials to access the professional admin panel</CardDescription>
+          <Card className="shadow-2xl dark:bg-gray-800 dark:border-gray-700">
+            <CardHeader className="text-center">
+              <CardTitle className="text-2xl font-bold text-gray-800 dark:text-white">Admin Login</CardTitle>
+              <CardDescription className="dark:text-gray-300">Enter your credentials to access the admin panel</CardDescription>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleLogin} className="professional-spacing">
+              <form onSubmit={handleLogin} className="space-y-4">
                 <div>
                   <Input
                     type="text"
                     placeholder="User ID"
                     value={credentials.userid}
                     onChange={(e) => setCredentials({...credentials, userid: e.target.value})}
-                    className="dark:bg-gray-700 dark:border-gray-600 dark:text-white px-6 py-4 text-lg rounded-xl"
+                    className="dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                     required
                   />
                 </div>
@@ -75,7 +75,7 @@ const Admin = () => {
                     placeholder="Password"
                     value={credentials.password}
                     onChange={(e) => setCredentials({...credentials, password: e.target.value})}
-                    className="dark:bg-gray-700 dark:border-gray-600 dark:text-white px-6 py-4 text-lg rounded-xl"
+                    className="dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                     required
                   />
                 </div>
@@ -86,8 +86,8 @@ const Admin = () => {
                   </Alert>
                 )}
                 
-                <Button type="submit" className="professional-button w-full text-lg">
-                  🔐 Access Admin Panel
+                <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
+                  Login
                 </Button>
               </form>
             </CardContent>
@@ -98,7 +98,7 @@ const Admin = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-amber-50 dark:from-gray-900 dark:to-yellow-900 transition-colors duration-300">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       {/* Welcome Popup */}
       {showWelcome && (
         <motion.div
@@ -109,285 +109,189 @@ const Admin = () => {
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="bg-white dark:bg-gray-800 p-10 rounded-3xl shadow-2xl max-w-lg mx-4 text-professionally-aligned"
+            className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-2xl max-w-md mx-4 text-center"
           >
-            <div className="text-8xl mb-6">🎉</div>
-            <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">Welcome Admin!</h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-8 text-lg">You have successfully accessed the CADD Solutions Professional Admin Dashboard.</p>
-            <Button onClick={() => setShowWelcome(false)} className="professional-button text-lg">
-              <X className="w-5 h-5 mr-2" />
-              Continue to Dashboard
+            <div className="text-6xl mb-4">🎉</div>
+            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">Welcome Admin!</h2>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">You have successfully logged into the admin dashboard.</p>
+            <Button onClick={() => setShowWelcome(false)} className="bg-blue-600 hover:bg-blue-700">
+              <X className="w-4 h-4 mr-2" />
+              Close
             </Button>
           </motion.div>
         </motion.div>
       )}
 
-      <div className="professional-container">
+      <div className="container mx-auto px-4 py-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="professional-margin"
+          className="mb-8"
         >
-          <h1 className="professional-heading">🏆 CADD Solutions Admin Dashboard</h1>
-          <p className="professional-text">Professional Training Management System - Comprehensive Control Panel</p>
+          <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">Admin Dashboard</h1>
+          <p className="text-gray-600 dark:text-gray-300">Manage your training center content and data</p>
         </motion.div>
 
-        {/* Admin Features Grid */}
-        <div className="professional-grid professional-grid-3 gap-8">
-          {/* Employee Management */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Image Upload */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
           >
-            <Card className="professional-card hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+            <Card className="hover:shadow-lg transition-shadow dark:bg-gray-800 dark:border-gray-700">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-xl dark:text-white">
-                  <UserPlus className="professional-icon w-12 h-12" />
-                  Employee Management
+                <CardTitle className="flex items-center gap-2 dark:text-white">
+                  <Image className="w-5 h-5 text-blue-600" />
+                  Image Management
                 </CardTitle>
-                <CardDescription className="dark:text-gray-300 text-lg">Complete staff and trainer management system</CardDescription>
+                <CardDescription className="dark:text-gray-300">Upload and manage course images, gallery photos</CardDescription>
               </CardHeader>
               <CardContent>
                 <Button 
-                  onClick={() => handleFeatureAccess('Employee Management')}
-                  className="professional-button w-full text-lg"
+                  onClick={() => handleFileUpload('Image')}
+                  className="w-full bg-blue-600 hover:bg-blue-700"
                 >
-                  👥 Manage Employees
+                  <Upload className="w-4 h-4 mr-2" />
+                  Upload Images
                 </Button>
               </CardContent>
             </Card>
           </motion.div>
 
-          {/* Attendance Management */}
+          {/* Folder Management */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <Card className="professional-card hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+            <Card className="hover:shadow-lg transition-shadow dark:bg-gray-800 dark:border-gray-700">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-xl dark:text-white">
-                  <CheckSquare className="professional-icon w-12 h-12" />
-                  Attendance Management
+                <CardTitle className="flex items-center gap-2 dark:text-white">
+                  <FolderOpen className="w-5 h-5 text-green-600" />
+                  Folder Management
                 </CardTitle>
-                <CardDescription className="dark:text-gray-300 text-lg">Track attendance and generate reports</CardDescription>
+                <CardDescription className="dark:text-gray-300">Organize course materials and documents</CardDescription>
               </CardHeader>
               <CardContent>
                 <Button 
-                  onClick={() => handleFeatureAccess('Attendance Management')}
-                  className="professional-button w-full text-lg"
+                  onClick={() => handleFileUpload('Folder')}
+                  className="w-full bg-green-600 hover:bg-green-700"
                 >
-                  📊 Track Attendance
+                  <Upload className="w-4 h-4 mr-2" />
+                  Manage Folders
                 </Button>
               </CardContent>
             </Card>
           </motion.div>
 
-          {/* Student Enrollment */}
+          {/* Scholarship Management */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            <Card className="professional-card hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+            <Card className="hover:shadow-lg transition-shadow dark:bg-gray-800 dark:border-gray-700">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-xl dark:text-white">
-                  <Users className="professional-icon w-12 h-12" />
-                  Student Enrollment
+                <CardTitle className="flex items-center gap-2 dark:text-white">
+                  <GraduationCap className="w-5 h-5 text-purple-600" />
+                  Scholarship Programs
                 </CardTitle>
-                <CardDescription className="dark:text-gray-300 text-lg">Manage student registrations and profiles</CardDescription>
+                <CardDescription className="dark:text-gray-300">Manage scholarship courses and eligibility</CardDescription>
               </CardHeader>
               <CardContent>
                 <Button 
-                  onClick={() => handleFeatureAccess('Student Enrollment')}
-                  className="professional-button w-full text-lg"
+                  onClick={() => handleFileUpload('Scholarship')}
+                  className="w-full bg-purple-600 hover:bg-purple-700"
                 >
-                  🎓 Manage Students
+                  <GraduationCap className="w-4 h-4 mr-2" />
+                  Manage Scholarships
                 </Button>
               </CardContent>
             </Card>
           </motion.div>
 
-          {/* Certificate Management */}
+          {/* Course Management */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            <Card className="professional-card hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+            <Card className="hover:shadow-lg transition-shadow dark:bg-gray-800 dark:border-gray-700">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-xl dark:text-white">
-                  <GraduationCap className="professional-icon w-12 h-12" />
-                  Certificate Dispatch
+                <CardTitle className="flex items-center gap-2 dark:text-white">
+                  <Upload className="w-5 h-5 text-orange-600" />
+                  Course Content
                 </CardTitle>
-                <CardDescription className="dark:text-gray-300 text-lg">Generate and manage certificates</CardDescription>
+                <CardDescription className="dark:text-gray-300">Upload course brochures and materials</CardDescription>
               </CardHeader>
               <CardContent>
                 <Button 
-                  onClick={() => handleFeatureAccess('Certificate Management')}
-                  className="professional-button w-full text-lg"
+                  onClick={() => handleFileUpload('Course')}
+                  className="w-full bg-orange-600 hover:bg-orange-700"
                 >
-                  🏆 Manage Certificates
+                  <Upload className="w-4 h-4 mr-2" />
+                  Upload Content
                 </Button>
               </CardContent>
             </Card>
           </motion.div>
 
-          {/* Task Management */}
+          {/* Student Management */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            <Card className="professional-card hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+            <Card className="hover:shadow-lg transition-shadow dark:bg-gray-800 dark:border-gray-700">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-xl dark:text-white">
-                  <ClipboardList className="professional-icon w-12 h-12" />
-                  Task Assignment
+                <CardTitle className="flex items-center gap-2 dark:text-white">
+                  <Users className="w-5 h-5 text-red-600" />
+                  Student Data
                 </CardTitle>
-                <CardDescription className="dark:text-gray-300 text-lg">Assign and track employee tasks</CardDescription>
+                <CardDescription className="dark:text-gray-300">Manage student records and enrollment</CardDescription>
               </CardHeader>
               <CardContent>
                 <Button 
-                  onClick={() => handleFeatureAccess('Task Management')}
-                  className="professional-button w-full text-lg"
+                  onClick={() => handleFileUpload('Student')}
+                  className="w-full bg-red-600 hover:bg-red-700"
                 >
-                  📋 Manage Tasks
-                </Button>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          {/* Reports & Analytics */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-          >
-            <Card className="professional-card hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-xl dark:text-white">
-                  <BarChart3 className="professional-icon w-12 h-12" />
-                  Reports & Analytics
-                </CardTitle>
-                <CardDescription className="dark:text-gray-300 text-lg">Comprehensive business analytics</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button 
-                  onClick={() => handleFeatureAccess('Reports & Analytics')}
-                  className="professional-button w-full text-lg"
-                >
-                  📈 View Analytics
-                </Button>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          {/* Media Management */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
-          >
-            <Card className="professional-card hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-xl dark:text-white">
-                  <Image className="professional-icon w-12 h-12" />
-                  Media Management
-                </CardTitle>
-                <CardDescription className="dark:text-gray-300 text-lg">Upload and manage training materials</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button 
-                  onClick={() => handleFeatureAccess('Media Management')}
-                  className="professional-button w-full text-lg"
-                >
-                  🖼️ Manage Media
-                </Button>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          {/* Document Storage */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-          >
-            <Card className="professional-card hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-xl dark:text-white">
-                  <FolderOpen className="professional-icon w-12 h-12" />
-                  Document Storage
-                </CardTitle>
-                <CardDescription className="dark:text-gray-300 text-lg">Centralized document management</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button 
-                  onClick={() => handleFeatureAccess('Document Storage')}
-                  className="professional-button w-full text-lg"
-                >
-                  📁 Manage Documents
-                </Button>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          {/* System Settings */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9 }}
-          >
-            <Card className="professional-card hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-xl dark:text-white">
-                  <Settings className="professional-icon w-12 h-12" />
-                  System Settings
-                </CardTitle>
-                <CardDescription className="dark:text-gray-300 text-lg">Configure system preferences</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button 
-                  onClick={() => handleFeatureAccess('System Settings')}
-                  className="professional-button w-full text-lg"
-                >
-                  ⚙️ System Config
+                  <Users className="w-4 h-4 mr-2" />
+                  Manage Students
                 </Button>
               </CardContent>
             </Card>
           </motion.div>
         </div>
 
-        {/* Professional Statistics Dashboard */}
+        {/* Quick Stats */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.0 }}
-          className="professional-margin"
+          transition={{ delay: 0.6 }}
+          className="mt-8"
         >
-          <Card className="professional-card">
+          <Card className="dark:bg-gray-800 dark:border-gray-700">
             <CardHeader>
-              <CardTitle className="professional-subheading">📊 Professional Training Center Statistics</CardTitle>
+              <CardTitle className="dark:text-white">Quick Statistics</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="professional-grid professional-grid-4 gap-8">
-                <div className="text-professionally-aligned">
-                  <div className="professional-stats">500+</div>
-                  <div className="text-lg text-gray-600 dark:text-gray-400">Active Students</div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-600">150+</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Total Images</div>
                 </div>
-                <div className="text-professionally-aligned">
-                  <div className="professional-stats">25</div>
-                  <div className="text-lg text-gray-600 dark:text-gray-400">Professional Courses</div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-green-600">25</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Course Folders</div>
                 </div>
-                <div className="text-professionally-aligned">
-                  <div className="professional-stats">15</div>
-                  <div className="text-lg text-gray-600 dark:text-gray-400">Expert Trainers</div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-purple-600">5</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Scholarships</div>
                 </div>
-                <div className="text-professionally-aligned">
-                  <div className="professional-stats">95%</div>
-                  <div className="text-lg text-gray-600 dark:text-gray-400">Placement Rate</div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-red-600">500+</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Students</div>
                 </div>
               </div>
             </CardContent>
