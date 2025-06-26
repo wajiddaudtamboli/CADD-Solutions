@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Play, Award, Users, BookOpen } from 'lucide-react';
+import { ArrowRight, Play, Award, Users, BookOpen, Zap, Shield, Trophy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -9,112 +9,135 @@ const Hero = () => {
   const { translations } = useLanguage();
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 via-yellow-50/50 to-orange-50/50 dark:from-gray-900 dark:via-yellow-900/10 dark:to-amber-900/10 pt-20 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-professional-pattern opacity-30"></div>
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-amber-300/20 to-yellow-400/20 rounded-full blur-3xl animate-professional-float"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-orange-300/20 to-red-400/20 rounded-full blur-3xl animate-professional-pulse"></div>
+    <section id="home" className="min-h-screen bg-gradient-hero relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-pattern-dots opacity-40"></div>
+      <motion.div 
+        className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-amber-400/30 to-orange-500/30 rounded-full blur-3xl"
+        animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+      />
+      <motion.div 
+        className="absolute bottom-20 left-20 w-72 h-72 bg-gradient-to-br from-blue-400/30 to-purple-500/30 rounded-full blur-3xl"
+        animate={{ scale: [1.2, 1, 1.2], rotate: [360, 180, 0] }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+      />
       
-      <div className="professional-container relative z-10">
-        <div className="professional-grid professional-grid-2 items-center gap-16">
+      <div className="section-container relative z-10 pt-20">
+        <div className="grid-responsive grid-2 items-center min-h-[80vh]">
           {/* Left Content */}
           <motion.div
-            className="professional-spacing text-center lg:text-left"
+            className="space-y-8 text-center lg:text-left"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
+            {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="mb-6"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-100 to-yellow-100 dark:from-amber-900/30 dark:to-yellow-900/30 rounded-full border border-amber-200 dark:border-amber-600/30 mb-6">
-                <Award className="w-5 h-5 text-amber-600 dark:text-amber-400" />
-                <span className="text-sm font-semibold text-amber-700 dark:text-amber-300">Professional Training Institute</span>
+              <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 rounded-full border border-amber-200 dark:border-amber-600/30">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <Trophy className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+                <span className="text-sm font-semibold text-amber-700 dark:text-amber-300">Premium Training Institute</span>
               </div>
             </motion.div>
             
+            {/* Main Heading */}
             <motion.h1 
-              className="professional-heading text-left lg:text-left"
+              className="heading-primary text-center lg:text-left"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
               Master Professional <br />
-              <span className="text-gradient-professional">CAD & Engineering</span> <br />
-              Skills
+              <span className="relative">
+                Engineering Skills
+                <motion.div 
+                  className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ delay: 1, duration: 0.8 }}
+                />
+              </span>
             </motion.h1>
             
+            {/* Description */}
             <motion.p 
-              className="professional-text text-left lg:text-left max-w-2xl"
+              className="text-lead text-center lg:text-left"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              Transform your career with industry-leading training in CAD, CAM, CAE, Civil Engineering, and Software Development. Join thousands of successful professionals who started their journey with CADD Solutions.
+              Transform your career with industry-leading training in CAD, CAM, CAE, Civil Engineering, and Software Development. Join thousands of successful professionals.
             </motion.p>
 
+            {/* Action Buttons */}
             <motion.div 
-              className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
             >
-              <Button className="professional-button flex items-center gap-3 text-lg">
-                Get Started Today <ArrowRight className="w-5 h-5" />
+              <Button className="btn-primary group">
+                Get Started Today
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button className="professional-button-secondary flex items-center gap-3 text-lg">
-                <Play className="w-5 h-5" /> Watch Demo
+              <Button className="btn-secondary group">
+                <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                Watch Demo
               </Button>
             </motion.div>
 
+            {/* Stats */}
             <motion.div 
-              className="professional-grid professional-grid-3 gap-8 pt-12 max-w-lg mx-auto lg:mx-0"
+              className="grid grid-cols-3 gap-8 pt-12"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.9 }}
             >
               <div className="text-center lg:text-left">
-                <div className="text-4xl font-bold text-gradient-professional mb-2">500+</div>
+                <div className="text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600 mb-2">500+</div>
                 <div className="text-sm font-medium text-gray-600 dark:text-gray-400 flex items-center justify-center lg:justify-start gap-2">
                   <Users className="w-4 h-4" />
-                  Successful Students
+                  Students
                 </div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-4xl font-bold text-gradient-professional mb-2">15+</div>
+                <div className="text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-2">15+</div>
                 <div className="text-sm font-medium text-gray-600 dark:text-gray-400 flex items-center justify-center lg:justify-start gap-2">
                   <BookOpen className="w-4 h-4" />
-                  Professional Courses
+                  Courses
                 </div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-4xl font-bold text-gradient-professional mb-2">95%</div>
+                <div className="text-3xl lg:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600 mb-2">95%</div>
                 <div className="text-sm font-medium text-gray-600 dark:text-gray-400 flex items-center justify-center lg:justify-start gap-2">
                   <Award className="w-4 h-4" />
-                  Placement Success
+                  Success Rate
                 </div>
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Professional Media Frame */}
+          {/* Right Content - Media Frame */}
           <motion.div
-            className="flex justify-center"
+            className="flex justify-center order-first lg:order-last"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <motion.div 
-              className="relative w-full max-w-lg hover-professional"
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <div className="media-frame shadow-professional-xl">
+            <div className="relative w-full max-w-lg">
+              {/* Main Media Frame */}
+              <motion.div 
+                className="media-frame hover-lift group cursor-pointer"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <video 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   autoPlay 
                   muted 
                   loop 
@@ -123,29 +146,44 @@ const Hero = () => {
                   <source src="/imgs/portfolio/watermark.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
-              </div>
+                
+                {/* Play Overlay */}
+                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
+                    <Play className="w-8 h-8 text-gray-800 ml-1" />
+                  </div>
+                </div>
+              </motion.div>
               
-              {/* Professional Floating Elements */}
+              {/* Floating Elements */}
               <motion.div 
-                className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center shadow-professional-lg"
-                animate={{ rotate: [0, 360] }}
+                className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center shadow-elegant-lg"
+                animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               >
-                <Award className="w-10 h-10 text-white" />
+                <Shield className="w-8 h-8 text-white" />
               </motion.div>
               
               <motion.div 
-                className="absolute -bottom-6 -left-6 px-6 py-3 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-2xl border border-amber-200 dark:border-amber-600/30 shadow-professional"
+                className="absolute -bottom-4 -left-4 px-4 py-2 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-xl border border-gray-200 dark:border-gray-700 shadow-elegant"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.2 }}
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">Live Training Sessions</span>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-xs font-medium text-gray-700 dark:text-gray-300">Live Training</span>
                 </div>
               </motion.div>
-            </motion.div>
+
+              <motion.div 
+                className="absolute top-1/2 -left-8 w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-elegant"
+                animate={{ y: [-10, 10, -10] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Zap className="w-6 h-6 text-white" />
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>

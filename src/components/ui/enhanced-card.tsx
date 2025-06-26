@@ -7,11 +7,18 @@ interface EnhancedCardProps extends Omit<HTMLMotionProps<"div">, "onAnimationSta
   children: React.ReactNode;
   hover?: boolean;
   gradient?: boolean;
-  shadow?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+  glowing?: boolean;
+  size?: 'sm' | 'md' | 'lg';
 }
 
 export const EnhancedCard = React.forwardRef<HTMLDivElement, EnhancedCardProps>(
-  ({ className, children, hover = true, gradient = false, shadow = 'lg', ...props }, ref) => {
+  ({ className, children, hover = true, gradient = false, glowing = false, size = 'md', ...props }, ref) => {
+    const sizeClasses = {
+      sm: 'p-4',
+      md: 'p-6',
+      lg: 'p-8'
+    };
+
     return (
       <motion.div
         ref={ref}
@@ -20,15 +27,13 @@ export const EnhancedCard = React.forwardRef<HTMLDivElement, EnhancedCardProps>(
         className={cn(
           "rounded-2xl border transition-all duration-300",
           gradient 
-            ? "bg-gradient-to-br from-white/80 to-amber-50/80 dark:from-gray-800/80 dark:to-gray-700/80" 
+            ? "bg-gradient-to-br from-white/90 to-gray-50/90 dark:from-gray-800/90 dark:to-gray-700/90" 
             : "bg-white/80 dark:bg-gray-800/80",
           "backdrop-blur-sm border-gray-200/50 dark:border-gray-700/50",
-          hover && "hover:shadow-2xl hover:border-amber-200 dark:hover:border-amber-600",
-          shadow === 'sm' && "shadow-sm",
-          shadow === 'md' && "shadow-md",
-          shadow === 'lg' && "shadow-lg",
-          shadow === 'xl' && "shadow-xl",
-          shadow === '2xl' && "shadow-2xl",
+          hover && "hover:shadow-elegant-lg hover:border-amber-200 dark:hover:border-amber-600",
+          glowing && "shadow-elegant hover:shadow-amber-500/25 dark:hover:shadow-amber-400/25",
+          "shadow-elegant",
+          sizeClasses[size],
           className
         )}
         {...props}
@@ -50,7 +55,7 @@ export const EnhancedCardHeader = React.forwardRef<HTMLDivElement, EnhancedCardH
     return (
       <div
         ref={ref}
-        className={cn("flex flex-col space-y-1.5 p-6", className)}
+        className={cn("flex flex-col space-y-2 mb-4", className)}
         {...props}
       >
         {children}
@@ -70,7 +75,7 @@ export const EnhancedCardContent = React.forwardRef<HTMLDivElement, EnhancedCard
     return (
       <div
         ref={ref}
-        className={cn("p-6 pt-0", className)}
+        className={cn("", className)}
         {...props}
       >
         {children}
