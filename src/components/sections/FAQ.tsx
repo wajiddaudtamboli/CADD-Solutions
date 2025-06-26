@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, Phone, Mail } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const FAQ = () => {
@@ -26,7 +26,7 @@ const FAQ = () => {
     },
     {
       question: "Do you offer online and offline training modes?",
-      answer: "Yes, we provide both online and offline training options. Our online sessions are interactive with live projects, recorded sessions for revision, virtual labs, and dedicated support for remote learners with the same quality as classroom training."
+      answer: "Yes, we provide both online and offline training methods. Our online sessions are interactive with live projects, recorded sessions for revision, virtual labs, and dedicated support for remote learners with the same quality as classroom training."
     },
     {
       question: "What certifications do you provide?",
@@ -39,10 +39,6 @@ const FAQ = () => {
     {
       question: "What is your fee structure and payment options?",
       answer: "Our fees are competitive and transparent with no hidden costs. We offer flexible payment options including installment plans, education loans, and special discounts for students, bulk enrollments, and early bird registrations."
-    },
-    {
-      question: "What study materials and resources do you provide?",
-      answer: "We provide comprehensive study materials including course manuals, practice exercises, project files, software access, and our online learning portal with additional resources, video tutorials, and industry case studies."
     }
   ];
 
@@ -55,24 +51,24 @@ const FAQ = () => {
   };
 
   return (
-    <section className="professional-section bg-gradient-to-br from-gray-50 via-yellow-50 to-amber-50 dark:from-gray-900 dark:via-yellow-900 dark:to-amber-900 transition-colors duration-300">
-      <div className="professional-container">
+    <section className="bg-gradient-light dark:bg-gray-900 transition-colors duration-300">
+      <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="professional-margin"
+          className="section-header"
         >
-          <h2 className="professional-heading">
+          <h2 className="heading-secondary">
             Frequently Asked Questions
           </h2>
-          <p className="professional-text">
-            Get comprehensive answers to the most common questions about our professional training programs and services
+          <p className="text-lead">
+            Get comprehensive answers to the most common questions about our professional training programs
           </p>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto professional-spacing">
+        <div className="max-w-4xl mx-auto space-content">
           {faqData.map((item, index) => (
             <motion.div
               key={index}
@@ -81,19 +77,19 @@ const FAQ = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="professional-card border-2 border-transparent hover:border-yellow-200 dark:hover:border-yellow-600 transition-all duration-300">
+              <Card className="card-modern border-2 border-transparent hover:border-amber-200 dark:hover:border-amber-600">
                 <CardContent className="p-0">
                   <button
                     onClick={() => toggleItem(index)}
-                    className="w-full p-8 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 rounded-2xl"
+                    className="w-full p-6 md:p-8 text-left flex items-center justify-between hover:bg-gray-50/50 dark:hover:bg-gray-700/50 transition-colors duration-200 rounded-2xl"
                   >
-                    <h3 className="text-xl font-semibold text-gray-800 dark:text-white pr-6 text-professionally-aligned-left">
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-800 dark:text-white pr-6">
                       {item.question}
                     </h3>
                     {openItems.includes(index) ? (
-                      <ChevronUp className="w-6 h-6 text-yellow-600 dark:text-yellow-400 flex-shrink-0" />
+                      <ChevronUp className="w-6 h-6 text-amber-600 dark:text-amber-400 flex-shrink-0" />
                     ) : (
-                      <ChevronDown className="w-6 h-6 text-yellow-600 dark:text-yellow-400 flex-shrink-0" />
+                      <ChevronDown className="w-6 h-6 text-amber-600 dark:text-amber-400 flex-shrink-0" />
                     )}
                   </button>
                   
@@ -106,8 +102,8 @@ const FAQ = () => {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-8 pb-8">
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg text-professionally-aligned-left">
+                    <div className="px-6 md:px-8 pb-6 md:pb-8">
+                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base md:text-lg">
                         {item.answer}
                       </p>
                     </div>
@@ -123,26 +119,28 @@ const FAQ = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="professional-margin"
+          className="mt-16"
         >
-          <Card className="professional-card gradient-bg-golden text-white max-w-4xl mx-auto">
-            <CardContent className="professional-padding">
-              <h3 className="text-3xl font-bold mb-6 text-professionally-aligned">Still have questions?</h3>
-              <p className="text-yellow-100 mb-8 text-xl text-professionally-aligned">
+          <Card className="card-modern bg-gradient-primary text-white max-w-4xl mx-auto">
+            <CardContent className="p-8 md:p-12 text-center">
+              <h3 className="text-2xl md:text-3xl font-bold mb-6">Still have questions?</h3>
+              <p className="text-amber-100 mb-8 text-lg md:text-xl">
                 Our professional team is here to help you find the perfect training program for your career advancement.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <a
                   href="tel:+919689044025"
-                  className="bg-white text-yellow-700 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-200 text-center text-lg"
+                  className="btn-secondary flex items-center justify-center gap-3"
                 >
-                  📞 Call Us: +91 96890 44025
+                  <Phone className="w-5 h-5" />
+                  Call: +91 96890 44025
                 </a>
                 <a
                   href="mailto:tambolimahibub@gmail.com"
-                  className="bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/30 transition-colors duration-200 text-center text-lg"
+                  className="bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/30 transition-colors duration-200 flex items-center justify-center gap-3"
                 >
-                  ✉️ Email Us
+                  <Mail className="w-5 h-5" />
+                  Email Us
                 </a>
               </div>
             </CardContent>
