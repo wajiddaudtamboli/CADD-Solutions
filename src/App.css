@@ -1,118 +1,42 @@
-
-/* Reset and base styles */
-* {
-  box-sizing: border-box;
-}
-
 #root {
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
-/* Smooth scrolling for better UX */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-/* Custom scrollbar styles */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #f59e0b, #ea580c);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #d97706, #dc2626);
-}
-
-/* Focus styles for accessibility */
-.focus-visible:focus {
-  outline: 2px solid #f59e0b;
-  outline-offset: 2px;
-}
-
-/* Enhanced animations */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-  50% {
-    transform: translateY(-10px);
+  to {
+    transform: rotate(360deg);
   }
 }
 
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
   }
 }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
+.card {
+  padding: 2em;
 }
 
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-/* Mobile-first responsive utilities */
-@media (max-width: 640px) {
-  .mobile-hidden {
-    display: none !important;
-  }
-  
-  .mobile-full {
-    width: 100% !important;
-  }
-  
-  .mobile-center {
-    text-align: center !important;
-  }
-}
-
-/* Text selection styling */
-::selection {
-  background-color: rgba(245, 158, 11, 0.3);
-  color: inherit;
-}
-
-::-moz-selection {
-  background-color: rgba(245, 158, 11, 0.3);
-  color: inherit;
-}
-
-/* Print styles */
-@media print {
-  .no-print {
-    display: none !important;
-  }
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  .contrast-border {
-    border: 2px solid currentColor !important;
-  }
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+.read-the-docs {
+  color: #888;
 }
