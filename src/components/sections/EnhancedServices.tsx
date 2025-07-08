@@ -1,209 +1,119 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Monitor, Code, Building, Cpu, Database, Wrench, Settings, Calculator, Compass, Layers } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { 
+  Pen, Puzzle, Cpu, Settings, Grid3X3, 
+  Building, Home, Box, Zap, Calendar,
+  Calculator, Code, FileCode, Coffee,
+  Terminal, Bot, BarChart
+} from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 const EnhancedServices = () => {
-  const services = [
-    {
-      icon: Settings,
-      title: "CAD Design & Modeling",
-      description: "Master professional CAD software with hands-on industry projects and real-world applications.",
-      courses: ["AutoCAD", "CREO", "CATIA", "SolidWorks", "NX CAD & CAM"],
-      color: "from-primary to-primary/80"
-    },
-    {
-      icon: Calculator,
-      title: "CAE & Analysis",
-      description: "Advanced engineering analysis and simulation using industry-standard software solutions.",
-      courses: ["ANSYS Workbench", "Hypermesh", "Finite Element Analysis", "CFD Analysis"],
-      color: "from-blue-500 to-blue-600"
-    },
-    {
-      icon: Building,
-      title: "Civil & Architecture",
-      description: "Comprehensive building design and construction technology training programs.",
-      courses: ["AutoCAD Civil 3D", "Revit Architecture", "3Ds Max", "STAAD.PRO", "ETABS"],
-      color: "from-green-500 to-green-600"
-    },
-    {
-      icon: Code,
-      title: "Software Development",
-      description: "Modern programming languages and development frameworks for technical professionals.",
-      courses: ["C Programming", "C++", "Java", "Python", "Web Development"],
-      color: "from-purple-500 to-purple-600"
-    },
-    {
-      icon: Database,
-      title: "Data Science & ML",
-      description: "Advanced data analytics and machine learning techniques for engineering applications.",
-      courses: ["Python", "Machine Learning", "Data Science", "AI Applications"],
-      color: "from-red-500 to-red-600"
-    },
-    {
-      icon: Compass,
-      title: "Project Management",
-      description: "Professional project planning and management tools for engineering projects.",
-      courses: ["MS Project", "Primavera", "Building Estimation", "Project Planning"],
-      color: "from-orange-500 to-orange-600"
-    }
+  const { translations } = useLanguage();
+
+  const cadServices = [
+    { name: 'AutoCAD', icon: Pen, link: 'https://www.autodesk.com/products/autocad/overview' },
+    { name: 'CREO', icon: Puzzle, link: 'https://www.ptc.com/en/products/cad/creo' },
+    { name: 'CATIA', icon: Grid3X3, link: 'https://www.3ds.com/products-services/catia/' },
+    { name: 'Solid Works', icon: Cpu, link: 'https://www.solidworks.com/' },
+    { name: 'NX CAD & NX CAM', icon: Settings, link: 'https://www.plm.automation.siemens.com/global/en/products/nx/' },
+    { name: 'ANSYS Workbench', icon: Grid3X3, link: 'https://www.ansys.com/products/structures/ansys-mechanical' },
+    { name: 'Hypermesh', icon: Grid3X3, link: 'https://www.altair.com/hypermesh/' },
+    { name: 'AutoCAD Civil 3D', icon: Building, link: 'https://www.autodesk.com/products/autocad-civil-3d/overview' },
+    { name: 'Revit Architecture', icon: Home, link: 'https://www.autodesk.com/products/revit/overview' },
+    { name: '3Ds Max', icon: Box, link: 'https://www.autodesk.com/products/3ds-max/overview' },
+    { name: 'STAAD.PRO', icon: Grid3X3, link: 'https://www.bentley.com/en/products/brands/staad' },
+    { name: 'ETABS', icon: Grid3X3, link: 'https://www.csiamerica.com/products/etabs' },
+    { name: 'AutoCAD Electrical', icon: Zap, link: 'https://www.autodesk.com/products/autocad-electrical/overview' },
+    { name: 'MS Project', icon: Calendar, link: 'https://www.microsoft.com/en-us/microsoft-365/project/project-management-software' },
+    { name: 'Primavera', icon: Calendar, link: 'https://www.oracle.com/industries/construction-engineering/primavera-p6/' },
+    { name: 'Building Estimation', icon: Calculator, link: '#' },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
+  const softwareServices = [
+    { name: 'C Programming', icon: Code, link: 'https://en.wikipedia.org/wiki/C_(programming_language)' },
+    { name: 'C++', icon: FileCode, link: 'https://isocpp.org/' },
+    { name: 'JAVA', icon: Coffee, link: 'https://www.oracle.com/java/' },
+    { name: 'PYTHON', icon: Terminal, link: 'https://www.python.org/' },
+    { name: 'Machine Learning', icon: Bot, link: 'https://www.tensorflow.org/' },
+    { name: 'Data Science', icon: BarChart, link: 'https://www.datasciencecentral.com/' },
+  ];
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 }
-    }
-  };
+  const ServiceCard = ({ service, index }: { service: any; index: number }) => (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true }}
+      className="group"
+    >
+      <a
+        href={service.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block bg-white dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-red-500 dark:hover:border-blue-500"
+      >
+        <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-red-500 to-red-700 dark:from-blue-500 dark:to-purple-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+          <service.icon className="w-8 h-8 text-white" />
+        </div>
+        <h4 className="text-lg font-semibold text-gray-800 dark:text-white group-hover:text-red-600 dark:group-hover:text-blue-400 transition-colors">
+          {service.name}
+        </h4>
+      </a>
+    </motion.div>
+  );
 
   return (
-    <section id="services" className="professional-section gradient-bg-light">
-      <div className="professional-container">
-        <motion.div 
-          className="text-center professional-margin"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="professional-heading">
-            Professional Training Services
-          </h2>
-          <p className="professional-text">
-            Comprehensive training programs designed to meet industry demands and accelerate your career growth 
-            with cutting-edge technology and expert instruction.
-          </p>
-        </motion.div>
+    <div className="bg-gradient-to-br from-gray-50 via-red-50 to-pink-50 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900 transition-colors duration-300">
+      {/* CAD Services Section */}
+      <section id="services" className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-red-600 to-red-800 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-4">
+              SERVICES
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">What we offer</p>
+          </motion.div>
 
-        <motion.div 
-          className="professional-grid professional-grid-3"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              variants={itemVariants}
-              whileHover={{ 
-                y: -8,
-                transition: { duration: 0.3 }
-              }}
-              className="h-full"
-            >
-              <Card className="professional-card h-full hover-glow group">
-                <CardHeader className="text-center pb-4">
-                  <motion.div 
-                    className={`professional-icon bg-gradient-to-br ${service.color} group-hover:scale-110 transition-transform duration-300`}
-                    whileHover={{ rotate: 5 }}
-                  >
-                    <service.icon className="w-8 h-8" />
-                  </motion.div>
-                  <CardTitle className="professional-subheading text-xl group-hover:text-primary transition-colors">
-                    {service.title}
-                  </CardTitle>
-                  <CardDescription className="professional-text text-sm">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="space-y-3">
-                    <h4 className="font-semibold text-foreground mb-3 flex items-center">
-                      <Layers className="w-4 h-4 mr-2 text-primary" />
-                      Course Modules:
-                    </h4>
-                    <div className="grid grid-cols-1 gap-2">
-                      {service.courses.map((course, courseIndex) => (
-                        <motion.div
-                          key={course}
-                          className="flex items-center p-2 rounded-lg bg-accent/50 hover:bg-accent transition-colors"
-                          initial={{ opacity: 0, x: -10 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ delay: courseIndex * 0.1 }}
-                          viewport={{ once: true }}
-                        >
-                          <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0" />
-                          <span className="text-sm font-medium text-foreground">
-                            {course}
-                          </span>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <motion.div
-                    className="mt-6 pt-4 border-t border-border"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="flex items-center justify-between text-sm text-muted-foreground">
-                      <span className="flex items-center">
-                        <Monitor className="w-4 h-4 mr-1" />
-                        Hands-on Training
-                      </span>
-                      <span className="flex items-center">
-                        <Wrench className="w-4 h-4 mr-1" />
-                        Industry Projects
-                      </span>
-                    </div>
-                  </motion.div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </motion.div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            {cadServices.map((service, index) => (
+              <ServiceCard key={service.name} service={service} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
 
-        {/* Call to Action */}
-        <motion.div
-          className="text-center professional-margin"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <Card className="professional-card gradient-bg-primary text-primary-foreground max-w-4xl mx-auto">
-            <CardContent className="professional-padding">
-              <h3 className="text-3xl font-bold mb-6">Ready to Transform Your Career?</h3>
-              <p className="text-lg mb-8 opacity-90">
-                Join thousands of professionals who have advanced their careers with our industry-leading training programs.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <motion.button
-                  className="bg-background text-foreground px-8 py-4 rounded-xl font-semibold hover:bg-secondary transition-colors duration-200"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  📞 Call: +91 96890 44025
-                </motion.button>
-                <motion.button
-                  className="bg-background/20 backdrop-blur-sm border-2 border-background/30 text-primary-foreground px-8 py-4 rounded-xl font-semibold hover:bg-background/30 transition-colors duration-200"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  ✉️ Get Course Brochure
-                </motion.button>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
-      </div>
-    </section>
+      {/* Software Development Section */}
+      <section id="software-courses" className="py-20 bg-white/50 dark:bg-gray-800/50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-red-600 to-red-800 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-4">
+              SOFTWARE DEVELOPMENT COURSES
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">Enhance your coding skills</p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+            {softwareServices.map((service, index) => (
+              <ServiceCard key={service.name} service={service} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 
