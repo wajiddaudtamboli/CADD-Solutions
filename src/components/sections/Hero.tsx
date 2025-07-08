@@ -1,113 +1,194 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Play, Settings, Code, Building2, Calculator } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/context/LanguageContext';
 
 const Hero = () => {
   const { translations } = useLanguage();
 
+  const floatingIcons = [
+    { Icon: Settings, delay: 0.2, x: -20, y: -30 },
+    { Icon: Code, delay: 0.4, x: 30, y: -20 },
+    { Icon: Building2, delay: 0.6, x: -40, y: 20 },
+    { Icon: Calculator, delay: 0.8, x: 40, y: 30 },
+  ];
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-blue-900 pt-20 transition-colors duration-300">
-      <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Video Background with Overlay */}
+      <div className="absolute inset-0 w-full h-full">
+        <div className="professional-media-frame h-full w-full">
+          <video 
+            className="w-full h-full object-cover"
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+          >
+            <source src="/imgs/portfolio/watermark.mp4" type="video/mp4" />
+          </video>
+        </div>
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/90 dark:from-background/95 dark:via-background/80 dark:to-background/95" />
+      </div>
+
+      {/* Floating CAD Tools Icons */}
+      {floatingIcons.map(({ Icon, delay, x, y }, index) => (
+        <motion.div
+          key={index}
+          className="absolute hidden lg:block"
+          style={{
+            left: `${20 + (index * 15)}%`,
+            top: `${30 + (index * 10)}%`,
+          }}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ 
+            opacity: 0.6, 
+            scale: 1,
+            x: [0, x, 0],
+            y: [0, y, 0],
+          }}
+          transition={{ 
+            delay,
+            duration: 4,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut"
+          }}
+        >
+          <div className="professional-icon-small">
+            <Icon className="w-4 h-4 text-primary-foreground" />
+          </div>
+        </motion.div>
+      ))}
+
+      {/* Content */}
+      <div className="professional-container relative z-10 grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
         <motion.div
-          className="space-y-6"
+          className="professional-spacing text-center lg:text-left"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
           <motion.h1 
-            className="text-4xl lg:text-6xl font-bold text-gray-800 dark:text-white leading-tight transition-colors"
+            className="professional-heading text-left lg:text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            {translations.hero.title.split('CAD & Engineering').map((part, index) => (
-              <span key={index}>
-                {part}
-                {index === 0 && <span className="text-blue-600 dark:text-blue-400">CAD & Engineering</span>}
-              </span>
-            ))}
+            Master Professional{' '}
+            <span className="relative">
+              CAD & Engineering
+              <motion.div
+                className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary/50"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ delay: 1, duration: 0.8 }}
+              />
+            </span>
           </motion.h1>
           
           <motion.p 
-            className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed transition-colors"
+            className="professional-text text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            {translations.hero.subtitle}
+            Transform your career with industry-leading CAD, CAE, and software development training. 
+            Join thousands of professionals who have advanced their skills with our comprehensive programs.
           </motion.p>
 
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-3 rounded-lg flex items-center gap-2 transition-colors">
-              {translations.hero.getStarted} <ArrowRight size={20} />
+            <Button className="professional-button group">
+              Start Your Journey 
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline" className="px-8 py-3 rounded-lg flex items-center gap-2 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800 transition-colors">
-              <Play size={20} /> {translations.hero.watchDemo}
+            <Button className="professional-button-outline group">
+              <Play className="mr-2 w-5 h-5" /> 
+              Watch Demo
             </Button>
           </motion.div>
 
+          {/* Stats */}
           <motion.div 
-            className="grid grid-cols-3 gap-6 pt-8"
+            className="professional-grid-3 pt-12 text-center lg:text-left"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
           >
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">500+</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400 transition-colors">{translations.hero.studentsCount}</div>
+            <div className="professional-spacing-sm">
+              <div className="text-4xl font-bold text-primary mb-2">500+</div>
+              <div className="text-sm text-muted-foreground">Students Trained</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">15+</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400 transition-colors">{translations.hero.coursesCount}</div>
+            <div className="professional-spacing-sm">
+              <div className="text-4xl font-bold text-primary mb-2">15+</div>
+              <div className="text-sm text-muted-foreground">Expert Courses</div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">95%</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400 transition-colors">{translations.hero.successRate}</div>
+            <div className="professional-spacing-sm">
+              <div className="text-4xl font-bold text-primary mb-2">95%</div>
+              <div className="text-sm text-muted-foreground">Success Rate</div>
             </div>
           </motion.div>
         </motion.div>
 
-        {/* Right Content - Video */}
+        {/* Right Content - Featured Media */}
         <motion.div
-          className="flex justify-center"
+          className="flex justify-center lg:justify-end"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.div 
-            className="relative w-full max-w-md"
-            whileHover={{ scale: 1.05 }}
+            className="professional-media-frame max-w-md w-full hover-scale hover-glow"
+            whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <div className="video-container border-8 border-white dark:border-gray-700 rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-gray-800 transition-colors">
-              <video 
-                className="w-full h-auto object-cover"
-                autoPlay 
-                muted 
-                loop 
-                playsInline
-              >
-                <source src="/imgs/portfolio/watermark.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
+            <video 
+              className="w-full h-auto object-cover rounded-lg"
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+            >
+              <source src="/imgs/portfolio/watermark.mp4" type="video/mp4" />
+            </video>
             <motion.div 
-              className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-purple-400 dark:from-blue-500 dark:to-purple-500 rounded-3xl -z-10 transition-colors"
-              animate={{ rotate: [0, 1, -1, 0] }}
-              transition={{ duration: 6, repeat: Infinity }}
+              className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-lg pointer-events-none"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2 }}
             />
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.5 }}
+      >
+        <motion.div
+          className="w-6 h-10 border-2 border-primary rounded-full flex justify-center"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <motion.div
+            className="w-1 h-2 bg-primary rounded-full mt-2"
+            animate={{ opacity: [1, 0, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
