@@ -7,33 +7,124 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
+
+interface AdminUser {
+  admin_id: string;
+  username: string;
+  email: string;
+  full_name: string;
+  role: string;
+  session_token?: string;
+}
 
 const Admin = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [adminUser, setAdminUser] = useState<AdminUser | null>(null);
   const [credentials, setCredentials] = useState({ userid: '', password: '' });
   const [loginError, setLoginError] = useState('');
   const [showWelcome, setShowWelcome] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleLogin = (e: React.FormEvent) => {
+  // Check for existing session on component mount
+  useEffect(() => {
+    const checkSession = () => {
+      const sessionToken = localStorage.getItem('admin_session_token');
+      const adminData = localStorage.getItem('admin_user_data');
+      
+      if (sessionToken && adminData) {
+        try {
+          const userData = JSON.parse(adminData);
+          setAdminUser(userData);
+          setIsAuthenticated(true);
+        } catch (error) {
+          console.error('Error parsing admin data:', error);
+          localStorage.removeItem('admin_session_token');
+          localStorage.removeItem('admin_user_data');
+        }
+      }
+    };
+
+    checkSession();
+  }, []);
+
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
+    setLoginError('');
     
-    if (credentials.userid === 'Cadd' && credentials.password === 'Cadd@123') {
-      setIsAuthenticated(true);
-      setShowWelcome(true);
-      setLoginError('');
-      toast({
-        title: "Login Successful",
-        description: "Welcome to CADD Solutions Admin Dashboard!",
+    try {
+      const { data, error } = await supabase.rpc('validate_admin_login', {
+        p_username: credentials.userid,
+        p_password: credentials.password
       });
-    } else {
-      setLoginError('Invalid credentials. Please try again.');
+
+      if (error) {
+        console.error('Login error:', error);
+        setLoginError('An error occurred during login. Please try again.');
+        toast({
+          title: "Login Failed",
+          description: "An error occurred during login.",
+          variant: "destructive"
+        });
+        return;
+      }
+
+      if (data && data.length > 0) {
+        const adminData = data[0];
+        
+        // Store session data
+        localStorage.setItem('admin_session_token', adminData.session_token);
+        localStorage.setItem('admin_user_data', JSON.stringify({
+          admin_id: adminData.admin_id,
+          username: adminData.username,
+          email: adminData.email,
+          full_name: adminData.full_name,
+          role: adminData.role
+        }));
+
+        setAdminUser(adminData);
+        setIsAuthenticated(true);
+        setShowWelcome(true);
+        setLoginError('');
+        
+        toast({
+          title: "Login Successful",
+          description: `Welcome back, ${adminData.full_name || adminData.username}!`,
+        });
+      } else {
+        setLoginError('Invalid credentials. Please check your username and password.');
+        toast({
+          title: "Login Failed",
+          description: "Invalid username or password.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      setLoginError('An unexpected error occurred. Please try again.');
       toast({
         title: "Login Failed",
-        description: "Invalid userid or password.",
+        description: "An unexpected error occurred.",
         variant: "destructive"
       });
+    } finally {
+      setIsLoading(false);
     }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('admin_session_token');
+    localStorage.removeItem('admin_user_data');
+    setIsAuthenticated(false);
+    setAdminUser(null);
+    setCredentials({ userid: '', password: '' });
+    
+    toast({
+      title: "Logged Out",
+      description: "You have been successfully logged out.",
+    });
   };
 
   const handleFeatureAccess = (feature: string) => {
@@ -67,6 +158,7 @@ const Admin = () => {
                     onChange={(e) => setCredentials({...credentials, userid: e.target.value})}
                     className="dark:bg-gray-700 dark:border-gray-600 dark:text-white px-6 py-4 text-lg rounded-xl"
                     required
+                    disabled={isLoading}
                   />
                 </div>
                 <div>
@@ -77,6 +169,7 @@ const Admin = () => {
                     onChange={(e) => setCredentials({...credentials, password: e.target.value})}
                     className="dark:bg-gray-700 dark:border-gray-600 dark:text-white px-6 py-4 text-lg rounded-xl"
                     required
+                    disabled={isLoading}
                   />
                 </div>
                 
@@ -86,8 +179,8 @@ const Admin = () => {
                   </Alert>
                 )}
                 
-                <Button type="submit" className="professional-button w-full text-lg">
-                  🔐 Access Admin Panel
+                <Button type="submit" className="professional-button w-full text-lg" disabled={isLoading}>
+                  {isLoading ? '🔄 Authenticating...' : '🔐 Access Admin Panel'}
                 </Button>
               </form>
             </CardContent>
@@ -112,7 +205,7 @@ const Admin = () => {
             className="bg-white dark:bg-gray-800 p-10 rounded-3xl shadow-2xl max-w-lg mx-4 text-professionally-aligned"
           >
             <div className="text-8xl mb-6">🎉</div>
-            <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">Welcome Admin!</h2>
+            <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">Welcome {adminUser?.full_name || adminUser?.username}!</h2>
             <p className="text-gray-600 dark:text-gray-300 mb-8 text-lg">You have successfully accessed the CADD Solutions Professional Admin Dashboard.</p>
             <Button onClick={() => setShowWelcome(false)} className="professional-button text-lg">
               <X className="w-5 h-5 mr-2" />
@@ -123,14 +216,23 @@ const Admin = () => {
       )}
 
       <div className="professional-container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="professional-margin"
-        >
-          <h1 className="professional-heading">🏆 CADD Solutions Admin Dashboard</h1>
-          <p className="professional-text">Professional Training Management System - Comprehensive Control Panel</p>
-        </motion.div>
+        {/* Header with logout button */}
+        <div className="flex justify-between items-center mb-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <h1 className="professional-heading">🏆 CADD Solutions Admin Dashboard</h1>
+            <p className="professional-text">Professional Training Management System - Comprehensive Control Panel</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+              Logged in as: <span className="font-semibold">{adminUser?.full_name || adminUser?.username}</span> ({adminUser?.role})
+            </p>
+          </motion.div>
+          
+          <Button onClick={handleLogout} variant="outline" className="text-red-600 border-red-600 hover:bg-red-50 dark:hover:bg-red-900/20">
+            Logout
+          </Button>
+        </div>
 
         {/* Admin Features Grid */}
         <div className="professional-grid professional-grid-3 gap-8">
