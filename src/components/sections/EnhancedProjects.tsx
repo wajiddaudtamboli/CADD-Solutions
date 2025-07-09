@@ -52,7 +52,7 @@ const EnhancedProjects = () => {
     image: '/imgs/portfolio/12.jpg',
     title: 'Design Project 12'
   }];
-  return <section id="portfolio" className="py-20 bg-gradient-to-br from-gray-50 via-red-50 to-pink-50 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900 transition-colors duration-300 bg-fuchsia-600">
+  return <section id="portfolio" className="py-20 bg-gradient-to-br from-gray-50 via-red-50 to-pink-50 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900 transition-colors duration-300 bg-orange-400">
       <div className="container mx-auto px-4">
         <motion.div initial={{
         opacity: 0,
