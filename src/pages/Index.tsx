@@ -19,7 +19,7 @@ import { ScrollToTop } from '@/components/ui/scroll-to-top';
 const Index = () => {
   return (
     <motion.div 
-      className="min-h-screen bg-gradient-to-br from-white via-yellow-50 to-amber-50 dark:from-gray-900 dark:via-yellow-900 dark:to-amber-900 transition-colors duration-300"
+      className="min-h-screen bg-gradient-to-br from-white via-yellow-50 to-amber-50 dark:from-red-900 dark:via-red-800 dark:to-red-700 transition-colors duration-300"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
