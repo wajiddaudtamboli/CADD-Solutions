@@ -2,10 +2,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Pen, Puzzle, Cpu, Settings, Grid3X3, 
+  Drafting, PenTool, Layers, Cog, Wrench, 
   Building, Home, Box, Zap, Calendar,
   Calculator, Code, FileCode, Coffee,
-  Terminal, Bot, BarChart
+  Terminal, Bot, BarChart, Ruler, 
+  Compass, Grid3X3, Settings, Cpu,
+  Database, Monitor, Activity
 } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -13,18 +15,18 @@ const EnhancedServices = () => {
   const { translations } = useLanguage();
 
   const cadServices = [
-    { name: 'AutoCAD', icon: Pen, link: 'https://www.autodesk.com/products/autocad/overview' },
-    { name: 'CREO', icon: Puzzle, link: 'https://www.ptc.com/en/products/cad/creo' },
-    { name: 'CATIA', icon: Grid3X3, link: 'https://www.3ds.com/products-services/catia/' },
-    { name: 'Solid Works', icon: Cpu, link: 'https://www.solidworks.com/' },
+    { name: 'AutoCAD', icon: Drafting, link: 'https://www.autodesk.com/products/autocad/overview' },
+    { name: 'CREO', icon: Cog, link: 'https://www.ptc.com/en/products/cad/creo' },
+    { name: 'CATIA', icon: Layers, link: 'https://www.3ds.com/products-services/catia/' },
+    { name: 'Solid Works', icon: Wrench, link: 'https://www.solidworks.com/' },
     { name: 'NX CAD & NX CAM', icon: Settings, link: 'https://www.plm.automation.siemens.com/global/en/products/nx/' },
-    { name: 'ANSYS Workbench', icon: Grid3X3, link: 'https://www.ansys.com/products/structures/ansys-mechanical' },
+    { name: 'ANSYS Workbench', icon: Activity, link: 'https://www.ansys.com/products/structures/ansys-mechanical' },
     { name: 'Hypermesh', icon: Grid3X3, link: 'https://www.altair.com/hypermesh/' },
-    { name: 'AutoCAD Civil 3D', icon: Building, link: 'https://www.autodesk.com/products/autocad-civil-3d/overview' },
-    { name: 'Revit Architecture', icon: Home, link: 'https://www.autodesk.com/products/revit/overview' },
+    { name: 'AutoCAD Civil 3D', icon: Ruler, link: 'https://www.autodesk.com/products/autocad-civil-3d/overview' },
+    { name: 'Revit Architecture', icon: Building, link: 'https://www.autodesk.com/products/revit/overview' },
     { name: '3Ds Max', icon: Box, link: 'https://www.autodesk.com/products/3ds-max/overview' },
-    { name: 'STAAD.PRO', icon: Grid3X3, link: 'https://www.bentley.com/en/products/brands/staad' },
-    { name: 'ETABS', icon: Grid3X3, link: 'https://www.csiamerica.com/products/etabs' },
+    { name: 'STAAD.PRO', icon: Home, link: 'https://www.bentley.com/en/products/brands/staad' },
+    { name: 'ETABS', icon: Building, link: 'https://www.csiamerica.com/products/etabs' },
     { name: 'AutoCAD Electrical', icon: Zap, link: 'https://www.autodesk.com/products/autocad-electrical/overview' },
     { name: 'MS Project', icon: Calendar, link: 'https://www.microsoft.com/en-us/microsoft-365/project/project-management-software' },
     { name: 'Primavera', icon: Calendar, link: 'https://www.oracle.com/industries/construction-engineering/primavera-p6/' },
@@ -77,9 +79,9 @@ const EnhancedServices = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-red-600 to-red-800 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-4">
-              SERVICES
+              PROFESSIONAL CAD & ENGINEERING SERVICES
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">What we offer</p>
+            <p className="text-xl text-gray-600 dark:text-gray-300">Industry-standard software training</p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
@@ -103,7 +105,7 @@ const EnhancedServices = () => {
             <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-red-600 to-red-800 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-4">
               SOFTWARE DEVELOPMENT COURSES
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">Enhance your coding skills</p>
+            <p className="text-xl text-gray-600 dark:text-gray-300">Master programming languages & data science</p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
