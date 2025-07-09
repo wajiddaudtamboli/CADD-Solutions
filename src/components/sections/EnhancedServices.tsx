@@ -151,7 +151,7 @@ const EnhancedServices = () => {
       </section>
 
       {/* Software Development Section */}
-      <section id="software-courses" className="py-20 bg-white/50 dark:bg-red-800/50">
+      <section id="software-courses" className="py-20 bg-fuchsia-950">
         <div className="container mx-auto px-4">
           <motion.div initial={{
           opacity: 0,
