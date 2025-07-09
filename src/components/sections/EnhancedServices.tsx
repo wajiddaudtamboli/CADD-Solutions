@@ -125,7 +125,7 @@ const EnhancedServices = () => {
     </motion.div>;
   return <div className="bg-gradient-to-br from-gray-50 via-red-50 to-pink-50 dark:from-red-900 dark:via-red-800 dark:to-red-700 transition-colors duration-300">
       {/* CAD Services Section */}
-      <section id="services" className="py-20 bg-sky-950">
+      <section id="services" className="py-20 bg-lime-800">
         <div className="container mx-auto px-4">
           <motion.div initial={{
           opacity: 0,
