@@ -141,7 +141,7 @@ const EnhancedServices = () => {
             <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-red-600 to-red-800 dark:from-red-400 dark:to-red-300 bg-clip-text mb-4 text-slate-50">
               PROFESSIONAL CAD & ENGINEERING SERVICES
             </h2>
-            <p className="text-xl text-gray-600 dark:text-red-200">Industry-standard software training</p>
+            <p className="text-xl text-amber-400">Industry-standard software training</p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
