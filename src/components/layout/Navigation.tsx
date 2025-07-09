@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Phone, Mail, Shield } from 'lucide-react';
@@ -18,7 +17,6 @@ const Navigation = () => {
     { name: translations.nav.services, href: '#services', route: '/' },
     { name: translations.nav.products, href: '#products', route: '/' },
     { name: translations.nav.projects, href: '#projects', route: '/' },
-    { name: 'Scholarship', href: '/scholarship', route: '/scholarship' },
     { name: translations.nav.contact, href: '#contact', route: '/' },
   ];
 
