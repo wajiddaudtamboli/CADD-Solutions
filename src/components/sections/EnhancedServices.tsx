@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Drafting, PenTool, Layers, Cog, Wrench, 
+  Pen, Layers, Cog, Wrench, 
   Building, Home, Box, Zap, Calendar,
   Calculator, Code, FileCode, Coffee,
   Terminal, Bot, BarChart, Ruler, 
@@ -15,7 +15,7 @@ const EnhancedServices = () => {
   const { translations } = useLanguage();
 
   const cadServices = [
-    { name: 'AutoCAD', icon: Drafting, link: 'https://www.autodesk.com/products/autocad/overview' },
+    { name: 'AutoCAD', icon: Pen, link: 'https://www.autodesk.com/products/autocad/overview' },
     { name: 'CREO', icon: Cog, link: 'https://www.ptc.com/en/products/cad/creo' },
     { name: 'CATIA', icon: Layers, link: 'https://www.3ds.com/products-services/catia/' },
     { name: 'Solid Works', icon: Wrench, link: 'https://www.solidworks.com/' },
