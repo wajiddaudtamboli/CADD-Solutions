@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Phone, Mail, Shield } from 'lucide-react';
@@ -33,7 +32,7 @@ const Navigation = () => {
 
   return (
     <motion.nav 
-      className="fixed top-0 left-0 right-0 z-50 media-frame bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg transition-colors duration-300"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg transition-colors duration-300"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
