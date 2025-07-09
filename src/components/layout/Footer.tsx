@@ -3,13 +3,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import SlidingFooter from './SlidingFooter';
 
 const Footer = () => {
   const { translations } = useLanguage();
 
   return (
     <>
-      <footer className="bg-gray-900 text-white py-16 pb-20">
+      {/* Regular Footer for larger screens */}
+      <footer className="bg-gray-900 text-white py-16 pb-20 hidden xl:block">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Company Info */}
@@ -119,21 +121,9 @@ const Footer = () => {
         </div>
       </footer>
 
-      {/* Custom Developer Footer */}
-      <div 
-        className="fixed bottom-0 left-0 right-0 z-50"
-        style={{
-          width: '100%',
-          padding: '10px 0',
-          textAlign: 'center',
-          background: 'rgba(0, 0, 0, 0.8)',
-          color: 'white',
-          fontSize: '1.4rem',
-          fontWeight: '600',
-          boxShadow: '0px -2px 12px rgba(0, 0, 0, 0.5)',
-        }}
-      >
-        Developer - <strong style={{ color: '#ffcc00', fontWeight: '800', letterSpacing: '1px' }}>Wajid Daud Tamboli</strong>
+      {/* Sliding Footer for tablets and mobile */}
+      <div className="xl:hidden">
+        <SlidingFooter />
       </div>
     </>
   );
