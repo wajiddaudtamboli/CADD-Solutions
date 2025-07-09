@@ -73,7 +73,7 @@ const Hero = () => {
               <div className="text-3xl font-bold text-blue-600 dark:text-red-400">95%</div>
               <div className="text-sm text-gray-600 dark:text-red-300 transition-colors">{translations.hero.successRate}</div>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Right Content - Video */}
