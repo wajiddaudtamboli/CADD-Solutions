@@ -68,7 +68,7 @@ const EnhancedContact = () => {
         }} viewport={{
           once: true
         }} className="professional-spacing">
-            <Card className="professional-card">
+            <Card className="professional-card text-slate-50">
               <CardHeader>
                 <CardTitle className="professional-subheading flex items-center gap-3">
                   <MapPin className="professional-icon w-8 h-8" />
