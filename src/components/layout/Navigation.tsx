@@ -32,13 +32,19 @@ const Navigation = () => {
 
   return (
     <motion.nav 
-      className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg transition-colors duration-300"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/85 dark:bg-gray-900/85 backdrop-blur-md shadow-sm transition-colors duration-300 border-b border-white/20 dark:border-gray-700/20"
+      style={{ 
+        width: '100%',
+        height: 'clamp(36px, 7vh, 56px)',
+        borderRadius: '0 0 4px 4px',
+        boxShadow: '0 1px 2px rgba(0, 0, 0, 0.1)'
+      }}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
+      <div className="container mx-auto px-2 sm:px-4 h-full">
+        <div className="flex justify-between items-center h-full py-1 sm:py-2">
           {/* Logo */}
           <motion.div
             className="flex items-center space-x-2 cursor-pointer"

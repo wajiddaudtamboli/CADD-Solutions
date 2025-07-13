@@ -47,16 +47,16 @@ const FAQ = () => {
         duration: 0.6
       }} viewport={{
         once: true
-      }} className="professional-margin">
-          <h2 className="professional-heading">
+      }} className="text-center mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="professional-text text-slate-50">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Get comprehensive answers to the most common questions about our professional training programs and services
           </p>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto professional-spacing">
+        <div className="max-w-4xl mx-auto px-4">
           {faqData.map((item, index) => <motion.div key={index} initial={{
           opacity: 0,
           y: 20
@@ -68,14 +68,14 @@ const FAQ = () => {
           delay: index * 0.1
         }} viewport={{
           once: true
-        }}>
-              <Card className="professional-card border-2 border-transparent hover:border-yellow-200 dark:hover:border-yellow-600 transition-all duration-300">
+        }} className="mb-3">
+              <Card className="border border-gray-200 dark:border-gray-700 hover:border-yellow-300 dark:hover:border-yellow-500 transition-all duration-300 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm">
                 <CardContent className="p-0">
-                  <button onClick={() => toggleItem(index)} className="w-full p-8 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 rounded-2xl">
-                    <h3 className="text-xl font-semibold text-gray-800 dark:text-white pr-6 text-professionally-aligned-left">
+                  <button onClick={() => toggleItem(index)} className="w-full p-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200 rounded-lg">
+                    <h3 className="text-sm sm:text-base font-semibold text-gray-800 dark:text-white pr-4">
                       {item.question}
                     </h3>
-                    {openItems.includes(index) ? <ChevronUp className="w-6 h-6 text-yellow-600 dark:text-yellow-400 flex-shrink-0" /> : <ChevronDown className="w-6 h-6 text-yellow-600 dark:text-yellow-400 flex-shrink-0" />}
+                    {openItems.includes(index) ? <ChevronUp className="w-4 h-4 text-yellow-600 dark:text-yellow-400 flex-shrink-0" /> : <ChevronDown className="w-4 h-4 text-yellow-600 dark:text-yellow-400 flex-shrink-0" />}
                   </button>
                   
                   <motion.div initial={false} animate={{
@@ -84,8 +84,8 @@ const FAQ = () => {
               }} transition={{
                 duration: 0.3
               }} className="overflow-hidden">
-                    <div className="px-8 pb-8">
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg text-professionally-aligned-left">
+                    <div className="px-4 pb-4">
+                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-xs sm:text-sm">
                         {item.answer}
                       </p>
                     </div>
@@ -106,18 +106,18 @@ const FAQ = () => {
         delay: 0.3
       }} viewport={{
         once: true
-      }} className="professional-margin">
-          <Card className="professional-card gradient-bg-golden text-white max-w-4xl mx-auto">
-            <CardContent className="professional-padding">
-              <h3 className="text-3xl font-bold mb-6 text-professionally-aligned">Still have questions?</h3>
-              <p className="text-yellow-100 mb-8 text-xl text-professionally-aligned">
+      }} className="mt-8">
+          <Card className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white max-w-3xl mx-auto">
+            <CardContent className="p-6">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 text-center">Still have questions?</h3>
+              <p className="text-yellow-100 mb-6 text-sm sm:text-base text-center">
                 Our professional team is here to help you find the perfect training program for your career advancement.
               </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <a href="tel:+919689044025" className="bg-white text-yellow-700 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-200 text-center text-lg">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:+919689044025" className="bg-white text-yellow-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 text-center text-sm sm:text-base">
                   📞 Call Us: +91 96890 44025
                 </a>
-                <a href="mailto:tambolimahibub@gmail.com" className="bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/30 transition-colors duration-200 text-center text-lg">
+                <a href="mailto:tambolimahibub@gmail.com" className="bg-white/20 backdrop-blur-sm border-2 border-white/30 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/30 transition-colors duration-200 text-center text-sm sm:text-base">
                   ✉️ Email Us
                 </a>
               </div>

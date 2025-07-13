@@ -47,10 +47,10 @@ const EnhancedContact = () => {
       }} viewport={{
         once: true
       }} className="professional-margin">
-          <h2 className="professional-heading">
-            CONTACT US
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
+            Our Professional Center
           </h2>
-          <p className="professional-text text-slate-50">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Connect with our professional team and we'll respond within 24 hours with comprehensive solutions
           </p>
         </motion.div>
@@ -149,7 +149,7 @@ const EnhancedContact = () => {
         }}>
             <Card className="professional-card">
               <CardHeader>
-                <CardTitle className="professional-subheading">Send us a Professional Message</CardTitle>
+                <CardTitle className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">Send us a Professional Message</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="professional-spacing">
@@ -196,7 +196,7 @@ const EnhancedContact = () => {
 
                   <Button type="submit" className="w-full gradient-bg-golden hover:from-yellow-600 hover:via-yellow-700 hover:to-yellow-800 text-white py-4 px-8 rounded-xl flex items-center justify-center gap-3 text-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                     <Send className="w-6 h-6" />
-                    Send Professional Message
+                    Send Us a Professional Message
                   </Button>
                 </form>
               </CardContent>
