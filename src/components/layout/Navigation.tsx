@@ -34,8 +34,8 @@ const Navigation = () => {
     <motion.nav 
       className="fixed top-0 left-0 right-0 z-50 bg-white/85 dark:bg-gray-900/85 backdrop-blur-md shadow-sm transition-colors duration-300 border-b border-white/20 dark:border-gray-700/20"
       style={{ 
-        width: '100vw',
-        height: 'clamp(56px, 8vh, 72px)',
+        width: '100%',
+        height: 'clamp(36px, 7vh, 56px)',
         borderRadius: '0 0 4px 4px',
         boxShadow: '0 1px 2px rgba(0, 0, 0, 0.1)'
       }}
@@ -43,19 +43,19 @@ const Navigation = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-        <div className="flex justify-between items-center h-full py-2 sm:py-3 min-h-[56px]">
+      <div className="container mx-auto px-2 sm:px-4 h-full">
+        <div className="flex justify-between items-center h-full py-1 sm:py-2">
           {/* Logo */}
           <motion.div
-            className="flex items-center space-x-2 cursor-pointer flex-shrink-0"
+            className="flex items-center space-x-2 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
             onClick={() => navigate('/')}
           >
-            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm sm:text-lg">C</span>
+            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">C</span>
             </div>
-            <span className="text-lg sm:text-xl font-bold text-gray-800 dark:text-white transition-colors truncate">CADD Solutions</span>
+            <span className="text-xl font-bold text-gray-800 dark:text-white transition-colors">CADD Solutions</span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -102,14 +102,14 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-1 sm:space-x-2 flex-shrink-0">
+          <div className="md:hidden flex items-center space-x-2">
             <Button
               variant="ghost"
               size="sm"
               onClick={() => navigate('/admin')}
-              className="text-gray-600 dark:text-gray-400 p-1 sm:p-2"
+              className="text-gray-600 dark:text-gray-400"
             >
-              <Shield size={18} />
+              <Shield size={20} />
             </Button>
             <ThemeToggle />
             <LanguageSelector />
@@ -117,9 +117,8 @@ const Navigation = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className="p-1 sm:p-2"
             >
-              {isOpen ? <X size={20} /> : <Menu size={20} />}
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
           </div>
         </div>
