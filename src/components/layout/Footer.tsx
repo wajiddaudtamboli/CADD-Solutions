@@ -9,15 +9,8 @@ const Footer = () => {
 
   return (
     <>
-      <footer 
-        className="bg-gray-900 text-white py-8 sm:py-12 md:py-16"
-        style={{
-          paddingBottom: 'clamp(60px, 12vh, 90px)',
-          borderRadius: '4px 4px 0 0',
-          boxShadow: '0 -1px 2px rgba(0, 0, 0, 0.1)'
-        }}
-      >
-        <div className="container mx-auto px-2 sm:px-4">
+      <footer className="bg-gray-900 text-white py-16 pb-20">
+        <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Company Info */}
             <motion.div
@@ -131,18 +124,13 @@ const Footer = () => {
         className="fixed bottom-0 left-0 right-0 z-50"
         style={{
           width: '100%',
-          height: 'clamp(60px, 10vh, 72px)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          padding: '10px 0',
           textAlign: 'center',
-          background: 'rgba(0, 0, 0, 0.85)',
+          background: 'rgba(0, 0, 0, 0.8)',
           color: 'white',
-          fontSize: 'clamp(1rem, 2.5vw, 1.4rem)',
+          fontSize: '1.4rem',
           fontWeight: '600',
-          boxShadow: '0px -1px 8px rgba(0, 0, 0, 0.3)',
-          borderRadius: '4px 4px 0 0',
-          backdropFilter: 'blur(8px)'
+          boxShadow: '0px -2px 12px rgba(0, 0, 0, 0.5)',
         }}
       >
         Developer - <strong style={{ color: '#ffcc00', fontWeight: '800', letterSpacing: '1px' }}>Wajid Daud Tamboli</strong>
