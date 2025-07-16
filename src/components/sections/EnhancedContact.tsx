@@ -60,7 +60,7 @@ const EnhancedContact = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
           {/* Contact Information with Media Frame */}
           <motion.div initial={{
           opacity: 0,
