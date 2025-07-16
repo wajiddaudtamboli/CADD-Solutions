@@ -103,7 +103,7 @@ const Hero = () => {
           stiffness: 300
         }}>
             <div className="video-container border-8 border-white dark:border-red-700 rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-red-800 transition-colors">
-              <video autoPlay muted loop playsInline className="w-full h-auto object-cover py-[90px] mx-px px-0 my-[30px]">
+              <video autoPlay muted loop playsInline className="w-full h-auto object-cover mx-px px-0 my-[30px] py-[50px]">
                 <source src="/imgs/portfolio/watermark.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
