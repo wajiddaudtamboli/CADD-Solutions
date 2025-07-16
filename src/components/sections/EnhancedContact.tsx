@@ -205,8 +205,8 @@ const EnhancedContact = () => {
           duration: 0.8
         }} viewport={{
           once: true
-        }}>
-            <Card className="overflow-hidden border-0 shadow-xl bg-white dark:bg-slate-800 backdrop-blur-sm">
+        }} className="h-full">
+            <Card className="overflow-hidden border-0 shadow-xl bg-white dark:bg-slate-800 backdrop-blur-sm h-full flex flex-col">
               <CardHeader className="bg-gradient-to-r from-slate-900 to-slate-700 dark:from-slate-700 dark:to-slate-900 text-white p-8">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="p-3 bg-white/20 rounded-xl">
@@ -218,7 +218,7 @@ const EnhancedContact = () => {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="p-8">
+              <CardContent className="p-8 flex-1 flex flex-col justify-center">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
