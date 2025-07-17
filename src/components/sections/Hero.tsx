@@ -7,8 +7,13 @@ const Hero = () => {
   const {
     translations
   } = useLanguage();
-  return <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50 dark:from-red-900 dark:to-red-800 pt-20 transition-colors duration-300">
-      <div className="container grid lg:grid-cols-2 gap-12 items-center px-[100px] mx-[80px]">
+  return (
+    <section 
+      id="home" 
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300"
+      style={{ paddingTop: 'clamp(80px, 12vh, 120px)' }}
+    >
+      <div className="container grid lg:grid-cols-2 gap-8 lg:gap-16 items-center px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl mx-auto">
         {/* Left Content */}
         <motion.div className="space-y-6" initial={{
         opacity: 0,
@@ -85,38 +90,108 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right Content - Video */}
-        <motion.div className="flex justify-center" initial={{
-        opacity: 0,
-        x: 50
-      }} animate={{
-        opacity: 1,
-        x: 0
-      }} transition={{
-        duration: 0.8,
-        delay: 0.2
-      }}>
-          <motion.div className="relative w-full max-w-md" whileHover={{
-          scale: 1.05
-        }} transition={{
-          type: "spring",
-          stiffness: 300
-        }}>
-            <div className="video-container border-8 border-white dark:border-red-700 rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-red-800 transition-colors">
-              <video autoPlay muted loop playsInline className="w-full h-auto object-cover mx-px px-0 my-[30px] py-[50px]">
-                <source src="/imgs/portfolio/watermark.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <motion.div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-purple-400 dark:from-red-500 dark:to-red-600 rounded-3xl -z-10 transition-colors" animate={{
-            rotate: [0, 1, -1, 0]
-          }} transition={{
-            duration: 6,
-            repeat: Infinity
-          }} />
-          </motion.div>
+        {/* Right Content - Enhanced Media Frame */}
+        <motion.div 
+          className="flex justify-center lg:justify-end order-first lg:order-last"
+          initial={{ opacity: 0, x: 50, scale: 0.9 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        >
+          <div className="relative w-full max-w-lg">
+            {/* Laptop Frame */}
+            <motion.div 
+              className="relative"
+              whileHover={{ scale: 1.02, rotateY: 5 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              {/* Device Frame Container */}
+              <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 shadow-2xl">
+                {/* Screen Bezel */}
+                <div className="relative bg-black rounded-lg p-2 shadow-inner">
+                  {/* Screen Content */}
+                  <div className="relative bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-md aspect-video overflow-hidden">
+                    {/* Media Content */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10">
+                      <video 
+                        autoPlay 
+                        muted 
+                        loop 
+                        playsInline 
+                        className="w-full h-full object-cover"
+                        poster="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop"
+                      >
+                        <source src="/imgs/portfolio/watermark.mp4" type="video/mp4" />
+                      </video>
+                      
+                      {/* Play Button Overlay */}
+                      <motion.div 
+                        className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm opacity-0 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        <div className="bg-white/90 rounded-full p-4 shadow-lg">
+                          <Play className="w-8 h-8 text-blue-600 ml-1" fill="currentColor" />
+                        </div>
+                      </motion.div>
+                    </div>
+                    
+                    {/* Screen Reflection */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
+                  </div>
+                </div>
+                
+                {/* Laptop Base */}
+                <div className="h-3 bg-gradient-to-b from-gray-700 to-gray-800 rounded-b-xl shadow-lg" />
+              </div>
+              
+              {/* Floating Elements */}
+              <motion.div 
+                className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500 rounded-full shadow-lg"
+                animate={{ 
+                  y: [0, -10, 0],
+                  rotate: [0, 180, 360] 
+                }}
+                transition={{ 
+                  duration: 3, 
+                  repeat: Infinity, 
+                  ease: "easeInOut" 
+                }}
+              />
+              
+              <motion.div 
+                className="absolute -bottom-6 -left-6 w-6 h-6 bg-purple-500 rounded-full shadow-lg"
+                animate={{ 
+                  x: [0, 10, 0],
+                  scale: [1, 1.2, 1] 
+                }}
+                transition={{ 
+                  duration: 2.5, 
+                  repeat: Infinity, 
+                  ease: "easeInOut",
+                  delay: 0.5 
+                }}
+              />
+            </motion.div>
+            
+            {/* Glow Effect */}
+            <motion.div 
+              className="absolute -inset-8 bg-gradient-to-r from-blue-400/20 via-purple-400/20 to-blue-400/20 rounded-3xl blur-xl -z-10"
+              animate={{ 
+                scale: [1, 1.1, 1],
+                opacity: [0.3, 0.6, 0.3] 
+              }}
+              transition={{ 
+                duration: 4, 
+                repeat: Infinity, 
+                ease: "easeInOut" 
+              }}
+            />
+            
+            {/* Grid Pattern Background */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)] -z-20" />
+          </div>
         </motion.div>
       </div>
-    </section>;
+    </section>
+  );
 };
 export default Hero;
