@@ -9,14 +9,21 @@ const Footer = () => {
 
   return (
     <>
-      <footer 
-        className="bg-gray-900 text-white py-8 sm:py-12 md:py-16"
+      <motion.footer 
+        className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden"
         style={{
-          paddingBottom: 'clamp(60px, 12vh, 90px)',
-          borderRadius: '4px 4px 0 0',
-          boxShadow: '0 -1px 2px rgba(0, 0, 0, 0.1)'
+          paddingTop: 'clamp(48px, 8vh, 80px)',
+          paddingBottom: 'clamp(100px, 15vh, 140px)',
+          marginBottom: 'clamp(60px, 10vh, 80px)'
         }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
       >
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
         <div className="container mx-auto px-2 sm:px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Company Info */}
@@ -124,29 +131,57 @@ const Footer = () => {
             </p>
           </motion.div>
         </div>
-      </footer>
+      </motion.footer>
 
-      {/* Custom Developer Footer */}
-      <div 
-        className="fixed bottom-0 left-0 right-0 z-50"
+      {/* Enhanced Developer Footer */}
+      <motion.div 
+        className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white border-t border-gray-700/50 backdrop-blur-xl"
         style={{
-          width: '100%',
-          height: 'clamp(60px, 10vh, 72px)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          textAlign: 'center',
-          background: 'rgba(0, 0, 0, 0.85)',
-          color: 'white',
-          fontSize: 'clamp(1rem, 2.5vw, 1.4rem)',
-          fontWeight: '600',
-          boxShadow: '0px -1px 8px rgba(0, 0, 0, 0.3)',
-          borderRadius: '4px 4px 0 0',
-          backdropFilter: 'blur(8px)'
+          height: 'clamp(60px, 10vh, 80px)',
+          boxShadow: '0 -4px 12px rgba(0, 0, 0, 0.3), 0 -1px 3px rgba(0, 0, 0, 0.5)'
         }}
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
       >
-        Developer - <strong style={{ color: '#ffcc00', fontWeight: '800', letterSpacing: '1px' }}>Wajid Daud Tamboli</strong>
-      </div>
+        <div className="flex items-center justify-center h-full px-4">
+          <motion.div 
+            className="flex items-center space-x-3 text-center"
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <span className="text-gray-300 font-medium text-sm sm:text-base">
+              Crafted with 
+            </span>
+            <motion.span 
+              className="text-red-400 text-lg"
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              ❤️
+            </motion.span>
+            <span className="text-gray-300 font-medium text-sm sm:text-base">
+              by
+            </span>
+            <motion.span 
+              className="bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 bg-clip-text text-transparent font-bold text-sm sm:text-lg tracking-wide"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              Wajid Daud Tamboli
+            </motion.span>
+          </motion.div>
+        </div>
+        
+        {/* Animated bottom border */}
+        <motion.div 
+          className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500"
+          initial={{ width: 0 }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 2, delay: 0.8, ease: "easeInOut" }}
+        />
+      </motion.div>
     </>
   );
 };
