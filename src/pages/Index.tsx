@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Navigation from '@/components/layout/Navigation';
 import Hero from '@/components/sections/Hero';
 import EnhancedServices from '@/components/sections/EnhancedServices';
-import Products from '@/components/sections/Products';
+
 import AboutCompany from '@/components/sections/AboutCompany';
 import EnhancedProjects from '@/components/sections/EnhancedProjects';
 import OurValues from '@/components/sections/OurValues';
@@ -27,7 +27,7 @@ const Index = () => {
       <Navigation />
       <Hero />
       <EnhancedServices />
-      <Products />
+      
       <AboutCompany />
       <EnhancedProjects />
       <OurValues />
