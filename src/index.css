@@ -46,6 +46,12 @@
     --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    
+    /* Python Training Special Colors */
+    --python-primary: 48 96% 53%;
+    --python-secondary: 176 100% 44%;
+    --python-gradient: linear-gradient(135deg, hsl(var(--python-primary)), hsl(var(--python-secondary)));
+    --python-text: hsl(var(--python-primary));
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -93,6 +99,12 @@
     --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--secondary)));
     --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.3);
     --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
+    
+    /* Python Training Special Colors - Dark Mode */
+    --python-primary: 48 96% 64%;
+    --python-secondary: 176 100% 54%;
+    --python-gradient: linear-gradient(135deg, hsl(var(--python-primary)), hsl(var(--python-secondary)));
+    --python-text: hsl(var(--python-primary));
     --sidebar-background: 0 15% 8%;
     --sidebar-foreground: 0 12% 85%;
     --sidebar-primary: 0 60% 60%;
@@ -320,6 +332,27 @@
 
   .professional-spacing-sm {
     @apply space-y-4 md:space-y-6;
+  }
+
+  /* Python Training Highlight */
+  .python-training-text {
+    background: var(--python-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+    position: relative;
+  }
+
+  .python-training-text::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--python-gradient);
+    border-radius: 1px;
   }
 }
 

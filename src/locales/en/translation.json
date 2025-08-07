@@ -10,7 +10,7 @@
   },
   "hero": {
     "title": "Master CAD & Engineering Skills",
-    "subtitle": "Professional training in AutoCAD, CREO, CATIA, SolidWorks, Python, Machine Learning, and more. Transform your career with industry-focused courses.",
+    "subtitle": "Professional training in AutoCAD, CREO, CATIA, SolidWorks, <span class='python-training-text'>Python Training & Machine Learning</span>, and more. Transform your career with industry-focused courses.",
     "getStarted": "Get Started",
     "watchDemo": "Watch Demo",
     "studentsCount": "Students Trained",

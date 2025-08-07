@@ -12,9 +12,9 @@ const Footer = () => {
       <motion.footer 
         className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden"
         style={{
-          paddingTop: 'clamp(48px, 8vh, 80px)',
-          paddingBottom: 'clamp(100px, 15vh, 140px)',
-          marginBottom: 'clamp(60px, 10vh, 80px)'
+          paddingTop: 'clamp(32px, 6vh, 64px)',
+          paddingBottom: 'clamp(80px, 12vh, 120px)',
+          marginBottom: 'clamp(56px, 8vh, 64px)'
         }}
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -24,8 +24,8 @@ const Footer = () => {
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
-        <div className="container mx-auto px-2 sm:px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {/* Company Info */}
             <motion.div
               className="space-y-4"
@@ -80,7 +80,7 @@ const Footer = () => {
               <h3 className="text-lg font-semibold">{translations.footer.popularCourses}</h3>
               <ul className="space-y-2">
                 <li className="text-gray-300">AutoCAD</li>
-                <li className="text-gray-300">Python & ML</li>
+                <li className="python-training-text">Python Training & ML</li>
                 <li className="text-gray-300">SolidWorks</li>
                 <li className="text-gray-300">CATIA</li>
                 <li className="text-gray-300">ANSYS</li>
@@ -133,39 +133,40 @@ const Footer = () => {
         </div>
       </motion.footer>
 
-      {/* Enhanced Developer Footer */}
+      {/* Mobile-Optimized Developer Footer */}
       <motion.div 
-        className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white border-t border-gray-700/50 backdrop-blur-xl"
+        className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-r from-gray-900/95 via-black/95 to-gray-900/95 text-white border-t border-gray-700/50 backdrop-blur-xl"
         style={{
-          height: 'clamp(60px, 10vh, 80px)',
-          boxShadow: '0 -4px 12px rgba(0, 0, 0, 0.3), 0 -1px 3px rgba(0, 0, 0, 0.5)'
+          height: 'clamp(56px, 8vh, 64px)',
+          boxShadow: '0 -4px 12px rgba(0, 0, 0, 0.3), 0 -1px 3px rgba(0, 0, 0, 0.5)',
+          paddingBottom: 'env(safe-area-inset-bottom)'
         }}
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
       >
-        <div className="flex items-center justify-center h-full px-4">
+        <div className="flex items-center justify-center h-full px-2 sm:px-4">
           <motion.div 
-            className="flex items-center space-x-3 text-center"
+            className="flex items-center space-x-2 sm:space-x-3 text-center"
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <span className="text-gray-300 font-medium text-sm sm:text-base">
+            <span className="text-gray-300 font-medium text-xs sm:text-sm">
               Crafted with 
             </span>
             <motion.span 
-              className="text-red-400 text-lg"
+              className="text-red-400 text-sm sm:text-lg"
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             >
               ❤️
             </motion.span>
-            <span className="text-gray-300 font-medium text-sm sm:text-base">
+            <span className="text-gray-300 font-medium text-xs sm:text-sm">
               by
             </span>
             <motion.span 
-              className="bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 bg-clip-text text-transparent font-bold text-sm sm:text-lg tracking-wide"
+              className="bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 bg-clip-text text-transparent font-bold text-xs sm:text-base tracking-wide"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
@@ -176,7 +177,8 @@ const Footer = () => {
         
         {/* Animated bottom border */}
         <motion.div 
-          className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500"
+          className="absolute bottom-0 left-0 h-0.5"
+          style={{ background: 'var(--gradient-primary)' }}
           initial={{ width: 0 }}
           animate={{ width: "100%" }}
           transition={{ duration: 2, delay: 0.8, ease: "easeInOut" }}
