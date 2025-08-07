@@ -114,19 +114,20 @@ const EnhancedServices = () => {
   }} viewport={{
     once: true
   }} className="group">
-      <a href={service.link} target="_blank" rel="noopener noreferrer" className="block bg-white dark:bg-red-900/90 rounded-xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-red-500 dark:hover:border-red-400">
-        <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-red-500 to-red-700 dark:from-red-500 dark:to-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+      <a href={service.link} target="_blank" rel="noopener noreferrer" className="professional-card block p-6 text-center hover:-translate-y-2 border-2 border-transparent hover:border-primary/50 group">
+        <div className="professional-icon group-hover:scale-110 transition-transform duration-300">
           <service.icon className="w-8 h-8 text-white" />
         </div>
-        <h4 className="text-lg font-semibold text-gray-800 dark:text-red-100 group-hover:text-red-600 dark:group-hover:text-red-300 transition-colors">
+        <h4 className="text-lg font-semibold group-hover:text-primary transition-colors">
           {service.name}
         </h4>
       </a>
     </motion.div>;
-  return <div className="bg-gradient-to-br from-gray-50 via-red-50 to-pink-50 dark:from-red-900 dark:via-red-800 dark:to-red-700 transition-colors duration-300">
+    return <div className="spacing-section bg-gradient-to-br from-background via-primary/5 to-accent/5 transition-colors duration-500">
       {/* CAD Services Section */}
-      <section id="services" className="py-20 bg-lime-800">
-        <div className="container mx-auto px-4">
+      <section id="services" className="spacing-section relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10"></div>
+        <div className="professional-container relative z-10">
           <motion.div initial={{
           opacity: 0,
           y: 30
@@ -137,11 +138,11 @@ const EnhancedServices = () => {
           duration: 0.6
         }} viewport={{
           once: true
-        }} className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-red-600 to-red-800 dark:from-red-400 dark:to-red-300 bg-clip-text mb-4 text-slate-50">
+        }} className="text-center spacing-content">
+            <h2 className="professional-heading">
               PROFESSIONAL CAD & ENGINEERING SERVICES
             </h2>
-            <p className="text-xl text-amber-400">Industry-standard software training</p>
+            <p className="professional-text">Industry-standard software training with hands-on experience</p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
@@ -151,8 +152,9 @@ const EnhancedServices = () => {
       </section>
 
       {/* Software Development Section */}
-      <section id="software-courses" className="py-20 bg-fuchsia-950">
-        <div className="container mx-auto px-4">
+      <section id="software-courses" className="spacing-section relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-primary/10"></div>
+        <div className="professional-container relative z-10">
           <motion.div initial={{
           opacity: 0,
           y: 30
@@ -163,11 +165,11 @@ const EnhancedServices = () => {
           duration: 0.6
         }} viewport={{
           once: true
-        }} className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-red-600 to-red-800 dark:from-red-400 dark:to-red-300 bg-clip-text mb-4 text-slate-50">
+        }} className="text-center spacing-content">
+            <h2 className="professional-heading">
               SOFTWARE DEVELOPMENT COURSES
             </h2>
-            <p className="text-xl text-amber-400">Master programming languages & data science</p>
+            <p className="professional-text">Master programming languages & data science with real-world projects</p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
