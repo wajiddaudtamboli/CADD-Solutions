@@ -87,18 +87,7 @@ const Chatbot = () => {
       type: "spring",
       stiffness: 300
     }}>
-        <motion.button onClick={() => setIsOpen(!isOpen)} className="w-16 h-16 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg flex items-center justify-center" whileHover={{
-        scale: 1.1
-      }} whileTap={{
-        scale: 0.9
-      }} animate={{
-        boxShadow: isOpen ? "0 0 0 0 rgba(59, 130, 246, 0.4)" : "0 0 0 10px rgba(59, 130, 246, 0.4)"
-      }} transition={{
-        duration: 1,
-        repeat: isOpen ? 0 : Infinity
-      }}>
-          {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
-        </motion.button>
+        
       </motion.div>
 
       {/* Chat Window */}
