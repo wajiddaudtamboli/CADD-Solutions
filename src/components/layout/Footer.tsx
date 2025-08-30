@@ -12,8 +12,8 @@ const Footer = () => {
       <motion.footer 
         className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden"
         style={{
-          paddingTop: 'clamp(32px, 6vh, 64px)',
-          paddingBottom: 'clamp(80px, 12vh, 120px)',
+          paddingTop: 'clamp(24px, 4vh, 48px)',
+          paddingBottom: 'clamp(72px, 10vh, 96px)',
           marginBottom: 'clamp(56px, 8vh, 64px)'
         }}
         initial={{ opacity: 0, y: 50 }}
@@ -24,8 +24,8 @@ const Footer = () => {
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4" style={{ paddingLeft: 'env(safe-area-inset-left)', paddingRight: 'env(safe-area-inset-right)' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {/* Company Info */}
             <motion.div
               className="space-y-4"
@@ -137,17 +137,19 @@ const Footer = () => {
       <motion.div 
         className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-r from-gray-900/95 via-black/95 to-gray-900/95 text-white border-t border-gray-700/50 backdrop-blur-xl"
         style={{
-          height: 'clamp(56px, 8vh, 64px)',
-          boxShadow: '0 -4px 12px rgba(0, 0, 0, 0.3), 0 -1px 3px rgba(0, 0, 0, 0.5)',
-          paddingBottom: 'env(safe-area-inset-bottom)'
+          height: 'clamp(48px, 6vh, 56px)',
+          boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.2), 0 -1px 3px rgba(0, 0, 0, 0.3)',
+          paddingBottom: 'env(safe-area-inset-bottom)',
+          paddingLeft: 'env(safe-area-inset-left)',
+          paddingRight: 'env(safe-area-inset-right)'
         }}
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
       >
-        <div className="flex items-center justify-center h-full px-2 sm:px-4">
+        <div className="flex items-center justify-center h-full px-2 sm:px-3">
           <motion.div 
-            className="flex items-center space-x-2 sm:space-x-3 text-center"
+            className="flex items-center space-x-1 sm:space-x-2 text-center"
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
