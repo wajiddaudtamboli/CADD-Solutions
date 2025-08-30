@@ -114,11 +114,11 @@ const EnhancedServices = () => {
   }} viewport={{
     once: true
   }} className="group">
-      <a href={service.link} target="_blank" rel="noopener noreferrer" className="professional-card block p-6 text-center hover:-translate-y-2 border-2 border-transparent hover:border-primary/50 group">
-        <div className="professional-icon group-hover:scale-110 transition-transform duration-300">
+      <a href={service.link} target="_blank" rel="noopener noreferrer" className="professional-card block p-6 text-center hover:-translate-y-2 border-2 border-transparent hover:border-primary/50 group h-32 flex flex-col items-center justify-center">
+        <div className="professional-icon group-hover:scale-110 transition-transform duration-300 mb-3">
           <service.icon className="w-8 h-8 text-white" />
         </div>
-        <h4 className="text-lg font-semibold group-hover:text-primary transition-colors">
+        <h4 className="text-sm font-semibold group-hover:text-primary transition-colors leading-tight">
           {service.name}
         </h4>
       </a>
