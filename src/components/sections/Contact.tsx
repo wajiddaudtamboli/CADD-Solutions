@@ -63,22 +63,24 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-12 sm:py-16 bg-gray-50" style={{ marginBottom: 'clamp(60px, 8vh, 80px)' }}>
+      <div className="container mx-auto px-3 sm:px-4">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Contact Us</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+            Our Professional Center
+          </h2>
+          <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
             Get in touch with us and we'll get back to you within 24 hours
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Contact Info */}
           <motion.div
             className="space-y-6"
@@ -184,7 +186,7 @@ const Contact = () => {
           >
             <Card>
               <CardHeader>
-                <CardTitle>Send Us a Message</CardTitle>
+                <CardTitle>Send Us a Professional Message</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -254,9 +256,9 @@ const Contact = () => {
                     onChange={(e) => setFormData({...formData, comments: e.target.value})}
                   />
                   
-                  <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
+                  <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 px-4 py-3 text-sm sm:text-base font-semibold">
                     <Send className="w-4 h-4 mr-2" />
-                    Send Message
+                    Send Us a Professional Message
                   </Button>
                 </form>
               </CardContent>

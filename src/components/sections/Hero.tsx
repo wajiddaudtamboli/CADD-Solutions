@@ -13,11 +13,11 @@ const Hero = () => {
       className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-accent/5 dark:from-primary/10 dark:via-background dark:to-accent/10 transition-colors duration-500 relative overflow-hidden"
       style={{ paddingTop: 'clamp(80px, 12vh, 120px)' }}
     >
-      {/* Background Effects */}
+      {/* Background Effects - Optimized for mobile */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      <div className="container grid lg:grid-cols-2 gap-8 lg:gap-16 items-center px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl mx-auto">
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-1/4 right-1/6 w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      <div className="container grid lg:grid-cols-2 gap-6 lg:gap-12 items-center px-3 sm:px-4 lg:px-6 xl:px-8 max-w-7xl mx-auto">
         {/* Left Content */}
         <motion.div className="space-y-6" initial={{
         opacity: 0,
@@ -108,19 +108,19 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
-          <div className="relative w-full max-w-lg">
-            {/* Laptop Frame */}
+          <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg">
+            {/* Mobile-Optimized Device Frame */}
             <motion.div 
               className="relative"
-              whileHover={{ scale: 1.02, rotateY: 5 }}
+              whileHover={{ scale: 1.02, rotateY: 3 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              {/* Device Frame Container */}
-              <div className="professional-media-frame">
+              {/* Device Frame Container - Mobile First */}
+              <div className="relative bg-gradient-to-br from-gray-800 via-gray-900 to-black rounded-[16px] sm:rounded-[20px] p-1.5 sm:p-2 shadow-2xl">
                 {/* Screen Bezel */}
-                <div className="relative bg-black rounded-xl p-3 shadow-inner">
+                <div className="relative bg-black rounded-[12px] sm:rounded-[16px] p-1 sm:p-1.5 shadow-inner">
                   {/* Screen Content */}
-                  <div className="relative bg-gradient-to-br from-background to-muted rounded-lg aspect-video overflow-hidden">
+                  <div className="relative bg-gradient-to-br from-background to-muted rounded-[8px] sm:rounded-[12px] aspect-[9/16] sm:aspect-[9/19.5] overflow-hidden">
                     {/* Media Content */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10">
                       <video 
@@ -128,8 +128,8 @@ const Hero = () => {
                         muted 
                         loop 
                         playsInline 
-                        className="w-full h-full object-cover rounded-lg"
-                        poster="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop"
+                        className="w-full h-full object-cover rounded-[8px] sm:rounded-[12px]"
+                        poster="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=800&fit=crop"
                       >
                         <source src="/imgs/portfolio/watermark.mp4" type="video/mp4" />
                       </video>
@@ -137,10 +137,10 @@ const Hero = () => {
                       {/* Play Button Overlay */}
                       <motion.div 
                         className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm opacity-0 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
-                        whileHover={{ scale: 1.1 }}
+                        whileHover={{ scale: 1.05 }}
                       >
-                        <div className="bg-card/90 backdrop-blur-sm rounded-full p-4 shadow-elegant">
-                          <Play className="w-8 h-8 text-primary ml-1" fill="currentColor" />
+                        <div className="bg-card/90 backdrop-blur-sm rounded-full p-3 sm:p-4 shadow-elegant">
+                          <Play className="w-6 h-6 sm:w-8 sm:h-8 text-primary ml-0.5" fill="currentColor" />
                         </div>
                       </motion.div>
                     </div>
@@ -150,15 +150,16 @@ const Hero = () => {
                   </div>
                 </div>
                 
-                {/* Laptop Base */}
-                <div className="h-3 bg-gradient-to-b from-gray-700 to-gray-800 rounded-b-xl shadow-lg" />
+                {/* Device Base/Power Button */}
+                <div className="absolute right-0 top-1/4 w-0.5 h-8 bg-gray-600 rounded-l-sm" />
+                <div className="absolute right-0 top-1/3 w-0.5 h-12 bg-gray-600 rounded-l-sm" />
               </div>
               
-              {/* Floating Elements */}
+              {/* Floating Elements - Scaled for mobile */}
               <motion.div 
-                className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full shadow-elegant animate-float"
+                className="absolute -top-2 -right-2 w-4 h-4 sm:w-6 sm:h-6 bg-primary rounded-full shadow-elegant animate-float"
                 animate={{ 
-                  y: [0, -10, 0],
+                  y: [0, -8, 0],
                   rotate: [0, 180, 360] 
                 }}
                 transition={{ 
@@ -169,9 +170,9 @@ const Hero = () => {
               />
               
               <motion.div 
-                className="absolute -bottom-6 -left-6 w-6 h-6 bg-accent rounded-full shadow-elegant animate-float"
+                className="absolute -bottom-3 -left-3 w-3 h-3 sm:w-4 sm:h-4 bg-accent rounded-full shadow-elegant animate-float"
                 animate={{ 
-                  x: [0, 10, 0],
+                  x: [0, 8, 0],
                   scale: [1, 1.2, 1] 
                 }}
                 transition={{ 
@@ -183,13 +184,13 @@ const Hero = () => {
               />
             </motion.div>
             
-            {/* Glow Effect */}
+            {/* Glow Effect - Optimized */}
             <motion.div 
-              className="absolute -inset-8 rounded-3xl blur-xl -z-10 animate-pulse-glow"
+              className="absolute -inset-4 sm:-inset-6 rounded-3xl blur-xl -z-10 animate-pulse-glow"
               style={{ background: 'var(--gradient-primary)' }}
               animate={{ 
-                scale: [1, 1.1, 1],
-                opacity: [0.2, 0.4, 0.2] 
+                scale: [1, 1.05, 1],
+                opacity: [0.2, 0.3, 0.2] 
               }}
               transition={{ 
                 duration: 4, 
@@ -197,9 +198,6 @@ const Hero = () => {
                 ease: "easeInOut" 
               }}
             />
-            
-            {/* Grid Pattern Background */}
-            <div className="absolute inset-0 opacity-10 -z-20" style={{ background: 'var(--gradient-hero)' }} />
           </div>
         </motion.div>
       </div>
