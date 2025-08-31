@@ -17,7 +17,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      <div className="container grid lg:grid-cols-2 gap-8 lg:gap-16 items-center px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl mx-auto">
+      <div className="container grid lg:grid-cols-2 gap-8 lg:gap-12 items-center justify-items-center px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl mx-auto">
         {/* Left Content */}
         <motion.div className="space-y-6" initial={{
         opacity: 0,
@@ -101,64 +101,117 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right Content - Enhanced Media Frame */}
+        {/* Right Content - Phone Media Frame */}
         <motion.div 
-          className="flex justify-center lg:justify-end order-first lg:order-last"
+          className="flex justify-center lg:justify-center order-first lg:order-last"
           initial={{ opacity: 0, x: 50, scale: 0.9 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
-          <div className="relative w-full max-w-lg">
-            {/* Laptop Frame */}
+          <div className="relative w-full max-w-xs mx-auto">
+            {/* Phone Frame */}
             <motion.div 
-              className="relative"
-              whileHover={{ scale: 1.02, rotateY: 5 }}
+              className="relative mx-auto"
+              whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               {/* Device Frame Container */}
-              <div className="professional-media-frame">
+              <div className="relative bg-gray-900 rounded-[2.5rem] p-2 shadow-2xl mx-auto" 
+                   style={{ width: '280px', height: '560px' }}>
                 {/* Screen Bezel */}
-                <div className="relative bg-black rounded-xl p-3 shadow-inner">
+                <div className="relative bg-black rounded-[2rem] p-1 h-full shadow-inner">
                   {/* Screen Content */}
-                  <div className="relative bg-gradient-to-br from-background to-muted rounded-lg aspect-video overflow-hidden">
-                    {/* Media Content */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10">
-                      <video 
-                        autoPlay 
-                        muted 
-                        loop 
-                        playsInline 
-                        className="w-full h-full object-cover rounded-lg"
-                        poster="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop"
-                      >
-                        <source src="/imgs/portfolio/watermark.mp4" type="video/mp4" />
-                      </video>
-                      
-                      {/* Play Button Overlay */}
-                      <motion.div 
-                        className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm opacity-0 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
-                        whileHover={{ scale: 1.1 }}
-                      >
-                        <div className="bg-card/90 backdrop-blur-sm rounded-full p-4 shadow-elegant">
-                          <Play className="w-8 h-8 text-primary ml-1" fill="currentColor" />
-                        </div>
-                      </motion.div>
+                  <div className="relative bg-background rounded-[1.8rem] h-full overflow-hidden flex flex-col">
+                    {/* Status Bar */}
+                    <div className="bg-background px-6 py-2 flex justify-between items-center text-xs">
+                      <span className="text-foreground font-medium">9:41</span>
+                      <div className="flex space-x-1">
+                        <div className="w-4 h-2 bg-foreground/30 rounded-sm"></div>
+                        <div className="w-6 h-2 bg-foreground/50 rounded-sm"></div>
+                        <div className="w-6 h-2 bg-primary rounded-sm"></div>
+                      </div>
                     </div>
                     
-                    {/* Screen Reflection */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
+                    {/* Navigation Bar Mock */}
+                    <div className="bg-background/95 backdrop-blur-sm px-4 py-3 border-b border-border/30">
+                      <div className="flex justify-between items-center">
+                        <div className="flex items-center space-x-2">
+                          <div className="w-6 h-6 bg-primary rounded-md flex items-center justify-center">
+                            <span className="text-white text-xs font-bold">C</span>
+                          </div>
+                          <span className="text-foreground font-semibold text-sm">CADD Solutions</span>
+                        </div>
+                        <div className="w-6 h-6 bg-muted rounded-md flex items-center justify-center">
+                          <div className="w-3 h-0.5 bg-foreground rounded-full"></div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Main Content Area */}
+                    <div className="flex-1 p-4 space-y-4 overflow-hidden">
+                      {/* Hero Section Mock */}
+                      <div className="text-center space-y-2">
+                        <h1 className="text-lg font-bold text-foreground leading-tight">
+                          CAD & Engineering Excellence
+                        </h1>
+                        <p className="text-xs text-muted-foreground">Professional training solutions</p>
+                      </div>
+                      
+                      {/* Services Cards Mock */}
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="bg-primary/10 rounded-lg p-2 text-center">
+                          <div className="w-8 h-8 bg-primary/20 rounded-lg mx-auto mb-1"></div>
+                          <span className="text-xs font-medium text-foreground">AutoCAD</span>
+                        </div>
+                        <div className="bg-accent/10 rounded-lg p-2 text-center">
+                          <div className="w-8 h-8 bg-accent/20 rounded-lg mx-auto mb-1"></div>
+                          <span className="text-xs font-medium text-foreground">SolidWorks</span>
+                        </div>
+                        <div className="bg-primary/10 rounded-lg p-2 text-center">
+                          <div className="w-8 h-8 bg-primary/20 rounded-lg mx-auto mb-1"></div>
+                          <span className="text-xs font-medium text-foreground">CATIA</span>
+                        </div>
+                        <div className="bg-accent/10 rounded-lg p-2 text-center">
+                          <div className="w-8 h-8 bg-accent/20 rounded-lg mx-auto mb-1"></div>
+                          <span className="text-xs font-medium text-foreground">Python</span>
+                        </div>
+                      </div>
+                      
+                      {/* Stats Mock */}
+                      <div className="grid grid-cols-3 gap-2 text-center">
+                        <div className="py-2">
+                          <div className="text-sm font-bold text-primary">500+</div>
+                          <div className="text-xs text-muted-foreground">Students</div>
+                        </div>
+                        <div className="py-2">
+                          <div className="text-sm font-bold text-primary">15+</div>
+                          <div className="text-xs text-muted-foreground">Courses</div>
+                        </div>
+                        <div className="py-2">
+                          <div className="text-sm font-bold text-primary">95%</div>
+                          <div className="text-xs text-muted-foreground">Success</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Bottom Navigation Mock */}
+                    <div className="bg-background/95 backdrop-blur-sm px-4 py-2 border-t border-border/30">
+                      <div className="text-center">
+                        <span className="text-xs text-muted-foreground">Crafted with ❤️ by Wajid Daud Tamboli</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 
-                {/* Laptop Base */}
-                <div className="h-3 bg-gradient-to-b from-gray-700 to-gray-800 rounded-b-xl shadow-lg" />
+                {/* Home Indicator */}
+                <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-white/30 rounded-full"></div>
               </div>
               
               {/* Floating Elements */}
               <motion.div 
-                className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full shadow-elegant animate-float"
+                className="absolute -top-4 -right-4 w-6 h-6 bg-primary rounded-full shadow-elegant"
                 animate={{ 
-                  y: [0, -10, 0],
+                  y: [0, -8, 0],
                   rotate: [0, 180, 360] 
                 }}
                 transition={{ 
@@ -169,9 +222,9 @@ const Hero = () => {
               />
               
               <motion.div 
-                className="absolute -bottom-6 -left-6 w-6 h-6 bg-accent rounded-full shadow-elegant animate-float"
+                className="absolute -bottom-4 -left-4 w-5 h-5 bg-accent rounded-full shadow-elegant"
                 animate={{ 
-                  x: [0, 10, 0],
+                  x: [0, 8, 0],
                   scale: [1, 1.2, 1] 
                 }}
                 transition={{ 
@@ -185,10 +238,10 @@ const Hero = () => {
             
             {/* Glow Effect */}
             <motion.div 
-              className="absolute -inset-8 rounded-3xl blur-xl -z-10 animate-pulse-glow"
-              style={{ background: 'var(--gradient-primary)' }}
+              className="absolute -inset-6 rounded-3xl blur-xl -z-10"
+              style={{ background: 'var(--gradient-primary)', opacity: 0.3 }}
               animate={{ 
-                scale: [1, 1.1, 1],
+                scale: [1, 1.05, 1],
                 opacity: [0.2, 0.4, 0.2] 
               }}
               transition={{ 
@@ -197,9 +250,6 @@ const Hero = () => {
                 ease: "easeInOut" 
               }}
             />
-            
-            {/* Grid Pattern Background */}
-            <div className="absolute inset-0 opacity-10 -z-20" style={{ background: 'var(--gradient-hero)' }} />
           </div>
         </motion.div>
       </div>

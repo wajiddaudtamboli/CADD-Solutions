@@ -137,8 +137,8 @@ const Footer = () => {
       <motion.div 
         className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-r from-gray-900/95 via-black/95 to-gray-900/95 text-white border-t border-gray-700/50 backdrop-blur-xl"
         style={{
-          height: 'clamp(48px, 6vh, 56px)',
-          boxShadow: '0 -2px 8px rgba(0, 0, 0, 0.2), 0 -1px 3px rgba(0, 0, 0, 0.3)',
+          height: 'clamp(40px, 5vh, 48px)',
+          boxShadow: '0 -1px 4px hsl(var(--shadow) / 0.1)',
           paddingBottom: 'env(safe-area-inset-bottom)',
           paddingLeft: 'env(safe-area-inset-left)',
           paddingRight: 'env(safe-area-inset-right)'
