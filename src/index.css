@@ -184,26 +184,6 @@
 
 /* Professional Media Frames */
 @layer utilities {
-  /* Media Frame Container */
-  .media-frame-container {
-    @apply relative w-full max-w-[280px] mx-auto;
-    transform: scale(1);
-    transform-origin: center;
-  }
-
-  /* Responsive scaling for different screen sizes */
-  @media (max-width: 640px) {
-    .media-frame-container {
-      max-width: 240px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .media-frame-container {
-      max-width: 320px;
-    }
-  }
-
   .media-frame {
     @apply relative overflow-hidden rounded-xl shadow-2xl;
     border: 3px solid transparent;
@@ -354,25 +334,91 @@
     @apply space-y-4 md:space-y-6;
   }
 
-  /* Python Training Highlight */
-  .python-training-text {
-    background: var(--python-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 600;
-    position: relative;
+  /* Phone Media Frame Optimization */
+  .phone-media-frame {
+    @apply relative mx-auto;
+    width: clamp(250px, 30vw, 300px);
+    height: clamp(500px, 60vw, 600px);
+    max-width: 300px;
+    max-height: 600px;
   }
-
-  .python-training-text::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--python-gradient);
-    border-radius: 1px;
+  
+  /* Responsive layout centering */
+  .hero-layout {
+    @apply grid gap-8 lg:gap-12 items-center justify-items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    grid-template-columns: 1fr;
+  }
+  
+  @media (min-width: 1024px) {
+    .hero-layout {
+      grid-template-columns: 1fr 400px;
+      justify-items: start;
+    }
+    
+    .hero-layout > *:last-child {
+      justify-self: center;
+    }
+  }
+  
+  /* Device-specific navigation and footer heights */
+  .device-navbar {
+    height: clamp(44px, 5.5vh, 52px);
+  }
+  
+  .device-footer {
+    height: clamp(36px, 4.5vh, 44px);
+  }
+  
+  /* Redmi Note 12 Pro 5G specific adjustments (20:9 aspect ratio) */
+  @media (aspect-ratio: 20/9) {
+    .device-navbar {
+      height: 48px;
+    }
+    
+    .device-footer {
+      height: 40px;
+    }
+  }
+  
+  /* iPad Pro adjustments */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .device-navbar {
+      height: 60px;
+    }
+    
+    .device-footer {
+      height: 52px;
+    }
+  }
+  
+  /* Remove extra spacing and ensure centered layout */
+  .container-centered {
+    @apply flex items-center justify-center min-h-screen;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Media frame content scaling */
+  .media-content-responsive {
+    @apply w-full h-full overflow-hidden;
+    font-size: clamp(10px, 1.2vw, 14px);
+  }
+  
+  .media-content-responsive h1 {
+    @apply text-sm sm:text-base lg:text-lg font-bold;
+  }
+  
+  .media-content-responsive p {
+    @apply text-xs sm:text-sm;
+  }
+  
+  /* Ensure no horizontal overflow */
+  .no-horizontal-overflow {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
   }
 }
 
