@@ -45,7 +45,7 @@ const Navigation = () => {
     setIsOpen(false);
   };
   return <motion.nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border-b border-gray-200/30 dark:border-gray-700/30 transition-all duration-300" style={{
-    height: 'clamp(56px, 8vh, 64px)',
+    height: 'clamp(48px, 6vh, 56px)',
     paddingTop: 'env(safe-area-inset-top)',
     boxShadow: '0 2px 12px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05)'
   }} initial={{

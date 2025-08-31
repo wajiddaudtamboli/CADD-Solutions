@@ -17,7 +17,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      <div className="container grid lg:grid-cols-2 gap-8 lg:gap-16 items-center px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl mx-auto">
+      <div className="container grid lg:grid-cols-2 gap-6 lg:gap-12 items-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         {/* Left Content */}
         <motion.div className="space-y-6" initial={{
         opacity: 0,
@@ -101,57 +101,60 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right Content - Enhanced Media Frame */}
+        {/* Right Content - Phone/Tablet Media Frame */}
         <motion.div 
-          className="flex justify-center lg:justify-end order-first lg:order-last"
+          className="flex justify-center order-first lg:order-last"
           initial={{ opacity: 0, x: 50, scale: 0.9 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
-          <div className="relative w-full max-w-lg">
-            {/* Laptop Frame */}
+          <div className="relative w-full max-w-[280px] mx-auto">
+            {/* Phone/Tablet Frame */}
             <motion.div 
               className="relative"
-              whileHover={{ scale: 1.02, rotateY: 5 }}
+              whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               {/* Device Frame Container */}
-              <div className="professional-media-frame">
-                {/* Screen Bezel */}
-                <div className="relative bg-black rounded-xl p-3 shadow-inner">
-                  {/* Screen Content */}
-                  <div className="relative bg-gradient-to-br from-background to-muted rounded-lg aspect-video overflow-hidden">
-                    {/* Media Content */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10">
-                      <video 
-                        autoPlay 
-                        muted 
-                        loop 
-                        playsInline 
-                        className="w-full h-full object-cover rounded-lg"
-                        poster="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop"
-                      >
-                        <source src="/imgs/portfolio/watermark.mp4" type="video/mp4" />
-                      </video>
+              <div className="media-frame-container">
+                {/* Phone Bezel */}
+                <div className="relative bg-gradient-to-b from-gray-800 via-gray-900 to-black rounded-3xl p-1 shadow-2xl">
+                  {/* Screen Area */}
+                  <div className="relative bg-black rounded-[20px] p-1">
+                    {/* Screen Content */}
+                    <div className="relative bg-gradient-to-br from-background to-muted rounded-[18px] aspect-[9/16] overflow-hidden">
+                      {/* Media Content - This is where the app content shows */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5">
+                        <video 
+                          autoPlay 
+                          muted 
+                          loop 
+                          playsInline 
+                          className="w-full h-full object-cover rounded-[18px]"
+                          poster="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=280&h=500&fit=crop"
+                        >
+                          <source src="/imgs/portfolio/watermark.mp4" type="video/mp4" />
+                        </video>
+                        
+                        {/* Play Button Overlay */}
+                        <motion.div 
+                          className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm opacity-0 hover:opacity-100 transition-opacity duration-300 cursor-pointer rounded-[18px]"
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          <div className="bg-card/90 backdrop-blur-sm rounded-full p-3 shadow-elegant">
+                            <Play className="w-6 h-6 text-primary ml-0.5" fill="currentColor" />
+                          </div>
+                        </motion.div>
+                      </div>
                       
-                      {/* Play Button Overlay */}
-                      <motion.div 
-                        className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm opacity-0 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
-                        whileHover={{ scale: 1.1 }}
-                      >
-                        <div className="bg-card/90 backdrop-blur-sm rounded-full p-4 shadow-elegant">
-                          <Play className="w-8 h-8 text-primary ml-1" fill="currentColor" />
-                        </div>
-                      </motion.div>
+                      {/* Screen Reflection */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none rounded-[18px]" />
+                      
+                      {/* Notch/Camera Cutout */}
+                      <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-16 h-1.5 bg-black rounded-full" />
                     </div>
-                    
-                    {/* Screen Reflection */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
                   </div>
                 </div>
-                
-                {/* Laptop Base */}
-                <div className="h-3 bg-gradient-to-b from-gray-700 to-gray-800 rounded-b-xl shadow-lg" />
               </div>
               
               {/* Floating Elements */}
@@ -185,11 +188,11 @@ const Hero = () => {
             
             {/* Glow Effect */}
             <motion.div 
-              className="absolute -inset-8 rounded-3xl blur-xl -z-10 animate-pulse-glow"
+              className="absolute -inset-4 rounded-[40px] blur-xl -z-10"
               style={{ background: 'var(--gradient-primary)' }}
               animate={{ 
-                scale: [1, 1.1, 1],
-                opacity: [0.2, 0.4, 0.2] 
+                scale: [1, 1.05, 1],
+                opacity: [0.1, 0.3, 0.1] 
               }}
               transition={{ 
                 duration: 4, 
@@ -197,9 +200,6 @@ const Hero = () => {
                 ease: "easeInOut" 
               }}
             />
-            
-            {/* Grid Pattern Background */}
-            <div className="absolute inset-0 opacity-10 -z-20" style={{ background: 'var(--gradient-hero)' }} />
           </div>
         </motion.div>
       </div>

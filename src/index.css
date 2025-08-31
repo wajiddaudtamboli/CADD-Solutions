@@ -184,6 +184,26 @@
 
 /* Professional Media Frames */
 @layer utilities {
+  /* Media Frame Container */
+  .media-frame-container {
+    @apply relative w-full max-w-[280px] mx-auto;
+    transform: scale(1);
+    transform-origin: center;
+  }
+
+  /* Responsive scaling for different screen sizes */
+  @media (max-width: 640px) {
+    .media-frame-container {
+      max-width: 240px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .media-frame-container {
+      max-width: 320px;
+    }
+  }
+
   .media-frame {
     @apply relative overflow-hidden rounded-xl shadow-2xl;
     border: 3px solid transparent;
