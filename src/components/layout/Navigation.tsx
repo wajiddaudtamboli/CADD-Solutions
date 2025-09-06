@@ -44,7 +44,7 @@ const Navigation = () => {
     }
     setIsOpen(false);
   };
-  return <motion.nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border-b border-gray-200/30 dark:border-gray-700/30 transition-all duration-300" style={{
+  return <motion.nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-gray-700 transition-all duration-300" style={{
     height: 'clamp(56px, 8vh, 64px)',
     paddingTop: 'env(safe-area-inset-top)',
     boxShadow: '0 2px 12px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05)'
@@ -64,7 +64,7 @@ const Navigation = () => {
         paddingRight: 'env(safe-area-inset-right)'
       }} className="flex items-center justify-between h-full my-0 mx-0 px-0 rounded-md py-0">
           {/* Mobile-First Toggle Button */}
-          <motion.button onClick={() => setIsOpen(!isOpen)} className="fixed top-3 right-3 z-[60] w-10 h-10 bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg rounded-lg shadow-lg border border-gray-200/50 dark:border-gray-700/50 flex items-center justify-center hover:scale-105 transition-all duration-300" style={{
+          <motion.button onClick={() => setIsOpen(!isOpen)} className="fixed top-3 right-3 z-[60] w-10 h-10 bg-white dark:bg-[#1a1a1a] rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:scale-105 transition-all duration-300" style={{
           top: 'calc(env(safe-area-inset-top) + 8px)',
           right: 'calc(env(safe-area-inset-right) + 12px)'
         }} initial={{
@@ -91,7 +91,7 @@ const Navigation = () => {
           </motion.button>
 
           {/* Mobile-Optimized Dropdown Menu */}
-          <motion.div className="fixed inset-x-3 z-[50] bg-white/98 dark:bg-gray-900/98 backdrop-blur-xl rounded-xl shadow-2xl border border-gray-200/50 dark:border-gray-700/50 overflow-hidden max-w-xs mx-auto" style={{
+          <motion.div className="fixed inset-x-3 z-[50] bg-white dark:bg-[#1a1a1a] rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden max-w-xs mx-auto" style={{
           top: 'calc(env(safe-area-inset-top) + 60px)',
           left: 'calc(env(safe-area-inset-left) + 12px)',
           right: 'calc(env(safe-area-inset-right) + 12px)'
