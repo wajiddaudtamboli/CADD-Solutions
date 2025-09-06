@@ -270,7 +270,7 @@
   .professional-text {
     @apply text-sm sm:text-lg leading-relaxed text-center max-w-4xl mx-auto px-2;
     color: rgb(107 114 128);
-    margin-bottom: 1rem sm:margin-bottom-2rem;
+    margin-bottom: 1rem;
     width: 100%;
     box-sizing: border-box;
     word-wrap: break-word;
