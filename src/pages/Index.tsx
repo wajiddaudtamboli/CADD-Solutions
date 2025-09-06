@@ -18,23 +18,27 @@ import { ScrollToTop } from '@/components/ui/scroll-to-top';
 
 const Index = () => {
   return (
-    <div className="min-h-screen w-full overflow-x-hidden bg-gradient-to-br from-background via-primary/5 to-accent/5 transition-colors duration-500">
+    <motion.div 
+      className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-accent/5 transition-colors duration-500"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <Navigation />
-      <div className="flex flex-col w-full">
-        <Hero />
-        <EnhancedServices />
-        <AboutCompany />
-        <EnhancedProjects />
-        <OurValues />
-        <Testimonials />
-        <ReviewSummary />
-        <FAQ />
-        <EnhancedContact />
-      </div>
+      <Hero />
+      <EnhancedServices />
+      
+      <AboutCompany />
+      <EnhancedProjects />
+      <OurValues />
+      <Testimonials />
+      <ReviewSummary />
+      <FAQ />
+      <EnhancedContact />
       <Footer />
       <Chatbot />
       <ScrollToTop />
-    </div>
+    </motion.div>
   );
 };
 
