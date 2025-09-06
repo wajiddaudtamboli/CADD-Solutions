@@ -10,8 +10,8 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-accent/5 dark:from-primary/10 dark:via-background dark:to-accent/10 transition-colors duration-500 relative overflow-hidden"
-      style={{ paddingTop: 'clamp(80px, 12vh, 120px)' }}
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-accent/5 dark:from-primary/10 dark:via-background dark:to-accent/10 transition-colors duration-500 relative overflow-hidden w-full"
+      style={{ paddingTop: 'clamp(80px, 12vh, 120px)', marginBottom: 0, paddingBottom: 'clamp(40px, 8vh, 80px)' }}
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
@@ -28,7 +28,7 @@ const Hero = () => {
       }} transition={{
         duration: 0.8
       }}>
-          <motion.h1 className="professional-heading" initial={{
+          <motion.h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-tight mb-8" initial={{
           opacity: 0,
           y: 20
         }} animate={{
@@ -42,10 +42,10 @@ const Hero = () => {
                 {part}
                 {index === 0 && (
                   <span 
-                    className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-gradient" 
+                    className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient block" 
                     style={{ backgroundSize: '200% 200%' }}
                   >
-                    CAD & Engineering
+                    CAD & Engineering Skills
                   </span>
                 )}
               </span>
@@ -53,7 +53,7 @@ const Hero = () => {
           </motion.h1>
           
           <motion.p 
-            className="professional-text text-xl lg:text-2xl" 
+            className="text-lg sm:text-xl lg:text-2xl xl:text-3xl leading-relaxed text-center lg:text-left max-w-4xl mx-auto lg:mx-0 mb-8" 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
