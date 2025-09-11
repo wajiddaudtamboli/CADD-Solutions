@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/context/LanguageContext';
-import cadTrainingImage from '@/assets/cad-training-website.jpg';
+import modernCadWorkspace from '@/assets/modern-cad-workspace.jpg';
 const Hero = () => {
   const {
     translations
@@ -142,8 +142,8 @@ const Hero = () => {
                         transition={{ duration: 0.3 }}
                       >
                         <img 
-                          src={cadTrainingImage} 
-                          alt="CAD Engineering Training Website" 
+                          src={modernCadWorkspace} 
+                          alt="Modern CAD Engineering Workspace" 
                           className="w-full h-full object-cover rounded-lg shadow-elegant"
                         />
                       </motion.div>
