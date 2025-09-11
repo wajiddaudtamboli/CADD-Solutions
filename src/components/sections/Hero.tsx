@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/context/LanguageContext';
+import cadTrainingImage from '@/assets/cad-training-website.jpg';
 const Hero = () => {
   const {
     translations
@@ -134,14 +135,17 @@ const Hero = () => {
                         <source src="/imgs/portfolio/watermark.mp4" type="video/mp4" />
                       </video>
                       
-                      {/* Play Button Overlay */}
+                      {/* Training Image Overlay */}
                       <motion.div 
-                        className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm opacity-0 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
-                        whileHover={{ scale: 1.1 }}
+                        className="absolute inset-0 rounded-lg overflow-hidden"
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ duration: 0.3 }}
                       >
-                        <div className="bg-card/90 backdrop-blur-sm rounded-full p-4 shadow-elegant">
-                          <Play className="w-8 h-8 text-primary ml-1" fill="currentColor" />
-                        </div>
+                        <img 
+                          src={cadTrainingImage} 
+                          alt="CAD Engineering Training Website" 
+                          className="w-full h-full object-cover rounded-lg shadow-elegant"
+                        />
                       </motion.div>
                     </div>
                     
