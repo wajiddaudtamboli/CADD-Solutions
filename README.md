@@ -89,6 +89,28 @@ For production deployment:
 npm run build
 ```
 
+## Deployment
+
+Primary: GitHub Pages (gh-pages branch)
+
+- Live URL: https://wajiddaudtamboli.github.io/CADD-Solutions/
+- The GitHub Action at `.github/workflows/deploy.yml` builds and publishes `./dist` to the `gh-pages` branch on every push to `main`.
+- Enable Pages: Settings → Pages → Deploy from a branch → Branch: `gh-pages`, Folder: `/`.
+- SPA routing: `404.html` is copied from `index.html` during deploy.
+
+Environment variables (optional but recommended):
+
+- VITE_CLERK_PUBLISHABLE_KEY
+- VITE_SUPABASE_URL
+- VITE_SUPABASE_PUBLISHABLE_KEY
+- VITE_SUPABASE_PROJECT_ID (if used)
+
+Secondary: Vercel
+
+- Build Command: `npm run build`
+- Output Directory: `dist`
+- Environment Variables: same `VITE_*` as above.
+
 ## Contributing
 
 1. Fork the repository
