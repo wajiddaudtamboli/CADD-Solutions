@@ -9,6 +9,10 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
     
     steps:
     - name: Checkout
@@ -24,11 +28,19 @@ jobs:
       run: npm ci
       
     - name: Build
-      run: npm run build
+      run: |
+        export DEPLOY_BASE="/${{ github.event.repository.name }}/"
+        npm run build
       env:
         VITE_SUPABASE_PROJECT_ID: ${{ secrets.VITE_SUPABASE_PROJECT_ID }}
         VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
         VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+        VITE_CLERK_PUBLISHABLE_KEY: ${{ secrets.VITE_CLERK_PUBLISHABLE_KEY }}
+        # Base path for Vite assets on GitHub Pages
+        DEPLOY_BASE: "/${{ github.event.repository.name }}/"
+
+    - name: Add 404.html for SPA routing
+      run: cp dist/index.html dist/404.html
         
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
