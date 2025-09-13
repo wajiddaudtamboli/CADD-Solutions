@@ -1,73 +1,101 @@
-# Welcome to your Lovable project
+# CADD Solutions Portal
 
-## Project info
+A modern web application for CADD (Computer-Aided Design and Drafting) solutions, featuring course management, student portal, and administrative dashboard.
 
-**URL**: https://lovable.dev/projects/258b483d-aed8-4582-94aa-cedbffe7b1b9
+## Getting Started
 
-## How can I edit this code?
+### Prerequisites
 
-There are several ways of editing your application.
+- Node.js (v18 or higher)
+- npm or yarn package manager
 
-**Use Lovable**
+### Installation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/258b483d-aed8-4582-94aa-cedbffe7b1b9) and start prompting.
+1. Clone the repository:
+```bash
+git clone https://github.com/wajiddaudtamboli/CADD-Solutions.git
+cd CADD-Solutions
+```
 
-Changes made via Lovable will be committed automatically to this repo.
+2. Install dependencies:
+```bash
+npm install
+```
 
-**Use your preferred IDE**
+3. Set up environment variables:
+   - Copy `.env.example` to `.env`
+   - Configure your Supabase credentials
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+4. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173` (or another port if 5173 is in use).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
+## Technologies Used
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Frontend**: React 18 with TypeScript
+- **Build Tool**: Vite
+- **UI Framework**: shadcn/ui components
+- **Styling**: Tailwind CSS
+- **Database**: Supabase (PostgreSQL)
+- **Authentication**: Clerk
+- **State Management**: React Query (TanStack Query)
+- **Routing**: React Router v6
+- **Animations**: Framer Motion
 
-## How can I deploy this project?
+## Available Scripts
 
-Simply open [Lovable](https://lovable.dev/projects/258b483d-aed8-4582-94aa-cedbffe7b1b9) and click on Share -> Publish.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-## Can I connect a custom domain to my Lovable project?
+## Features
 
-Yes, you can!
+- 📚 Course management system
+- 👥 Student portal with dashboard
+- 🔐 Admin panel with analytics
+- 🌐 Multi-language support (English, Hindi, Marathi)
+- 🌙 Dark/Light theme toggle
+- 📱 Fully responsive design
+- 💬 Integrated chatbot
+- 📝 Contact forms and testimonials
+- 🎓 Scholarship application system
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Project Structure
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```
+src/
+├── components/         # Reusable UI components
+├── pages/             # Application pages
+├── context/           # React context providers
+├── hooks/             # Custom React hooks
+├── lib/               # Utility functions
+├── services/          # API services
+├── types/             # TypeScript type definitions
+└── locales/           # Internationalization files
+```
+
+## Deployment
+
+The application can be deployed to any static hosting service like Vercel, Netlify, or AWS S3.
+
+For production deployment:
+```bash
+npm run build
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
