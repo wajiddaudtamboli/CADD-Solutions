@@ -1,11 +1,10 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Star, MapPin, Award, Users } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { motion } from 'framer-motion';
+import { Award, MapPin, Star, Users } from 'lucide-react';
 const ReviewSummary = () => {
-  return <section className="py-20 bg-white">
+  return <section className="py-8 md:py-12 lg:py-16 bg-white">
       <div className="container mx-auto px-4">
-        <motion.div className="text-center mb-16" initial={{
+                <motion.div className="text-center mb-8 md:mb-12" initial={{
         opacity: 0,
         y: 20
       }} whileInView={{
@@ -31,31 +30,31 @@ const ReviewSummary = () => {
         }} viewport={{
           once: true
         }}>
-            <Card className="p-6 bg-gradient-to-r from-blue-50 to-purple-50">
+            <Card className="p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700">
               <CardContent className="space-y-4">
-                <p className="text-lg leading-relaxed text-gray-700">
+                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-200">
                   CADD Solutions, located in the heart of <strong>Solapur & Karad</strong>, is a trusted name for engineering design, software training, and consultancy services. They are well-known for their professional approach, skilled team, and high-quality solutions for students and professionals alike.
                 </p>
-                
+
                 <div className="grid grid-cols-2 gap-4 pt-4">
                   <div className="flex items-center gap-2">
                     <Star className="w-5 h-5 text-yellow-500" />
-                    <span className="font-semibold text-zinc-950">Highly Rated</span>
+                    <span className="font-semibold text-gray-900 dark:text-white">Highly Rated</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Users className="w-5 h-5 text-blue-600" />
-                    <span className="font-semibold">500+ Students</span>
+                    <Users className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                    <span className="font-semibold text-gray-900 dark:text-white">500+ Students</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Award className="w-5 h-5 text-green-600" />
-                    <span className="font-semibold">Certified Training</span>
+                    <Award className="w-5 h-5 text-green-600 dark:text-green-400" />
+                    <span className="font-semibold text-gray-900 dark:text-white">Certified Training</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-5 h-5 text-red-600" />
-                    <span className="font-semibold">Prime Locations</span>
+                    <MapPin className="w-5 h-5 text-red-600 dark:text-red-400" />
+                    <span className="font-semibold text-gray-900 dark:text-white">Prime Locations</span>
                   </div>
                 </div>
-                
+
                 <motion.div className="text-center py-4 bg-white rounded-lg shadow-sm" whileHover={{
                 scale: 1.02
               }}>
@@ -90,7 +89,16 @@ const ReviewSummary = () => {
           }} style={{
             transformStyle: 'preserve-3d'
           }}>
-              <img src="/imgs/portfolio/caddsol.jpg" alt="CADD Solutions Poster" className="w-full max-w-md rounded-2xl shadow-2xl" />
+              <video
+                src="https://res.cloudinary.com/duhhsnbwh/video/upload/v1760609606/watermark_mzmrfl.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full max-w-md rounded-2xl shadow-2xl"
+              >
+                Your browser does not support the video tag.
+              </video>
               <motion.div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-purple-400 rounded-3xl -z-10 blur-xl opacity-30" animate={{
               scale: [1, 1.1, 1],
               rotate: [0, 2, -2, 0]

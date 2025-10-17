@@ -1,8 +1,7 @@
 
-import React from 'react';
-import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Mail, Award, Users, Target } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Award, Mail, Target, Users } from 'lucide-react';
 
 const AboutCompany = () => {
   const handleGetInTouch = () => {
@@ -10,7 +9,7 @@ const AboutCompany = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-red-50 via-pink-50 to-rose-50 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900 transition-colors duration-300">
+    <section id="about" className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-red-50 via-pink-50 to-rose-50 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900 transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content Section */}
@@ -24,18 +23,18 @@ const AboutCompany = () => {
             <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-red-600 to-red-800 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-6">
               About Company
             </h2>
-            
+
             <div className="prose prose-lg dark:prose-invert">
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 hidden md:block">
                 At CADD Solutions, we specialize in providing professional training in CAD, CAM, CAE, PPM, and Software Development, helping students and professionals gain industry-relevant skills. Our focus is on delivering practical, hands-on training in tools like AutoCAD, CREO, CATIA, NX CAD, ANSYS, Revit Architecture, Python, Java, Machine Learning, and Data Science, ensuring every learner is prepared to meet real-world challenges.
               </p>
-              
+
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 md:hidden">
                 We provide comprehensive, hands-on training in CAD, CAM, CAE, PPM, and software development, leveraging industry-standard tools such as AutoCAD, CREO, SolidWorks, Ansys, MATLAB, Python, Java, and more. Our expert-led courses are designed to bridge the gap between theoretical knowledge and practical application.
               </p>
 
               <div className="grid md:grid-cols-3 gap-4 my-8">
-                <motion.div 
+                <motion.div
                   className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md"
                   whileHover={{ scale: 1.05 }}
                 >
@@ -43,8 +42,8 @@ const AboutCompany = () => {
                   <div className="text-2xl font-bold text-red-600 dark:text-blue-400">500+</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">Students Trained</div>
                 </motion.div>
-                
-                <motion.div 
+
+                <motion.div
                   className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md"
                   whileHover={{ scale: 1.05 }}
                 >
@@ -52,8 +51,8 @@ const AboutCompany = () => {
                   <div className="text-2xl font-bold text-red-600 dark:text-blue-400">15+</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">Courses Offered</div>
                 </motion.div>
-                
-                <motion.div 
+
+                <motion.div
                   className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md"
                   whileHover={{ scale: 1.05 }}
                 >
@@ -93,7 +92,7 @@ const AboutCompany = () => {
           >
             <div className="relative">
               <img
-                src="/imgs/portfolio/caddposter.jpg"
+                src="https://res.cloudinary.com/duhhsnbwh/image/upload/v1760609576/caddposter_zbljby.jpg"
                 alt="CADD Poster"
                 className="w-full max-w-md rounded-2xl shadow-2xl border-4 border-red-200 dark:border-blue-400"
               />

@@ -1,15 +1,14 @@
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import { motion } from 'framer-motion';
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react';
 
 const Footer = () => {
   const { translations } = useLanguage();
 
   return (
     <>
-      <motion.footer 
+      <motion.footer
         className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden"
         style={{
           paddingTop: 'clamp(24px, 4vh, 48px)',
@@ -34,8 +33,12 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">C</span>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center">
+                <img
+                  src="https://res.cloudinary.com/duhhsnbwh/image/upload/v1760609576/caddsolutionlogo_ogmant.png"
+                  alt="CADD Solutions Logo"
+                  className="w-full h-full object-contain rounded-lg"
+                />
               </div>
               <span className="text-2xl font-bold">{translations.footer.company}</span>
             </div>
@@ -125,7 +128,7 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="border-t border-gray-800 pt-8 w-full text-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -133,14 +136,14 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <p className="text-gray-400">
-              © 2024 CADD Solutions. {translations.footer.rights}
+              © 2025 CADD Solutions. {translations.footer.rights}
             </p>
           </motion.div>
         </div>
       </motion.footer>
 
       {/* Mobile-Optimized Developer Footer */}
-      <motion.div 
+      <motion.div
         className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-r from-gray-900/95 via-black/95 to-gray-900/95 text-white border-t border-gray-700/50 backdrop-blur-xl"
         style={{
           height: 'clamp(48px, 6vh, 56px)',
@@ -154,26 +157,16 @@ const Footer = () => {
         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
       >
         <div className="flex items-center justify-center h-full px-2 sm:px-3">
-          <motion.div 
+          <motion.div
             className="flex items-center space-x-1 sm:space-x-2 text-center"
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <span className="text-gray-300 font-medium text-xs sm:text-sm">
-              Crafted with 
+              Developer -
             </span>
-            <motion.span 
-              className="text-red-400 text-sm sm:text-lg"
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            >
-              ❤️
-            </motion.span>
-            <span className="text-gray-300 font-medium text-xs sm:text-sm">
-              by
-            </span>
-            <motion.span 
+            <motion.span
               className="bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 bg-clip-text text-transparent font-bold text-xs sm:text-base tracking-wide"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
@@ -182,9 +175,9 @@ const Footer = () => {
             </motion.span>
           </motion.div>
         </div>
-        
+
         {/* Animated bottom border */}
-        <motion.div 
+        <motion.div
           className="absolute bottom-0 left-0 h-0.5"
           style={{ background: 'var(--gradient-primary)' }}
           initial={{ width: 0 }}

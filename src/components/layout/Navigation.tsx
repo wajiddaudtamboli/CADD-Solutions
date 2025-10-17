@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Menu, X, Phone, Mail, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LanguageSelector } from '@/components/ui/language-selector';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { useLanguage } from '@/context/LanguageContext';
+import { motion } from 'framer-motion';
+import { Mail, Menu, Phone, Shield, X } from 'lucide-react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +45,7 @@ const Navigation = () => {
     setIsOpen(false);
   };
   return <motion.nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-gray-700 transition-all duration-300" style={{
-    height: 'clamp(56px, 8vh, 64px)',
+    height: 'clamp(52px, 6vh, 60px)',
     paddingTop: 'env(safe-area-inset-top)',
     boxShadow: '0 2px 12px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05)'
   }} initial={{
@@ -58,15 +58,15 @@ const Navigation = () => {
     duration: 0.8,
     ease: "easeOut"
   }}>
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 h-full relative">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 h-full relative">
         <div style={{
         paddingLeft: 'env(safe-area-inset-left)',
         paddingRight: 'env(safe-area-inset-right)'
-      }} className="flex items-center justify-between h-full my-0 mx-0 px-0 rounded-md py-0">
-          {/* Mobile-First Toggle Button */}
-          <motion.button onClick={() => setIsOpen(!isOpen)} className="fixed top-3 right-3 z-[60] w-10 h-10 bg-white dark:bg-[#1a1a1a] rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:scale-105 transition-all duration-300" style={{
-          top: 'calc(env(safe-area-inset-top) + 8px)',
-          right: 'calc(env(safe-area-inset-right) + 12px)'
+      }} className="flex items-center justify-between h-full my-0 mx-0 px-1 rounded-md py-0">
+          {/* Mobile & Tablet Toggle Button - Hidden on Desktop */}
+          <motion.button onClick={() => setIsOpen(!isOpen)} className="md:hidden fixed top-2 right-2 z-[60] w-9 h-9 bg-white dark:bg-[#1a1a1a] rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:scale-105 transition-all duration-300" style={{
+          top: 'calc(env(safe-area-inset-top) + 6px)',
+          right: 'calc(env(safe-area-inset-right) + 8px)'
         }} initial={{
           opacity: 0,
           scale: 0.8
@@ -86,15 +86,15 @@ const Navigation = () => {
           }} transition={{
             duration: 0.3
           }}>
-              {isOpen ? <X size={18} className="text-gray-700 dark:text-gray-300" /> : <Menu size={18} className="text-gray-700 dark:text-gray-300" />}
+              {isOpen ? <X size={16} className="text-gray-700 dark:text-gray-300" /> : <Menu size={16} className="text-gray-700 dark:text-gray-300" />}
             </motion.div>
           </motion.button>
 
-          {/* Mobile-Optimized Dropdown Menu */}
-          <motion.div className="fixed inset-x-3 z-[50] bg-white dark:bg-[#1a1a1a] rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden max-w-xs mx-auto" style={{
-          top: 'calc(env(safe-area-inset-top) + 60px)',
-          left: 'calc(env(safe-area-inset-left) + 12px)',
-          right: 'calc(env(safe-area-inset-right) + 12px)'
+          {/* Mobile & Tablet Dropdown Menu - Hidden on Desktop */}
+          <motion.div className="md:hidden fixed inset-x-2 z-[50] bg-white dark:bg-[#1a1a1a] rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden max-w-sm mx-auto" style={{
+          top: 'calc(env(safe-area-inset-top) + 50px)',
+          left: 'calc(env(safe-area-inset-left) + 8px)',
+          right: 'calc(env(safe-area-inset-right) + 8px)'
         }} initial={{
           opacity: 0,
           y: -20,
@@ -113,11 +113,15 @@ const Navigation = () => {
             background: 'var(--gradient-primary)'
           }}>
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">C</span>
+                <div className="w-7 h-7 bg-white/20 rounded-lg flex items-center justify-center">
+                  <img
+                    src="https://res.cloudinary.com/duhhsnbwh/image/upload/v1760609576/caddsolutionlogo_ogmant.png"
+                    alt="CADD Solutions Logo"
+                    className="w-5 h-5 object-contain rounded"
+                  />
                 </div>
                 <div>
-                  <h3 className="text-white font-semibold text-base">CADD Solutions</h3>
+                  <h3 className="text-white font-semibold text-sm">CADD Solutions</h3>
                   <p className="text-white/80 text-xs">Navigation Menu</p>
                 </div>
               </div>
@@ -139,7 +143,7 @@ const Navigation = () => {
             }} whileTap={{
               scale: 0.95
             }}>
-                  <div className="w-1.5 h-1.5 bg-primary rounded-full" />
+                  <div className="w-1 h-1 bg-primary rounded-full" />
                   <span>{item.name}</span>
                 </motion.button>)}
             </div>
@@ -153,15 +157,15 @@ const Navigation = () => {
               }} whileTap={{
                 scale: 0.98
               }}>
-                  <Phone size={16} className="text-primary group-hover:scale-110 transition-transform" />
+                  <Phone size={14} className="text-primary group-hover:scale-110 transition-transform" />
                 </motion.a>
-                
+
                 <motion.a href="mailto:tambolimahibub@gmail.com" className="flex items-center justify-center p-2 bg-accent/10 rounded-lg hover:bg-accent/20 transition-colors group" whileHover={{
                 scale: 1.02
               }} whileTap={{
                 scale: 0.98
               }}>
-                  <Mail size={16} className="text-accent group-hover:scale-110 transition-transform" />
+                  <Mail size={14} className="text-accent group-hover:scale-110 transition-transform" />
                 </motion.a>
               </div>
             </div>
@@ -169,8 +173,8 @@ const Navigation = () => {
             {/* Settings */}
             <div className="border-t border-gray-200 dark:border-gray-700 p-3">
               <div className="flex items-center justify-center space-x-2">
-                <Button variant="ghost" size="sm" onClick={() => navigate('/admin')} className="text-gray-600 dark:text-gray-400 hover:text-primary p-1.5 rounded-lg h-8 w-8">
-                  <Shield size={14} />
+                <Button variant="ghost" size="sm" onClick={() => navigate('/admin')} className="text-gray-600 dark:text-gray-400 hover:text-primary p-1 rounded-lg h-7 w-7">
+                  <Shield size={12} />
                 </Button>
                 <ThemeToggle />
                 <LanguageSelector />
@@ -178,7 +182,7 @@ const Navigation = () => {
             </div>
           </motion.div>
 
-          {/* Logo - Mobile Optimized */}
+          {/* Logo - Optimized for All Screen Sizes */}
           <motion.div className="flex items-center space-x-2 cursor-pointer group" whileHover={{
           scale: 1.02
         }} transition={{
@@ -186,19 +190,21 @@ const Navigation = () => {
           stiffness: 400,
           damping: 17
         }} onClick={() => navigate('/')}>
-            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300" style={{
-            background: 'var(--gradient-primary)'
-          }}>
-              <span className="text-white font-bold text-sm sm:text-lg tracking-wide">C</span>
+            <div className="w-7 h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+              <img
+                src="https://res.cloudinary.com/duhhsnbwh/image/upload/v1760609576/caddsolutionlogo_ogmant.png"
+                alt="CADD Solutions Logo"
+                className="w-full h-full object-contain rounded-lg"
+              />
             </div>
-            <span className="text-base sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent transition-all duration-300 hidden sm:block">
+            <span className="text-sm sm:text-base md:text-lg lg:text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent transition-all duration-300">
               CADD Solutions
             </span>
           </motion.div>
 
-          {/* Desktop Navigation - Hidden on Mobile */}
-          <div className="hidden xl:flex items-center space-x-6">
-            {navItems.map((item, index) => <motion.button key={item.name} onClick={() => handleNavClick(item)} className="relative px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary font-medium transition-all duration-300 group" whileHover={{
+          {/* Desktop & Large Tablet Navigation - Visible from MD up */}
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
+            {navItems.map((item, index) => <motion.button key={item.name} onClick={() => handleNavClick(item)} className="relative px-2 py-2 lg:px-3 text-gray-700 dark:text-gray-300 hover:text-primary font-medium transition-all duration-300 group text-sm lg:text-base" whileHover={{
             y: -1
           }} initial={{
             opacity: 0,
@@ -221,8 +227,8 @@ const Navigation = () => {
               duration: 0.3
             }} />
               </motion.button>)}
-            
-            <motion.div className="flex items-center space-x-2 ml-4 pl-4 border-l border-border" initial={{
+
+            <motion.div className="flex items-center space-x-1 lg:space-x-2 ml-3 lg:ml-4 pl-3 lg:pl-4 border-l border-border" initial={{
             opacity: 0
           }} animate={{
             opacity: 1
@@ -230,25 +236,25 @@ const Navigation = () => {
             delay: 0.6,
             duration: 0.5
           }}>
-              <motion.a href="tel:+919689044025" className="p-2 text-primary hover:bg-primary/10 rounded-lg transition-all duration-300" whileHover={{
+              <motion.a href="tel:+919689044025" className="p-1.5 lg:p-2 text-primary hover:bg-primary/10 rounded-lg transition-all duration-300" whileHover={{
               scale: 1.1
             }} whileTap={{
               scale: 0.95
             }}>
-                <Phone size={20} />
+                <Phone size={16} className="lg:w-5 lg:h-5" />
               </motion.a>
-              <motion.a href="mailto:tambolimahibub@gmail.com" className="p-2 text-accent hover:bg-accent/10 rounded-lg transition-all duration-300" whileHover={{
+              <motion.a href="mailto:tambolimahibub@gmail.com" className="p-1.5 lg:p-2 text-accent hover:bg-accent/10 rounded-lg transition-all duration-300" whileHover={{
               scale: 1.1
             }} whileTap={{
               scale: 0.95
             }}>
-                <Mail size={20} />
+                <Mail size={16} className="lg:w-5 lg:h-5" />
               </motion.a>
-              
-              <Button variant="ghost" size="sm" onClick={() => navigate('/admin')} className="text-muted-foreground hover:text-primary hover:bg-primary/10">
-                <Shield size={20} />
+
+              <Button variant="ghost" size="sm" onClick={() => navigate('/admin')} className="text-muted-foreground hover:text-primary hover:bg-primary/10 p-1.5 lg:p-2 h-auto">
+                <Shield size={16} className="lg:w-5 lg:h-5" />
               </Button>
-              
+
               <ThemeToggle />
               <LanguageSelector />
             </motion.div>

@@ -1,7 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Star, Quote } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { motion } from 'framer-motion';
+import { Quote, Star } from 'lucide-react';
 const Testimonials = () => {
   const testimonials = [{
     name: "Irfan Shaikh",
@@ -25,9 +24,9 @@ const Testimonials = () => {
     content: "Best for CAD & CAE training, got placed successfully! The practical experience gained here was invaluable for my career growth.",
     rating: 5
   }];
-  return <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+  return <section className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-blue-50 to-purple-50">
       <div className="container mx-auto px-4">
-        <motion.div className="text-center mb-16" initial={{
+        <motion.div className="text-center mb-8 md:mb-12" initial={{
         opacity: 0,
         y: 20
       }} whileInView={{
@@ -67,17 +66,17 @@ const Testimonials = () => {
               <Card className="h-full hover:shadow-xl transition-all duration-300 bg-white/80 backdrop-blur-sm">
                 <CardContent className="p-6 space-y-4">
                   <Quote className="w-8 h-8 text-blue-300" />
-                  
+
                   <p className="text-gray-700 leading-relaxed italic">
                     "{testimonial.content}"
                   </p>
-                  
+
                   <div className="flex items-center gap-1">
                     {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                   </div>
-                  
+
                   <div className="flex items-center gap-4 pt-4 border-t">
-                    
+
                     <div>
                       <div className="font-semibold text-gray-800">{testimonial.name}</div>
                       <div className="text-sm text-gray-600">{testimonial.role}</div>

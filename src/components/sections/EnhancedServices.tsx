@@ -123,9 +123,9 @@ const EnhancedServices = () => {
         </h4>
       </a>
     </motion.div>;
-    return <div className="spacing-section bg-gradient-to-br from-background via-primary/5 to-accent/5 transition-colors duration-500">
+    return <div className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-background via-primary/5 to-accent/5 transition-colors duration-500">
       {/* CAD Services Section */}
-      <section id="services" className="spacing-section relative overflow-hidden">
+      <section id="services" className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10"></div>
         <div className="professional-container relative z-10">
           <motion.div initial={{
@@ -152,7 +152,7 @@ const EnhancedServices = () => {
       </section>
 
       {/* Software Development Section */}
-      <section id="software-courses" className="spacing-section relative overflow-hidden">
+      <section id="software-courses" className="pb-8 md:pb-12 lg:pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-primary/10"></div>
         <div className="professional-container relative z-10">
           <motion.div initial={{

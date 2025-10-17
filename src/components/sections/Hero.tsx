@@ -1,18 +1,17 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Play } from 'lucide-react';
+import modernCadWorkspace from '@/assets/modern-cad-workspace.jpg';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/context/LanguageContext';
-import modernCadWorkspace from '@/assets/modern-cad-workspace.jpg';
+import { motion } from 'framer-motion';
+import { ArrowRight, Play } from 'lucide-react';
 const Hero = () => {
   const {
     translations
   } = useLanguage();
   return (
-    <section 
-      id="home" 
+    <section
+      id="home"
       className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-accent/5 dark:from-primary/10 dark:via-background dark:to-accent/10 transition-colors duration-500 relative overflow-hidden"
-      style={{ paddingTop: 'clamp(80px, 12vh, 120px)' }}
+      style={{ paddingTop: 'clamp(60px, 8vh, 80px)', paddingBottom: 'clamp(40px, 6vh, 60px)' }}
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
@@ -42,8 +41,8 @@ const Hero = () => {
               <span key={index}>
                 {part}
                 {index === 0 && (
-                  <span 
-                    className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-gradient" 
+                  <span
+                    className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-gradient"
                     style={{ backgroundSize: '200% 200%' }}
                   >
                     CAD & Engineering
@@ -52,9 +51,9 @@ const Hero = () => {
               </span>
             ))}
           </motion.h1>
-          
-          <motion.p 
-            className="professional-text text-xl lg:text-2xl" 
+
+          <motion.p
+            className="professional-text text-xl lg:text-2xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -75,7 +74,7 @@ const Hero = () => {
               <ArrowRight size={20} className="relative z-10 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button variant="outline" className="px-8 py-4 rounded-xl border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 group">
-              <Play size={20} className="group-hover:scale-110 transition-transform" /> 
+              <Play size={20} className="group-hover:scale-110 transition-transform" />
               {translations.hero.watchDemo}
             </Button>
           </motion.div>
@@ -103,7 +102,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Right Content - Enhanced Media Frame */}
-        <motion.div 
+        <motion.div
           className="flex justify-center lg:justify-end order-first lg:order-last"
           initial={{ opacity: 0, x: 50, scale: 0.9 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -111,7 +110,7 @@ const Hero = () => {
         >
           <div className="relative w-full max-w-lg">
             {/* Laptop Frame */}
-            <motion.div 
+            <motion.div
               className="relative"
               whileHover={{ scale: 1.02, rotateY: 5 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -124,84 +123,84 @@ const Hero = () => {
                   <div className="relative bg-gradient-to-br from-background to-muted rounded-lg aspect-video overflow-hidden">
                     {/* Media Content */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10">
-                      <video 
-                        autoPlay 
-                        muted 
-                        loop 
-                        playsInline 
+                      <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
                         className="w-full h-full object-cover rounded-lg"
-                        poster="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop"
+                        poster="https://res.cloudinary.com/duhhsnbwh/image/upload/v1760609576/caddposter_zbljby.jpg"
                       >
-                        <source src="/imgs/portfolio/watermark.mp4" type="video/mp4" />
+                        <source src="https://res.cloudinary.com/duhhsnbwh/image/upload/v1760609570/14_asxijz.jpg" type="video/mp4" />
                       </video>
-                      
+
                       {/* Training Image Overlay */}
-                      <motion.div 
+                      <motion.div
                         className="absolute inset-0 rounded-lg overflow-hidden"
                         whileHover={{ scale: 1.02 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <img 
-                          src={modernCadWorkspace} 
-                          alt="Modern CAD Engineering Workspace" 
+                        <img
+                          src={modernCadWorkspace}
+                          alt="Modern CAD Engineering Workspace"
                           className="w-full h-full object-cover rounded-lg shadow-elegant"
                         />
                       </motion.div>
                     </div>
-                    
+
                     {/* Screen Reflection */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
                   </div>
                 </div>
-                
+
                 {/* Laptop Base */}
                 <div className="h-3 bg-gradient-to-b from-gray-700 to-gray-800 rounded-b-xl shadow-lg" />
               </div>
-              
+
               {/* Floating Elements */}
-              <motion.div 
+              <motion.div
                 className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full shadow-elegant animate-float"
-                animate={{ 
+                animate={{
                   y: [0, -10, 0],
-                  rotate: [0, 180, 360] 
+                  rotate: [0, 180, 360]
                 }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity, 
-                  ease: "easeInOut" 
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
                 }}
               />
-              
-              <motion.div 
+
+              <motion.div
                 className="absolute -bottom-6 -left-6 w-6 h-6 bg-accent rounded-full shadow-elegant animate-float"
-                animate={{ 
+                animate={{
                   x: [0, 10, 0],
-                  scale: [1, 1.2, 1] 
+                  scale: [1, 1.2, 1]
                 }}
-                transition={{ 
-                  duration: 2.5, 
-                  repeat: Infinity, 
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
                   ease: "easeInOut",
-                  delay: 0.5 
+                  delay: 0.5
                 }}
               />
             </motion.div>
-            
+
             {/* Glow Effect */}
-            <motion.div 
+            <motion.div
               className="absolute -inset-8 rounded-3xl blur-xl -z-10 animate-pulse-glow"
               style={{ background: 'var(--gradient-primary)' }}
-              animate={{ 
+              animate={{
                 scale: [1, 1.1, 1],
-                opacity: [0.2, 0.4, 0.2] 
+                opacity: [0.2, 0.4, 0.2]
               }}
-              transition={{ 
-                duration: 4, 
-                repeat: Infinity, 
-                ease: "easeInOut" 
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
               }}
             />
-            
+
             {/* Grid Pattern Background */}
             <div className="absolute inset-0 opacity-10 -z-20" style={{ background: 'var(--gradient-hero)' }} />
           </div>

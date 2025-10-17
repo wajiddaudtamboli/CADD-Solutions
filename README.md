@@ -12,21 +12,25 @@ A modern web application for CADD (Computer-Aided Design and Drafting) solutions
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/wajiddaudtamboli/CADD-Solutions.git
 cd CADD-Solutions
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Set up environment variables:
+
    - Copy `.env.example` to `.env`
    - Configure your Supabase credentials
 
 4. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -62,9 +66,10 @@ This project is built with:
 - 🌐 Multi-language support (English, Hindi, Marathi)
 - 🌙 Dark/Light theme toggle
 - 📱 Fully responsive design
-- 💬 Integrated chatbot
+- 💬 Integrated Elfsight AI chatbot (optimized size)
 - 📝 Contact forms and testimonials
 - 🎓 Scholarship application system
+- 🎨 Professional UI with desktop spacing optimization
 
 ## Project Structure
 
@@ -85,6 +90,7 @@ src/
 The application can be deployed to any static hosting service like Vercel, Netlify, or AWS S3.
 
 For production deployment:
+
 ```bash
 npm run build
 ```

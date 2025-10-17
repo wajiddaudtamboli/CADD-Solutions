@@ -1,10 +1,9 @@
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { GraduationCap, Award, Star, Users, Clock, BookOpen } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useLanguage } from '@/context/LanguageContext';
+import { motion } from 'framer-motion';
+import { Award, BookOpen, Clock, GraduationCap, Star, Users } from 'lucide-react';
 
 const Scholarship = () => {
   const { translations } = useLanguage();
@@ -52,7 +51,7 @@ const Scholarship = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-blue-900 pt-20 transition-colors duration-300">
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -67,13 +66,13 @@ const Scholarship = () => {
             Scholarship Programs
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Empowering deserving students with quality education through our comprehensive scholarship programs. 
+            Empowering deserving students with quality education through our comprehensive scholarship programs.
             Making technical education accessible to all.
           </p>
         </motion.div>
 
         {/* Statistics */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -104,7 +103,7 @@ const Scholarship = () => {
             <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mx-auto mb-2">
               <BookOpen className="w-6 h-6 text-orange-600 dark:text-orange-400" />
             </div>
-            <div className="text-2xl font-bold text-gray-800 dark:text-white">15+</div>
+            <div className="text-2xl font-bold text-gray-800 dark:text-white">25+</div>
             <div className="text-sm text-gray-600 dark:text-gray-400">Course Options</div>
           </div>
         </motion.div>
@@ -130,7 +129,7 @@ const Scholarship = () => {
                     {scholarship.description}
                   </CardDescription>
                 </CardHeader>
-                
+
                 <CardContent className="space-y-4">
                   {/* Course Info */}
                   <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
@@ -149,7 +148,7 @@ const Scholarship = () => {
                     <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Included Courses:</h4>
                     <div className="flex flex-wrap gap-2">
                       {scholarship.courses.map((course) => (
-                        <span 
+                        <span
                           key={course}
                           className="px-2 py-1 bg-blue-50 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs rounded-md"
                         >

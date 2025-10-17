@@ -1,10 +1,9 @@
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Target, Eye, Heart, Award, Users, Clock, MapPin, Phone, Mail } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
+import Navigation from '@/components/layout/Navigation';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { motion } from 'framer-motion';
+import { Award, Clock, Eye, Heart, Mail, MapPin, Phone, Target, Users } from 'lucide-react';
 
 const About = () => {
   const team = [
@@ -12,7 +11,7 @@ const About = () => {
       name: 'Prof. Dr. Mehboob Tamboli',
       position: 'Founder & Director',
       specialization: 'CAD/CAM/CAE Expert',
-      experience: '15+ Years',
+      experience: '25+ Years',
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face',
       description: 'Leading expert in engineering design and simulation with extensive industry experience.'
     },
@@ -43,8 +42,8 @@ const About = () => {
   ];
 
   const achievements = [
-    { number: '500+', label: 'Students Trained' },
-    { number: '15+', label: 'Years Experience' },
+    { number: '5000+', label: 'Students Trained' },
+    { number: '25+', label: 'Years Experience' },
     { number: '95%', label: 'Placement Rate' },
     { number: '50+', label: 'Industry Partners' }
   ];
@@ -75,7 +74,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-red-50 to-pink-50 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900 transition-colors duration-300">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="pt-20 pb-12 bg-gradient-to-r from-red-600 to-red-800 dark:from-blue-600 dark:to-purple-600">
         <div className="container mx-auto px-4 text-center">

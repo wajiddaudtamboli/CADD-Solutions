@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,50 +8,54 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
     --primary: 221 83% 53%;
     --primary-foreground: 210 40% 98%;
     --primary-glow: 226 100% 70%;
-
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
     --accent: 262 83% 58%;
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 221 83% 53%;
-
     --radius: 0.75rem;
-    
     /* Enhanced Design Tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--accent) / 0.1));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--accent))
+    );
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(var(--primary) / 0.1),
+      hsl(var(--accent) / 0.1)
+    );
+    --gradient-card: linear-gradient(
+      145deg,
+      hsl(var(--card)),
+      hsl(var(--muted))
+    );
     --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.2);
     --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-    
     /* Python Training Special Colors */
     --python-primary: 48 96% 53%;
     --python-secondary: 176 100% 44%;
-    --python-gradient: linear-gradient(135deg, hsl(var(--python-primary)), hsl(var(--python-secondary)));
+    --python-gradient: linear-gradient(
+      135deg,
+      hsl(var(--python-primary)),
+      hsl(var(--python-secondary))
+    );
     --python-text: hsl(var(--python-primary));
-
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -62,48 +65,53 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 45 100% 50%;
   }
-
   .dark {
     --background: 222 84% 4.9%;
     --foreground: 210 40% 98%;
-
     --card: 222 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
     --popover: 222 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-
     --primary: 217 91% 60%;
     --primary-foreground: 222 84% 4.9%;
     --primary-glow: 226 100% 70%;
-
     --secondary: 217 32% 17%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 217 32% 17%;
     --muted-foreground: 215 20.2% 65.1%;
-
     --accent: 270 95% 75%;
     --accent-foreground: 222 84% 4.9%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 217 32% 17%;
     --input: 217 32% 17%;
     --ring: 217 91% 60%;
-    
     /* Enhanced Dark Mode Tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--accent) / 0.1));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--secondary)));
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--accent))
+    );
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(var(--primary) / 0.1),
+      hsl(var(--accent) / 0.1)
+    );
+    --gradient-card: linear-gradient(
+      145deg,
+      hsl(var(--card)),
+      hsl(var(--secondary))
+    );
     --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.3);
     --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
-    
     /* Python Training Special Colors - Dark Mode */
     --python-primary: 48 96% 64%;
     --python-secondary: 176 100% 54%;
-    --python-gradient: linear-gradient(135deg, hsl(var(--python-primary)), hsl(var(--python-secondary)));
+    --python-gradient: linear-gradient(
+      135deg,
+      hsl(var(--python-primary)),
+      hsl(var(--python-secondary))
+    );
     --python-text: hsl(var(--python-primary));
     --sidebar-background: 0 15% 8%;
     --sidebar-foreground: 0 12% 85%;
@@ -121,13 +129,12 @@
     @apply border-border;
     box-sizing: border-box;
   }
-
-  html, body {
+  html,
+  body {
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
   }
-
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -137,53 +144,54 @@
     -moz-osx-font-smoothing: grayscale;
     position: relative;
   }
-
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
   }
-
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold leading-tight;
     margin-bottom: 0.75rem;
     text-wrap: balance;
   }
-
   h1 {
     @apply text-5xl lg:text-7xl xl:text-8xl font-black tracking-tight;
   }
-
   h2 {
     @apply text-4xl lg:text-6xl xl:text-7xl font-bold tracking-tight;
   }
-
   h3 {
     @apply text-3xl lg:text-5xl font-bold tracking-tight;
   }
-
   /* Focus improvements for accessibility */
   *:focus-visible {
     @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background rounded-lg;
   }
-
   /* Smooth transitions for all interactive elements */
-  button, a, input, textarea, select {
+  button,
+  a,
+  input,
+  textarea,
+  select {
     transition: var(--transition-smooth);
   }
-
   /* Reduced motion preferences */
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
-    
     html {
       scroll-behavior: auto;
     }
   }
-
   p {
     @apply leading-relaxed;
     margin-bottom: 1rem;
@@ -191,20 +199,18 @@
 }
 
 /* Professional Media Frames */
+
 @layer utilities {
   /* Prevent horizontal overflow */
   .overflow-x-hidden {
     overflow-x: hidden;
   }
-  
   .max-w-full {
     max-width: 100%;
   }
-  
   .w-full {
     width: 100%;
   }
-
   .media-frame {
     @apply relative overflow-hidden rounded-xl shadow-2xl max-w-full;
     border: 3px solid transparent;
@@ -213,7 +219,6 @@
     width: 100%;
     box-sizing: border-box;
   }
-  
   .media-frame::before {
     content: '';
     position: absolute;
@@ -225,23 +230,19 @@
     border-radius: inherit;
     z-index: -1;
   }
-
   .dark .media-frame {
     background: linear-gradient(135deg, #dc2626, #b91c1c, #991b1b);
   }
-
   .professional-container {
     @apply max-w-7xl mx-auto px-3 sm:px-6 py-4 sm:py-8;
     width: 100%;
     box-sizing: border-box;
   }
-
   .professional-section {
     @apply mb-8 sm:mb-16 text-center;
     width: 100%;
     max-width: 100%;
   }
-
   .professional-heading {
     @apply text-2xl sm:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6;
     background: linear-gradient(135deg, #d4af37, #b8860b, #daa520);
@@ -254,7 +255,6 @@
     max-width: 100%;
     word-wrap: break-word;
   }
-
   .professional-subheading {
     @apply text-lg sm:text-2xl lg:text-3xl font-semibold mb-4;
     background: linear-gradient(135deg, #d4af37, #b8860b);
@@ -266,7 +266,6 @@
     max-width: 100%;
     word-wrap: break-word;
   }
-
   .professional-text {
     @apply text-sm sm:text-lg leading-relaxed text-center max-w-4xl mx-auto px-2;
     color: rgb(107 114 128);
@@ -275,57 +274,89 @@
     box-sizing: border-box;
     word-wrap: break-word;
   }
-
   .dark .professional-text {
     color: rgb(220 38 38 / 0.8);
   }
-
   .professional-card {
-    @apply backdrop-blur-sm rounded-2xl shadow-xl border p-4 sm:p-8 hover:shadow-2xl transition-all duration-300;
+    @apply backdrop-blur-sm shadow-xl border p-4 sm:p-8 hover:shadow-2xl transition-all duration-300;
     background: rgb(255 255 255 / 0.95);
     border-color: rgb(229 231 235);
     border-image: linear-gradient(135deg, #d4af37, #b8860b) 1;
+    border-radius: 16px;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
   }
-
   .dark .professional-card {
     background: rgb(127 29 29 / 0.95);
     border-color: rgb(185 28 28);
+    border-radius: 16px;
   }
-
   .professional-grid {
     @apply grid gap-4 sm:gap-8 md:gap-12;
     width: 100%;
     max-width: 100%;
   }
-
   .professional-grid-2 {
     @apply md:grid-cols-2;
   }
-
   .professional-grid-3 {
     @apply md:grid-cols-2 lg:grid-cols-3;
   }
-
   .professional-grid-4 {
     @apply md:grid-cols-2 lg:grid-cols-4;
   }
-
   .professional-button {
     @apply bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 hover:from-yellow-600 hover:via-yellow-700 hover:to-yellow-800 text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
   }
-
   .professional-icon {
-    @apply w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-4 sm:mb-6 p-3 sm:p-4 rounded-2xl;
+    @apply w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-4 sm:mb-6 p-3 sm:p-4;
     background: linear-gradient(135deg, #d4af37, #b8860b);
     color: white;
+    border-radius: 12px;
   }
 
+  /* Enhanced Border Radius for All Card Components */
+  .professional-card,
+  .group .professional-card,
+  [class*='card'],
+  .motion-div.group {
+    border-radius: 16px !important;
+    overflow: hidden;
+  }
+
+  /* Ensure software icon containers have consistent rounded corners */
+  .group a.professional-card {
+    border-radius: 16px !important;
+  }
+
+  /* Responsive border radius for different screen sizes */
+  @media (max-width: 640px) {
+    .professional-card,
+    .group .professional-card,
+    .group a.professional-card {
+      border-radius: 12px !important;
+    }
+  }
+
+  @media (min-width: 641px) {
+    .professional-card,
+    .group .professional-card,
+    .group a.professional-card {
+      border-radius: 16px !important;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .professional-card,
+    .group .professional-card,
+    .group a.professional-card {
+      border-radius: 18px !important;
+    }
+  }
   .professional-stats {
     @apply text-2xl sm:text-4xl font-bold mb-2;
     background: linear-gradient(135deg, #d4af37, #b8860b);
@@ -333,53 +364,83 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-
   .professional-margin {
     @apply my-6 sm:my-12;
   }
-
   .professional-padding {
     @apply px-3 sm:px-6 py-4 sm:py-8;
   }
-
   /* Custom gradient backgrounds for golden royal theme */
   .gradient-bg-golden {
     background: linear-gradient(135deg, #d4af37 0%, #b8860b 50%, #daa520 100%);
   }
-  
   .gradient-bg-golden-light {
     background: linear-gradient(135deg, #faf5e6 0%, #f4e7b8 50%, #e6d08a 100%);
   }
-
   /* Dark mode red gradients */
   .dark .gradient-bg-golden {
     background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%);
   }
-  
   .dark .gradient-bg-golden-light {
     background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #b91c1c 100%);
   }
-
   /* Enhanced text alignment */
   .text-professionally-aligned {
     @apply text-center leading-relaxed;
     word-wrap: break-word;
   }
-
   .text-professionally-aligned-left {
     @apply text-left leading-relaxed;
     word-wrap: break-word;
   }
-
   /* Responsive spacing */
   .professional-spacing {
     @apply space-y-4 sm:space-y-8 md:space-y-12;
   }
-
   .professional-spacing-sm {
     @apply space-y-2 sm:space-y-4 md:space-y-6;
   }
 
+  /* Responsive section padding for mobile optimization */
+  .section-padding {
+    @apply py-8 md:py-12 lg:py-16;
+  }
+  .section-padding-sm {
+    @apply py-4 md:py-6 lg:py-8;
+  }
+
+  /* Mobile desktop mode optimization - reduce excessive spacing */
+  @media screen and (max-width: 768px) {
+    .section-padding {
+      padding-top: 1rem !important;
+      padding-bottom: 1rem !important;
+    }
+    .py-8 {
+      padding-top: 1rem !important;
+      padding-bottom: 1rem !important;
+    }
+    .mb-8 {
+      margin-bottom: 1rem !important;
+    }
+    .mb-12 {
+      margin-bottom: 1.5rem !important;
+    }
+    .space-y-8 > * + * {
+      margin-top: 1rem !important;
+    }
+    .space-y-6 > * + * {
+      margin-top: 0.75rem !important;
+    }
+  }
+
+  /* Line clamp utility for project titles */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   /* Python Training Highlight */
   .python-training-text {
     background: var(--python-gradient);
@@ -390,7 +451,6 @@
     position: relative;
     word-wrap: break-word;
   }
-
   .python-training-text::after {
     content: '';
     position: absolute;
@@ -401,25 +461,20 @@
     background: var(--python-gradient);
     border-radius: 1px;
   }
-
   /* Mobile-first responsive utilities */
   @media (max-width: 640px) {
     .professional-container {
       @apply px-2 py-3;
     }
-    
     .professional-card {
       @apply p-3;
     }
-    
     .professional-heading {
       @apply text-xl;
     }
-    
     .professional-subheading {
       @apply text-base;
     }
-    
     .professional-text {
       @apply text-xs px-1;
     }
@@ -427,6 +482,7 @@
 }
 
 /* Remove blue color references and replace with red */
+
 .bg-red-gradient {
   background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%);
 }
@@ -444,6 +500,7 @@
 }
 
 /* Scrollbar styling with red theme */
+
 .scrollbar-thin {
   scrollbar-width: thin;
   scrollbar-color: rgb(220 38 38) rgb(254 242 242);
@@ -483,6 +540,7 @@
 }
 
 /* Professional animations */
+
 @keyframes professional-fade-in {
   from {
     opacity: 0;
@@ -499,6 +557,7 @@
 }
 
 /* Loading spinner with red theme */
+
 .spinner {
   border: 2px solid #f3f3f3;
   border-top: 2px solid #dc2626;
@@ -513,6 +572,300 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile Navigation Optimization */
+body.navigation-optimized {
+  padding-top: clamp(48px, 5vh, 56px);
+}
+
+@media (max-width: 767px) {
+  .fixed nav,
+  nav.fixed {
+    height: clamp(48px, 5vh, 56px) !important;
+    padding: 0.25rem 0.5rem !important;
+  }
+
+  body.navigation-optimized {
+    padding-top: clamp(48px, 5vh, 56px) !important;
+  }
+
+  .navigation-container {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Stack layout optimization for mobile */
+  .mobile-nav-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  /* Remove excessive spacing in mobile desktop mode */
+  .container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}
+
+/* Tablet Navigation Optimization */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fixed nav,
+  nav.fixed {
+    height: clamp(52px, 6vh, 60px) !important;
+  }
+
+  body.navigation-optimized {
+    padding-top: clamp(52px, 6vh, 60px) !important;
+  }
+}
+
+/* Desktop Navigation Optimization */
+@media (min-width: 1024px) {
+  .fixed nav,
+  nav.fixed {
+    height: clamp(56px, 7vh, 64px) !important;
+  }
+
+  body.navigation-optimized {
+    padding-top: clamp(56px, 7vh, 64px) !important;
+  }
+}
+
+/* Desktop Layout Optimization - Remove Extra Space */
+@media (min-width: 992px) {
+  /* Reset unwanted margins and padding */
+  body {
+    margin: 0 !important;
+    overflow-x: hidden;
+  }
+
+  /* Section spacing optimization */
+  section {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Container and wrapper optimization */
+  .container,
+  .max-w-7xl,
+  .mx-auto {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Reduce section padding for tighter layout */
+  .py-8,
+  .py-12,
+  .py-16,
+  .py-20 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .md\\:py-12,
+  .lg\\:py-16,
+  .lg\\:py-20 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* Stack elements tightly */
+  .space-y-8 > * + * {
+    margin-top: 1.5rem !important;
+  }
+
+  .space-y-12 > * + * {
+    margin-top: 2rem !important;
+  }
+
+  .space-y-16 > * + * {
+    margin-top: 2.5rem !important;
+  }
+
+  /* Grid and flex gap optimization */
+  .gap-12,
+  .lg\\:gap-16 {
+    gap: 2rem !important;
+  }
+
+  .gap-8 {
+    gap: 1.5rem !important;
+  }
+
+  /* Remove excessive margins from headings and content */
+  .mb-8,
+  .mb-12,
+  .mb-16 {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .md\\:mb-12,
+  .lg\\:mb-16 {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .mt-8,
+  .mt-12,
+  .mt-16 {
+    margin-top: 1.5rem !important;
+  }
+
+  .md\\:mt-12,
+  .lg\\:mt-16 {
+    margin-top: 1.5rem !important;
+  }
+
+  /* Card and component spacing */
+  .p-8,
+  .p-12 {
+    padding: 1.5rem !important;
+  }
+
+  .lg\\:p-12 {
+    padding: 1.5rem !important;
+  }
+
+  /* Remove min-height that creates unwanted space */
+  .min-h-screen {
+    min-height: auto !important;
+  }
+
+  /* Ensure tight stacking of main content areas */
+  main,
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0 !important;
+  }
+
+  /* Professional spacing for components */
+  .professional-spacing,
+  .spacing-section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .professional-margin,
+  .spacing-content {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Contact section specific optimization */
+  #contact {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  /* Hero section optimization */
+  .hero-section,
+  #hero {
+    padding-top: 3rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  /* Remove viewport height dependencies */
+  .h-screen,
+  .min-h-screen {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  /* Ensure no extra space from flexbox */
+  .flex-1 {
+    flex: none !important;
+  }
+
+  /* Optimize grid layouts */
+  .grid {
+    gap: 1.5rem !important;
+  }
+
+  .lg\\:grid-cols-2 {
+    gap: 2rem !important;
+  }
+
+  /* Remove transform spacing issues */
+  .transform {
+    transform: none !important;
+  }
+
+  /* Ensure consistent line heights */
+  .leading-relaxed {
+    line-height: 1.5 !important;
+  }
+
+  .leading-tight {
+    line-height: 1.25 !important;
+  }
+}
+
+/* Elfsight Chatbot Styles */
+.elfsight-app-413fafd4-9386-4c74-99f9-215726a390e5 {
+  /* Ensure chatbot appears above other content but below modals */
+  z-index: 1000 !important;
+  /* Position in bottom-right corner */
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  /* Make chatbot smaller - medium size */
+  max-width: 320px !important;
+  max-height: 400px !important;
+  /* Ensure it doesn't interfere with mobile navigation */
+  margin-bottom: 0px !important;
+}
+
+/* Chatbot widget sizing */
+.elfsight-app-413fafd4-9386-4c74-99f9-215726a390e5 iframe {
+  max-width: 320px !important;
+  max-height: 400px !important;
+  pointer-events: auto !important;
+}
+
+/* Chatbot button/trigger sizing */
+.elfsight-app-413fafd4-9386-4c74-99f9-215726a390e5
+  [data-elfsight-chatbot-trigger] {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+/* Responsive adjustments for chatbot */
+@media (max-width: 768px) {
+  .elfsight-app-413fafd4-9386-4c74-99f9-215726a390e5 {
+    bottom: 70px !important; /* Space for mobile footer if needed */
+    right: 15px !important;
+    max-width: 280px !important;
+    max-height: 350px !important;
+  }
+
+  .elfsight-app-413fafd4-9386-4c74-99f9-215726a390e5 iframe {
+    max-width: 280px !important;
+    max-height: 350px !important;
+  }
+
+  .elfsight-app-413fafd4-9386-4c74-99f9-215726a390e5
+    [data-elfsight-chatbot-trigger] {
+    width: 45px !important;
+    height: 45px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .elfsight-app-413fafd4-9386-4c74-99f9-215726a390e5 {
+    max-width: 250px !important;
+    max-height: 300px !important;
+  }
+
+  .elfsight-app-413fafd4-9386-4c74-99f9-215726a390e5 iframe {
+    max-width: 250px !important;
+    max-height: 300px !important;
+  }
 }

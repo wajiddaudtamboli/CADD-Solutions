@@ -1,8 +1,7 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, Heart, Star, Award } from 'lucide-react';
+import { Award, Heart, Star, Target } from 'lucide-react';
 const OurValues = () => {
-  return <section className="py-20 bg-gradient-to-br from-white via-red-50 to-pink-50 dark:from-gray-800 dark:via-blue-800 dark:to-indigo-800 transition-colors duration-300">
+  return <section className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-white via-red-50 to-pink-50 dark:from-gray-800 dark:via-blue-800 dark:to-indigo-800 transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
@@ -74,7 +73,7 @@ const OurValues = () => {
             </div>
           </motion.div>
 
-          {/* Video Section */}
+          {/* Image Section */}
           <motion.div initial={{
           opacity: 0,
           x: 50
@@ -88,9 +87,11 @@ const OurValues = () => {
         }} className="flex justify-center hidden lg:flex">
             <div className="relative w-full max-w-md">
               <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-2xl border-4 border-red-200 dark:border-blue-400">
-                <video src="/imgs/portfolio/watermark.mp4" autoPlay muted loop playsInline className="w-full h-auto rounded-xl object-cover py-[90px] my-[10px]">
-                  Your browser does not support the video tag.
-                </video>
+                <img
+                  src="https://res.cloudinary.com/duhhsnbwh/image/upload/v1760609583/caddemployees_xshmbi.jpg"
+                  alt="CADD Solutions Team"
+                  className="w-full h-auto rounded-xl object-cover"
+                />
               </div>
               <div className="absolute -inset-4 bg-gradient-to-r from-red-400 to-pink-400 dark:from-blue-500 dark:to-purple-500 rounded-3xl -z-10 blur-lg opacity-30"></div>
             </div>

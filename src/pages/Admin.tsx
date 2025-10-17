@@ -22,7 +22,7 @@ const Admin = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (credentials.userid === 'Cadd' && credentials.password === 'Cadd@123') {
       setIsAuthenticated(true);
       setShowWelcome(true);
@@ -91,7 +91,7 @@ const Admin = () => {
               <CardDescription className="dark:text-gray-300 text-lg">Complete staff and trainer management system</CardDescription>
             </CardHeader>
             <CardContent>
-              <Button 
+              <Button
                 onClick={() => handleFeatureAccess('Employee Management')}
                 className="professional-button w-full text-lg"
               >
@@ -116,7 +116,7 @@ const Admin = () => {
               <CardDescription className="dark:text-gray-300 text-lg">Track attendance and generate reports</CardDescription>
             </CardHeader>
             <CardContent>
-              <Button 
+              <Button
                 onClick={() => handleFeatureAccess('Attendance Management')}
                 className="professional-button w-full text-lg"
               >
@@ -141,7 +141,7 @@ const Admin = () => {
               <CardDescription className="dark:text-gray-300 text-lg">Manage student registrations and profiles</CardDescription>
             </CardHeader>
             <CardContent>
-              <Button 
+              <Button
                 onClick={() => handleFeatureAccess('Student Enrollment')}
                 className="professional-button w-full text-lg"
               >
@@ -166,7 +166,7 @@ const Admin = () => {
               <CardDescription className="dark:text-gray-300 text-lg">Generate and manage certificates</CardDescription>
             </CardHeader>
             <CardContent>
-              <Button 
+              <Button
                 onClick={() => handleFeatureAccess('Certificate Management')}
                 className="professional-button w-full text-lg"
               >
@@ -191,7 +191,7 @@ const Admin = () => {
               <CardDescription className="dark:text-gray-300 text-lg">Assign and track employee tasks</CardDescription>
             </CardHeader>
             <CardContent>
-              <Button 
+              <Button
                 onClick={() => handleFeatureAccess('Task Assignment')}
                 className="professional-button w-full text-lg"
               >
@@ -216,7 +216,7 @@ const Admin = () => {
               <CardDescription className="dark:text-gray-300 text-lg">Comprehensive business analytics</CardDescription>
             </CardHeader>
             <CardContent>
-              <Button 
+              <Button
                 onClick={() => handleFeatureAccess('Reports & Analytics')}
                 className="professional-button w-full text-lg"
               >
@@ -241,7 +241,7 @@ const Admin = () => {
               <CardDescription className="dark:text-gray-300 text-lg">Upload and manage training materials</CardDescription>
             </CardHeader>
             <CardContent>
-              <Button 
+              <Button
                 onClick={() => handleFeatureAccess('Media Management')}
                 className="professional-button w-full text-lg"
               >
@@ -266,7 +266,7 @@ const Admin = () => {
               <CardDescription className="dark:text-gray-300 text-lg">Centralized document management</CardDescription>
             </CardHeader>
             <CardContent>
-              <Button 
+              <Button
                 onClick={() => handleFeatureAccess('Document Storage')}
                 className="professional-button w-full text-lg"
               >
@@ -291,7 +291,7 @@ const Admin = () => {
               <CardDescription className="dark:text-gray-300 text-lg">Configure system preferences</CardDescription>
             </CardHeader>
             <CardContent>
-              <Button 
+              <Button
                 onClick={() => handleFeatureAccess('System Settings')}
                 className="professional-button w-full text-lg"
               >
@@ -316,7 +316,7 @@ const Admin = () => {
           <CardContent>
             <div className="professional-grid professional-grid-4 gap-8">
               <div className="text-professionally-aligned">
-                <div className="professional-stats">500+</div>
+                <div className="professional-stats">5000+</div>
                 <div className="text-lg text-gray-600 dark:text-gray-400">Active Students</div>
               </div>
               <div className="text-professionally-aligned">
@@ -374,13 +374,13 @@ const Admin = () => {
                     required
                   />
                 </div>
-                
+
                 {loginError && (
                   <Alert variant="destructive">
                     <AlertDescription>{loginError}</AlertDescription>
                   </Alert>
                 )}
-                
+
                 <Button type="submit" className="professional-button w-full text-lg">
                   🔐 Access Admin Panel
                 </Button>
@@ -430,7 +430,7 @@ const Admin = () => {
             </div>
             <div className="flex gap-4">
               {currentView !== 'dashboard' && (
-                <Button 
+                <Button
                   onClick={() => setCurrentView('dashboard')}
                   variant="outline"
                   className="flex items-center gap-2"
@@ -439,7 +439,7 @@ const Admin = () => {
                   Back to Dashboard
                 </Button>
               )}
-              <Button 
+              <Button
                 onClick={handleLogout}
                 variant="destructive"
               >
