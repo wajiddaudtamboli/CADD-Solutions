@@ -13,6 +13,9 @@ const EnhancedContact = () => {
     inquiryType: '',
     comments: ''
   });
+
+  const [mapLoaded, setMapLoaded] = useState(false);
+  const [mapError, setMapError] = useState(false);
   const courses = ['AutoCAD', 'CREO', 'CATIA', 'Solid Works', 'NX CAD & NX CAM', 'ANSYS Workbench', 'Hypermesh', 'AutoCAD Civil 3D', 'Revit Architecture', '3Ds Max', 'STAAD.PRO', 'ETABS', 'AutoCAD Electrical', 'MS Project', 'Primavera', 'Building Estimation', 'C Programming', 'C++', 'Java', 'Python', 'Machine Learning', 'Data Science'];
   const inquiryTypes = ['Admission', 'Certificate', 'Demo Class', 'Fee Structure', 'Course Duration', 'Job Placement', 'Corporate Training', 'Other'];
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -137,16 +140,54 @@ const EnhancedContact = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-2xl blur-xl transform -rotate-1"></div>
                   <div className="relative bg-white dark:bg-slate-800 p-2 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-600">
                     <div className="overflow-hidden rounded-xl">
-                      <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.5487723167615!2d75.91448977511485!3d17.68089478303488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc5dc71d82b41f7%3A0xbbe2529da65e59c3!2sCADD%20Solutions%2C%2042%201st%20Floor%2C%20Apurva%20Building%2C%20Near%20Jumbo%20Xerox%2C%20Saat%20Rasta%2C%20Solapur%2C%20Maharashtra%20413001!5e0!3m2!1sen!2sin!4v1710247028736!5m2!1sen!2sin"
-                        width="100%"
-                        height="350"
-                        style={{ border: 0 }}
-                        allowFullScreen
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                        className="w-full h-full"
-                      />
+                      <div className="relative w-full h-0 pb-[75%] sm:pb-[65%] md:pb-[56.25%]"> {/* Responsive aspect ratio */}
+                        <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3823.8320168874044!2d75.90638157509577!3d17.661200683403405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc5dbb20957843f%3A0xabcfbedec349e16a!2sCADD%20SOLUTIONS%20SOLAPUR!5e0!3m2!1sen!2sin!4v1729250932581!5m2!1sen!2sin"
+                          className={`absolute top-0 left-0 w-full h-full border-0 transition-opacity duration-300 ${
+                            mapLoaded ? 'opacity-100' : 'opacity-0'
+                          }`}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                          title="Solapur Training Center Location"
+                          onLoad={() => setMapLoaded(true)}
+                          onError={() => setMapError(true)}
+                        />
+
+                        {/* Loading state */}
+                        {!mapLoaded && !mapError && (
+                          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-700 dark:to-slate-800 flex items-center justify-center">
+                            <div className="text-center p-4">
+                              <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+                              <p className="text-sm font-medium text-slate-700 dark:text-slate-300">Loading Solapur Map...</p>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Error/Fallback state */}
+                        {mapError && (
+                          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-slate-700 dark:to-slate-800 flex items-center justify-center cursor-pointer"
+                               onClick={() => window.open('https://www.google.com/maps/place/CADD+SOLUTIONS+SOLAPUR/@17.6612065,75.9064828,17z/data=!4m6!3m5!1s0x3bc5dbb20957843f:0xabcfbedec349e16a!8m2!3d17.661217!4d75.9063813!16s%2Fg%2F11fjm9zvqj?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D', '_blank')}>
+                            <div className="text-center p-4 hover:scale-105 transition-transform">
+                              <MapPin className="w-12 h-12 text-blue-500 mx-auto mb-2" />
+                              <p className="text-sm font-medium text-slate-700 dark:text-slate-300">Solapur Training Center</p>
+                              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Click to open in Google Maps</p>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Static map image for better compatibility */}
+                        <img
+                          src="https://res.cloudinary.com/dxgbxchqm/image/upload/v1729251032/solapur-map-static_q9xzlr.png"
+                          alt="Solapur Training Center Location Map"
+                          className={`absolute top-0 left-0 w-full h-full object-cover rounded-xl ${
+                            !mapLoaded && mapError ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                          } transition-opacity duration-300`}
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none';
+                          }}
+                        />
+                      </div>
                     </div>
                     <div className="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-700/50">
                       <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Solapur Training Center</span>

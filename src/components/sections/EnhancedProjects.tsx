@@ -172,8 +172,8 @@ const EnhancedProjects = () => {
 
             <div className="mb-6 flex justify-center">
               <img
-                src="https://res.cloudinary.com/duhhsnbwh/image/upload/v1760609583/caddemployees_xshmbi.jpg"
-                alt="CADD Solutions Team"
+                src="https://res.cloudinary.com/duhhsnbwh/image/upload/v1760609576/caddposter_zbljby.jpg"
+                alt="CADD Solutions"
                 className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto rounded-xl shadow-lg border-2 border-red-200 dark:border-blue-400 object-cover h-auto"
                 loading="lazy"
               />

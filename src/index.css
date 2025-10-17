@@ -999,3 +999,33 @@ body.navigation-optimized {
     max-height: 300px !important;
   }
 }
+
+/* Map iframe enhancements for better loading and responsiveness */
+iframe[title*='Training Center'] {
+  border: none !important;
+  border-radius: 0.75rem;
+  transition: opacity 0.3s ease-in-out;
+}
+
+iframe[title*='Training Center']:not([src]) {
+  opacity: 0;
+}
+
+/* Ensure maps are visible on all devices */
+@media (max-width: 640px) {
+  iframe[title*='Training Center'] {
+    min-height: 250px !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  iframe[title*='Training Center'] {
+    min-height: 300px !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  iframe[title*='Training Center'] {
+    min-height: 350px !important;
+  }
+}
