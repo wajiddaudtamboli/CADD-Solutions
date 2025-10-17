@@ -3,6 +3,7 @@
 ## 🚀 Quick Deployment Steps
 
 ### Prerequisites
+
 - Git installed and configured
 - Node.js 18.x installed
 - GitHub account connected to Vercel
@@ -28,11 +29,13 @@ git push origin main
 1. **Go to [Vercel Dashboard](https://vercel.com/dashboard)**
 
 2. **Import Project:**
+
    - Click "Add New..." → "Project"
    - Select "Import Git Repository"
    - Choose: `wajiddaudtamboli/CADD-Solutions`
 
 3. **Configure Project Settings:**
+
    - **Framework Preset:** Vite
    - **Build Command:** `npm run build`
    - **Install Command:** `npm install`
@@ -40,6 +43,7 @@ git push origin main
    - **Node.js Version:** 18.x (automatically detected)
 
 4. **Environment Variables (Optional but Recommended):**
+
    ```
    VITE_CLERK_PUBLISHABLE_KEY=your_clerk_key
    VITE_SUPABASE_URL=your_supabase_url
@@ -52,6 +56,7 @@ git push origin main
 ### Step 3: Verify Deployment
 
 After deployment, verify:
+
 - ✅ Site loads correctly
 - ✅ All pages accessible (SPA routing works)
 - ✅ Elfsight chatbot appears (small-medium size)
@@ -62,10 +67,12 @@ After deployment, verify:
 ## 🎯 Expected Results
 
 ### Live URL Examples:
+
 - **Primary:** `https://cadd-solutions-wajiddaudtamboli.vercel.app`
 - **Custom Domain:** `https://cadd-solutions.vercel.app` (if configured)
 
 ### Features Included:
+
 - ✅ **Optimized Elfsight AI Chatbot** (320px max width on desktop, 280px on mobile)
 - ✅ **Desktop Spacing Optimization** for professional layout
 - ✅ **Responsive Design** across all devices
@@ -81,6 +88,7 @@ After deployment, verify:
 ### Common Issues & Solutions:
 
 1. **Build Fails:**
+
    ```bash
    # Clear cache and reinstall
    rm -rf node_modules package-lock.json
@@ -89,10 +97,12 @@ After deployment, verify:
    ```
 
 2. **SPA Routing Issues:**
+
    - Verify `vercel.json` exists with rewrites configuration ✅
    - Check that all routes are properly defined in React Router ✅
 
 3. **Environment Variables:**
+
    - Add them in Vercel Dashboard → Project → Settings → Environment Variables
    - Ensure they start with `VITE_` prefix for client-side access
 
