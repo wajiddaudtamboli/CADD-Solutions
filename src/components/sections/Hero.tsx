@@ -10,16 +10,16 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-accent/5 dark:from-primary/10 dark:via-background dark:to-accent/10 transition-colors duration-500 relative overflow-hidden"
-      style={{ paddingTop: 'clamp(60px, 8vh, 80px)', paddingBottom: 'clamp(40px, 6vh, 60px)' }}
+      className="min-h-[60vh] lg:min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-accent/5 dark:from-primary/10 dark:via-background dark:to-accent/10 transition-colors duration-500 relative overflow-hidden"
+      style={{ paddingTop: 'clamp(40px, 4vh, 60px)', paddingBottom: 'clamp(20px, 3vh, 40px)' }}
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      <div className="container grid lg:grid-cols-2 gap-8 lg:gap-16 items-center px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl mx-auto">
+      <div className="container grid lg:grid-cols-2 gap-4 lg:gap-8 items-center px-4 sm:px-6 lg:px-8 xl:px-12 max-w-7xl mx-auto">
         {/* Left Content */}
-        <motion.div className="space-y-6" initial={{
+        <motion.div className="space-y-3 lg:space-y-6" initial={{
         opacity: 0,
         x: -50
       }} animate={{

@@ -84,13 +84,14 @@ const OurValues = () => {
           duration: 0.8
         }} viewport={{
           once: true
-        }} className="flex justify-center hidden lg:flex">
-            <div className="relative w-full max-w-md">
-              <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-2xl border-4 border-red-200 dark:border-blue-400">
+        }} className="flex justify-center">
+            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+              <div className="bg-white dark:bg-gray-800 p-3 sm:p-4 lg:p-6 rounded-2xl shadow-2xl border-4 border-red-200 dark:border-blue-400">
                 <img
                   src="https://res.cloudinary.com/duhhsnbwh/image/upload/v1760609583/caddemployees_xshmbi.jpg"
                   alt="CADD Solutions Team"
                   className="w-full h-auto rounded-xl object-cover"
+                  loading="lazy"
                 />
               </div>
               <div className="absolute -inset-4 bg-gradient-to-r from-red-400 to-pink-400 dark:from-blue-500 dark:to-purple-500 rounded-3xl -z-10 blur-lg opacity-30"></div>

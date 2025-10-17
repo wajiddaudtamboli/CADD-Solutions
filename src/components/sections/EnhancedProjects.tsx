@@ -170,8 +170,13 @@ const EnhancedProjects = () => {
               Take a look at some of our works and office moments! Visit our full gallery to explore more.
             </p>
 
-            <div className="block lg:hidden mb-6">
-              <img src="/imgs/portfolio/caddemployees.jpg" alt="CADD Solutions Team" className="w-full max-w-md mx-auto rounded-xl shadow-lg border-2 border-red-200 dark:border-blue-400" />
+            <div className="mb-6 flex justify-center">
+              <img
+                src="https://res.cloudinary.com/duhhsnbwh/image/upload/v1760609583/caddemployees_xshmbi.jpg"
+                alt="CADD Solutions Team"
+                className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto rounded-xl shadow-lg border-2 border-red-200 dark:border-blue-400 object-cover h-auto"
+                loading="lazy"
+              />
             </div>
 
             <Button onClick={() => window.open('https://www.justdial.com/Solapur/CADD-Solutions-Near-Dawat-Chowk-Above-Sudha-Uphargrha-Opposite-Vasundhara-College-Jule-Solapur/9999PX217-X217-180630164209-L6I6_BZDET/gallery', '_blank')} variant="outline" className="border-red-500 text-red-600 hover:bg-red-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-900/20">
