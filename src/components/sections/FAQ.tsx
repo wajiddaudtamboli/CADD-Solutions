@@ -35,7 +35,7 @@ const FAQ = () => {
   const toggleItem = (index: number) => {
     setOpenItems(prev => prev.includes(index) ? prev.filter(item => item !== index) : [...prev, index]);
   };
-  return <section className="professional-section bg-gradient-to-br from-gray-50 via-yellow-50 to-amber-50 dark:from-gray-900 dark:via-yellow-900 dark:to-amber-900 transition-colors duration-300">
+  return <section className="professional-section py-4 lg:py-6 bg-gradient-to-br from-gray-50 via-yellow-50 to-amber-50 dark:from-gray-900 dark:via-yellow-900 dark:to-amber-900 transition-colors duration-300">
       <div className="professional-container">
         <motion.div initial={{
         opacity: 0,
@@ -47,7 +47,7 @@ const FAQ = () => {
         duration: 0.6
       }} viewport={{
         once: true
-      }} className="text-center mb-8">
+      }} className="text-center mb-4 lg:mb-6">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
             Frequently Asked Questions
           </h2>

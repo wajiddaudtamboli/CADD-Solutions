@@ -7,11 +7,18 @@ const Hero = () => {
   const {
     translations
   } = useLanguage();
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section
       id="home"
-      className="min-h-[60vh] lg:min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-accent/5 dark:from-primary/10 dark:via-background dark:to-accent/10 transition-colors duration-500 relative overflow-hidden"
-      style={{ paddingTop: 'clamp(40px, 4vh, 60px)', paddingBottom: 'clamp(20px, 3vh, 40px)' }}
+      className="flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-accent/5 dark:from-primary/10 dark:via-background dark:to-accent/10 transition-colors duration-500 relative overflow-hidden py-6 lg:py-8"
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
@@ -27,7 +34,7 @@ const Hero = () => {
         x: 0
       }} transition={{
         duration: 0.8
-      }}>
+        }}>
           <motion.h1 className="professional-heading" initial={{
           opacity: 0,
           y: 20
@@ -41,19 +48,22 @@ const Hero = () => {
               <span key={index}>
                 {part}
                 {index === 0 && (
-                  <span
-                    className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-gradient"
-                    style={{ backgroundSize: '200% 200%' }}
-                  >
-                    CAD & Engineering
-                  </span>
+                  <>
+                    <span
+                      className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-gradient"
+                      style={{ backgroundSize: '200% 200%' }}
+                    >
+                      CAD
+                    </span>
+                    <span className="text-gray-900 dark:text-white">
+                      {" & Engineering"}
+                    </span>
+                  </>
                 )}
               </span>
             ))}
-          </motion.h1>
-
-          <motion.p
-            className="professional-text text-xl lg:text-2xl"
+          </motion.h1>          <motion.p
+            className="professional-text text-xl lg:text-2xl text-gray-700 dark:text-white"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -69,11 +79,18 @@ const Hero = () => {
         }} transition={{
           delay: 0.6
         }}>
-            <Button className="professional-button group">
+            <Button 
+              className="professional-button group"
+              onClick={() => scrollToSection('about')}
+            >
               <span className="relative z-10">{translations.hero.getStarted}</span>
               <ArrowRight size={20} className="relative z-10 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline" className="px-8 py-4 rounded-xl border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 group">
+            <Button 
+              variant="outline" 
+              className="px-8 py-4 rounded-xl border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 group"
+              onClick={() => scrollToSection('portfolio')}
+            >
               <Play size={20} className="group-hover:scale-110 transition-transform" />
               {translations.hero.watchDemo}
             </Button>
@@ -87,15 +104,15 @@ const Hero = () => {
           delay: 0.8
         }}>
             <div className="text-center">
-              <div className="professional-stats">500+</div>
+              <div className="professional-stats">5000+</div>
               <div className="text-sm opacity-80">{translations.hero.studentsCount}</div>
             </div>
             <div className="text-center">
-              <div className="professional-stats">15+</div>
+              <div className="professional-stats">20+</div>
               <div className="text-sm opacity-80">{translations.hero.coursesCount}</div>
             </div>
             <div className="text-center">
-              <div className="professional-stats">95%</div>
+              <div className="professional-stats">99%</div>
               <div className="text-sm opacity-80">{translations.hero.successRate}</div>
             </div>
           </motion.div>

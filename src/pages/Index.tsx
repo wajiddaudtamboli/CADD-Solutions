@@ -7,6 +7,7 @@ import EnhancedServices from '@/components/sections/EnhancedServices';
 
 import AboutCompany from '@/components/sections/AboutCompany';
 import EnhancedProjects from '@/components/sections/EnhancedProjects';
+import OurLeadership from '@/components/sections/OurLeadership';
 import OurValues from '@/components/sections/OurValues';
 import Testimonials from '@/components/sections/Testimonials';
 import ReviewSummary from '@/components/sections/ReviewSummary';
@@ -19,7 +20,7 @@ import { ScrollToTop } from '@/components/ui/scroll-to-top';
 const Index = () => {
   return (
     <motion.div
-      className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-accent/5 transition-colors duration-500"
+      className="bg-gradient-to-br from-background via-primary/5 to-accent/5 transition-colors duration-500"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -30,6 +31,7 @@ const Index = () => {
 
       <AboutCompany />
       <EnhancedProjects />
+      <OurLeadership />
       <OurValues />
       <Testimonials />
       <ReviewSummary />

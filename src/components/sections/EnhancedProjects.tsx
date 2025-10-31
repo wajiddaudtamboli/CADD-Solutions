@@ -99,7 +99,7 @@ const EnhancedProjects = () => {
     image: 'https://res.cloudinary.com/duhhsnbwh/image/upload/v1760609576/28_m1bw5t.jpg',
     title: 'House Floor Plan – AutoCAD + Revit Architecture Integration'
   }, ];
-  return <section id="portfolio" className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-gray-50 via-red-50 to-pink-50 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900 transition-colors duration-300 bg-orange-400">
+  return <section id="portfolio" className="py-4 lg:py-6 bg-gradient-to-br from-gray-50 via-red-50 to-pink-50 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900 transition-colors duration-300 bg-orange-400">
       <div className="container mx-auto px-4">
         <motion.div initial={{
         opacity: 0,
@@ -162,26 +162,30 @@ const EnhancedProjects = () => {
           </Button>
 
           {/* Gallery Section */}
-          <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 border border-red-200 dark:border-blue-400">
-            <h3 className="text-2xl font-bold text-center mb-6 text-gray-800 dark:text-white">
+          <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-red-200 dark:border-blue-400">
+            <h3 className="text-2xl font-bold text-center mb-4 lg:mb-6 text-gray-800 dark:text-white">
               📸 Our Gallery
             </h3>
-            <p className="text-center text-gray-600 dark:text-gray-300 mb-6">
+            <p className="text-center text-gray-600 dark:text-gray-300 mb-4 lg:mb-6">
               Take a look at some of our works and office moments! Visit our full gallery to explore more.
             </p>
 
-            <div className="mb-6 flex justify-center">
-              <img
-                src="https://res.cloudinary.com/duhhsnbwh/image/upload/v1760609576/caddposter_zbljby.jpg"
-                alt="CADD Solutions"
-                className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto rounded-xl shadow-lg border-2 border-red-200 dark:border-blue-400 object-cover h-auto"
-                loading="lazy"
-              />
+            <div className="mb-4 lg:mb-6 flex justify-center items-center">
+              <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+                <img
+                  src="https://res.cloudinary.com/duhhsnbwh/image/upload/v1761888803/WhatsApp_Image_2025-10-18_at_12.19.48_ce9d3d27_qv5kbs.jpg"
+                  alt="CADD Solutions Gallery"
+                  className="w-full rounded-xl shadow-lg border-2 border-red-200 dark:border-blue-400 object-cover"
+                  loading="lazy"
+                />
+              </div>
             </div>
 
-            <Button onClick={() => window.open('https://www.justdial.com/Solapur/CADD-Solutions-Near-Dawat-Chowk-Above-Sudha-Uphargrha-Opposite-Vasundhara-College-Jule-Solapur/9999PX217-X217-180630164209-L6I6_BZDET/gallery', '_blank')} variant="outline" className="border-red-500 text-red-600 hover:bg-red-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-900/20">
-              👉 Click here to view our complete Gallery 📷
-            </Button>
+            <div className="flex justify-center">
+              <Button onClick={() => window.open('https://www.justdial.com/Solapur/CADD-Solutions-Near-Dawat-Chowk-Above-Sudha-Uphargrha-Opposite-Vasundhara-College-Jule-Solapur/9999PX217-X217-180630164209-L6I6_BZDET/gallery', '_blank')} variant="outline" className="border-red-500 text-red-600 hover:bg-red-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-900/20">
+                👉 Click here to view our complete Gallery 📷
+              </Button>
+            </div>
           </div>
         </motion.div>
       </div>

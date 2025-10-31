@@ -37,7 +37,7 @@ const EnhancedContact = () => {
     const whatsappURL = `https://api.whatsapp.com/send?phone=${selectedNumber}&text=${message}&source=&data=&app_absent=0`;
     window.open(whatsappURL, "_blank");
   };
-    return <section id="contact" className="py-6 md:py-8 lg:py-12 bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700 transition-all duration-300">
+    return <section id="contact" className="py-4 lg:py-6 bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700 transition-all duration-300">
       <div className="container mx-auto px-4 lg:px-6 max-w-7xl">
         <motion.div initial={{
         opacity: 0,
@@ -49,7 +49,7 @@ const EnhancedContact = () => {
         duration: 0.6
         }} viewport={{
         once: true
-      }} className="text-center mb-6 md:mb-8 lg:mb-10">
+      }} className="text-center mb-4 lg:mb-6">
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-4 lg:mb-6">
             <MapPin className="w-5 h-5 text-blue-600 dark:text-blue-400" />
             <span className="text-sm font-medium text-blue-800 dark:text-blue-300">Professional Training Centers</span>
@@ -63,7 +63,7 @@ const EnhancedContact = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
           {/* Contact Information with Media Frame */}
           <motion.div initial={{
           opacity: 0,
@@ -95,9 +95,18 @@ const EnhancedContact = () => {
                     </div>
                     <div className="flex-1">
                       <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Solapur Training Center</h4>
-                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
                         CADD Solutions, 42, 1st Floor, Apurva Building, Near Jumbo Xerox, Saat Rasta, Solapur - 413001
                       </p>
+                      <div className="flex items-center gap-2">
+                        <Phone className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                        <a 
+                          href="tel:+919689044025" 
+                          className="text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                        >
+                          +91 96890 44025
+                        </a>
+                      </div>
                     </div>
                   </div>
                   <a
@@ -119,9 +128,18 @@ const EnhancedContact = () => {
                     </div>
                     <div className="flex-1">
                       <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Karad Training Center</h4>
-                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
                         CADD Solutions, Dargah Mohalla, Mangalwar Peth Karad, Karad, Maharashtra 415110
                       </p>
+                      <div className="flex items-center gap-2">
+                        <Phone className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                        <a 
+                          href="tel:+917722082626" 
+                          className="text-indigo-600 dark:text-indigo-400 font-semibold hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
+                        >
+                          +91 77220 82626
+                        </a>
+                      </div>
                     </div>
                   </div>
                   <a
@@ -207,7 +225,12 @@ const EnhancedContact = () => {
                     </div>
                     <div>
                       <div className="text-xs text-green-600 dark:text-green-400 font-medium">Call Us</div>
-                      <div className="text-sm font-semibold text-slate-900 dark:text-white">+91 96890 44025</div>
+                      <a 
+                        href="tel:+919689044025" 
+                        className="text-sm font-semibold text-slate-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors cursor-pointer"
+                      >
+                        +91 96890 44025
+                      </a>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800">
@@ -370,6 +393,31 @@ const EnhancedContact = () => {
                     Send Message
                   </Button>
                 </form>
+
+                {/* Developer Credit */}
+                <motion.div 
+                  className="mt-6 text-center"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <a 
+                    href="https://tech-world-ai.vercel.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                  >
+                    <span>Developer -</span>
+                    <motion.span 
+                      className="font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      Wajid Daud Tamboli
+                    </motion.span>
+                  </a>
+                </motion.div>
               </CardContent>
             </Card>
           </motion.div>

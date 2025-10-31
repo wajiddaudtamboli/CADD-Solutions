@@ -137,7 +137,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', 'Noto Sans Devanagari', 'Noto Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
     line-height: 1.6;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
@@ -157,6 +157,8 @@
     @apply font-bold leading-tight;
     margin-bottom: 0.75rem;
     text-wrap: balance;
+    font-feature-settings: 'kern' 1;
+    text-rendering: optimizeLegibility;
   }
   h1 {
     @apply text-5xl lg:text-7xl xl:text-8xl font-black tracking-tight;
@@ -166,6 +168,23 @@
   }
   h3 {
     @apply text-3xl lg:text-5xl font-bold tracking-tight;
+  }
+  
+  /* Devanagari Script Support (Hindi/Marathi) */
+  *[lang="hi"],
+  *[lang="mr"] {
+    font-family: 'Noto Sans Devanagari', 'Noto Sans', system-ui, sans-serif;
+    letter-spacing: 0.01em;
+    word-spacing: 0.05em;
+  }
+  
+  /* Better rendering for Devanagari in headings */
+  h1[lang="hi"], h1[lang="mr"],
+  h2[lang="hi"], h2[lang="mr"],
+  h3[lang="hi"], h3[lang="mr"] {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
   }
   /* Focus improvements for accessibility */
   *:focus-visible {
@@ -254,7 +273,19 @@
     width: 100%;
     max-width: 100%;
     word-wrap: break-word;
+    font-feature-settings: 'kern' 1;
+    text-rendering: optimizeLegibility;
   }
+  
+  /* Devanagari support for professional headings */
+  .professional-heading:lang(hi),
+  .professional-heading:lang(mr) {
+    font-family: 'Noto Sans Devanagari', 'Noto Sans', sans-serif;
+    letter-spacing: 0;
+    line-height: 1.3;
+    font-weight: 800;
+  }
+  
   .professional-subheading {
     @apply text-lg sm:text-2xl lg:text-3xl font-semibold mb-4;
     background: linear-gradient(135deg, #d4af37, #b8860b);
@@ -265,7 +296,19 @@
     width: 100%;
     max-width: 100%;
     word-wrap: break-word;
+    font-feature-settings: 'kern' 1;
+    text-rendering: optimizeLegibility;
   }
+  
+  /* Devanagari support for professional subheadings */
+  .professional-subheading:lang(hi),
+  .professional-subheading:lang(mr) {
+    font-family: 'Noto Sans Devanagari', 'Noto Sans', sans-serif;
+    letter-spacing: 0;
+    line-height: 1.4;
+    font-weight: 700;
+  }
+  
   .professional-text {
     @apply text-sm sm:text-lg leading-relaxed text-center max-w-4xl mx-auto px-2;
     color: rgb(107 114 128);
@@ -274,8 +317,15 @@
     box-sizing: border-box;
     word-wrap: break-word;
   }
+  
+  /* Devanagari support for professional text */
+  .professional-text:lang(hi),
+  .professional-text:lang(mr) {
+    font-family: 'Noto Sans Devanagari', 'Noto Sans', sans-serif;
+    line-height: 1.8;
+  }
   .dark .professional-text {
-    color: rgb(220 38 38 / 0.8);
+    color: rgb(255 255 255);
   }
   .professional-card {
     @apply backdrop-blur-sm shadow-xl border p-4 sm:p-8 hover:shadow-2xl transition-all duration-300;
@@ -647,10 +697,12 @@ body.navigation-optimized {
     overflow-x: hidden;
   }
 
-  /* Section spacing optimization */
+  /* Section spacing optimization - AGGRESSIVE TIGHTENING */
   section {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
   }
 
   /* Container and wrapper optimization */
@@ -659,78 +711,184 @@ body.navigation-optimized {
   .mx-auto {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
 
-  /* Reduce section padding for tighter layout */
-  .py-8,
-  .py-12,
-  .py-16,
+  /* Reduce all vertical padding classes aggressively */
+  .py-4 {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  .py-6 {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+  .py-8 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  .py-12 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  .py-16 {
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+  }
   .py-20 {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+  }
+  .py-24 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
   }
 
-  .md\\:py-12,
-  .lg\\:py-16,
+  /* Responsive padding classes */
+  .md\\:py-8,
+  .md\\:py-12 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  .lg\\:py-12,
+  .lg\\:py-16 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
   .lg\\:py-20 {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
   }
 
   /* Stack elements tightly */
+  .space-y-4 > * + * {
+    margin-top: 0.5rem !important;
+  }
+  .space-y-6 > * + * {
+    margin-top: 0.75rem !important;
+  }
   .space-y-8 > * + * {
-    margin-top: 1.5rem !important;
+    margin-top: 1rem !important;
   }
-
   .space-y-12 > * + * {
-    margin-top: 2rem !important;
+    margin-top: 1rem !important;
   }
-
   .space-y-16 > * + * {
-    margin-top: 2.5rem !important;
+    margin-top: 1rem !important;
   }
 
   /* Grid and flex gap optimization */
+  .gap-4 {
+    gap: 0.75rem !important;
+  }
+  .gap-6 {
+    gap: 1rem !important;
+  }
+  .gap-8 {
+    gap: 1rem !important;
+  }
   .gap-12,
   .lg\\:gap-16 {
-    gap: 2rem !important;
+    gap: 1.25rem !important;
   }
 
-  .gap-8 {
-    gap: 1.5rem !important;
+  /* Remove excessive margins from all elements */
+  .mb-4 {
+    margin-bottom: 0.5rem !important;
   }
-
-  /* Remove excessive margins from headings and content */
-  .mb-8,
-  .mb-12,
+  .mb-6 {
+    margin-bottom: 0.5rem !important;
+  }
+  .mb-8 {
+    margin-bottom: 0.75rem !important;
+  }
+  .mb-12 {
+    margin-bottom: 0.75rem !important;
+  }
   .mb-16 {
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .mb-20,
+  .mb-24 {
+    margin-bottom: 1rem !important;
   }
 
-  .md\\:mb-12,
+  .md\\:mb-8,
+  .md\\:mb-12 {
+    margin-bottom: 0.75rem !important;
+  }
+  .lg\\:mb-12,
   .lg\\:mb-16 {
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 1rem !important;
   }
 
-  .mt-8,
-  .mt-12,
+  .mt-4 {
+    margin-top: 0.5rem !important;
+  }
+  .mt-6 {
+    margin-top: 0.5rem !important;
+  }
+  .mt-8 {
+    margin-top: 0.75rem !important;
+  }
+  .mt-12 {
+    margin-top: 0.75rem !important;
+  }
   .mt-16 {
-    margin-top: 1.5rem !important;
+    margin-top: 1rem !important;
+  }
+  .mt-20,
+  .mt-24 {
+    margin-top: 1rem !important;
   }
 
-  .md\\:mt-12,
+  .md\\:mt-8,
+  .md\\:mt-12 {
+    margin-top: 0.75rem !important;
+  }
+  .lg\\:mt-12,
   .lg\\:mt-16 {
-    margin-top: 1.5rem !important;
+    margin-top: 1rem !important;
+  }
+
+  /* Vertical margin combinations */
+  .my-4 {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .my-6 {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .my-8 {
+    margin-top: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .my-12 {
+    margin-top: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .my-16,
+  .my-20,
+  .my-24 {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
   }
 
   /* Card and component spacing */
-  .p-8,
-  .p-12 {
-    padding: 1.5rem !important;
+  .p-6 {
+    padding: 1rem !important;
   }
-
+  .p-8 {
+    padding: 1rem !important;
+  }
+  .p-12 {
+    padding: 1.25rem !important;
+  }
+  .lg\\:p-8,
   .lg\\:p-12 {
-    padding: 1.5rem !important;
+    padding: 1.25rem !important;
   }
 
   /* Remove min-height that creates unwanted space */
@@ -749,34 +907,49 @@ body.navigation-optimized {
   /* Professional spacing for components */
   .professional-spacing,
   .spacing-section {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
   }
 
   .professional-margin,
   .spacing-content {
-    margin-top: 1rem !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .professional-container {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .professional-section {
     margin-bottom: 1rem !important;
   }
 
-  /* Contact section specific optimization */
-  #contact {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
+  /* Section-specific optimizations */
+  #contact,
+  #services,
+  #products,
+  #projects,
+  #about,
+  #testimonials,
+  #faq {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
   }
 
-  /* Hero section optimization */
+  /* Hero section optimization - Remove vh-based heights */
   .hero-section,
-  #hero {
-    padding-top: 3rem !important;
-    padding-bottom: 2rem !important;
+  #hero,
+  #home {
+    min-height: auto !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1rem !important;
   }
 
   /* Remove viewport height dependencies */
-  .h-screen,
-  .min-h-screen {
+  .h-screen {
     height: auto !important;
-    min-height: auto !important;
   }
 
   /* Ensure no extra space from flexbox */
@@ -786,11 +959,12 @@ body.navigation-optimized {
 
   /* Optimize grid layouts */
   .grid {
-    gap: 1.5rem !important;
+    gap: 1rem !important;
   }
-
-  .lg\\:grid-cols-2 {
-    gap: 2rem !important;
+  .lg\\:grid-cols-2,
+  .lg\\:grid-cols-3,
+  .lg\\:grid-cols-4 {
+    gap: 1rem !important;
   }
 
   /* Remove transform spacing issues */
@@ -802,49 +976,12 @@ body.navigation-optimized {
   .leading-relaxed {
     line-height: 1.5 !important;
   }
-
   .leading-tight {
     line-height: 1.25 !important;
   }
 
-  /* Additional desktop spacing tightening */
-  section {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-  }
-
-  /* Hero section specific */
-  .hero-section {
-    min-height: auto !important;
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
-  }
-
-  /* Remove extra spacing from containers */
-  .container {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  /* Tighten grid gaps */
-  .grid {
-    gap: 1rem !important;
-  }
-
-  /* Remove flex spacing */
-  .flex {
-    gap: 0.5rem !important;
-  }
-
-  /* Stats section tightening */
-  .stats-section {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-  }
-
-  /* Gallery and testimonials */
+  /* Stats, gallery, and testimonials sections */
+  .stats-section,
   .gallery-section,
   .testimonials-section {
     margin-top: 0 !important;
@@ -853,88 +990,44 @@ body.navigation-optimized {
     padding-bottom: 1rem !important;
   }
 
-  /* Hero section specific targeting */
-  [id='home'] {
-    min-height: 70vh !important;
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
+  /* Remove flex and items-center that add height */
+  section.flex {
+    min-height: auto !important;
   }
 
-  /* Remove excessive py classes */
-  .py-8 {
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-  }
-  .py-12 {
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
-  }
-  .py-16 {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
-  }
-  .py-20 {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
-  }
-  .py-24 {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
+  /* Target framer-motion divs that wrap sections */
+  .motion-div,
+  [class*='motion'] {
+    min-height: auto !important;
   }
 
-  /* Remove excessive margin classes */
-  .my-8 {
+  /* Specific targeting for all section wrappers */
+  div[className*='min-h'] {
+    min-height: auto !important;
+  }
+
+  /* Remove bottom padding from sections that stack */
+  section + section {
+    padding-top: 1rem !important;
+  }
+
+  /* Tighten heading margins */
+  h1, h2, h3, h4, h5, h6 {
     margin-top: 0.5rem !important;
     margin-bottom: 0.5rem !important;
   }
-  .my-12 {
-    margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
-  }
-  .my-16 {
-    margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
-  }
-  .my-20 {
-    margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
-  }
-  .my-24 {
-    margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
+
+  .professional-heading {
+    margin-bottom: 0.75rem !important;
   }
 
-  /* Specific spacing for common components */
-  .mb-8 {
+  .professional-subheading {
     margin-bottom: 0.5rem !important;
   }
-  .mb-12 {
-    margin-bottom: 1rem !important;
-  }
-  .mb-16 {
-    margin-bottom: 1rem !important;
-  }
-  .mb-20 {
-    margin-bottom: 1rem !important;
-  }
-  .mb-24 {
-    margin-bottom: 1rem !important;
-  }
 
-  .mt-8 {
-    margin-top: 0.5rem !important;
-  }
-  .mt-12 {
-    margin-top: 1rem !important;
-  }
-  .mt-16 {
-    margin-top: 1rem !important;
-  }
-  .mt-20 {
-    margin-top: 1rem !important;
-  }
-  .mt-24 {
-    margin-top: 1rem !important;
+  /* Remove extra space from Framer Motion wrappers */
+  [class*='framer'] {
+    margin: 0 !important;
   }
 }
 

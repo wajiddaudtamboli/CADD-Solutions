@@ -80,8 +80,22 @@ const Footer = () => {
               </div>
               <h3 className="text-lg font-semibold text-white">Call Us</h3>
               <div className="text-gray-300 text-sm space-y-1">
-                <p>+91 96890 44025</p>
-                <p>+91 77220 82626</p>
+                <motion.a 
+                  href="tel:+919689044025" 
+                  className="block hover:text-green-400 transition-colors duration-300 cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  +91 96890 44025
+                </motion.a>
+                <motion.a 
+                  href="tel:+917722082626" 
+                  className="block hover:text-green-400 transition-colors duration-300 cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  +91 77220 82626
+                </motion.a>
               </div>
             </div>
 
@@ -157,11 +171,15 @@ const Footer = () => {
         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
       >
         <div className="flex items-center justify-center h-full px-2 sm:px-3">
-          <motion.div
-            className="flex items-center space-x-1 sm:space-x-2 text-center"
+          <motion.a
+            href="https://tech-world-ai.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-1 sm:space-x-2 text-center cursor-pointer"
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
+            whileHover={{ scale: 1.02 }}
           >
             <span className="text-gray-300 font-medium text-xs sm:text-sm">
               Developer -
@@ -173,7 +191,7 @@ const Footer = () => {
             >
               Wajid Daud Tamboli
             </motion.span>
-          </motion.div>
+          </motion.a>
         </div>
 
         {/* Animated bottom border */}

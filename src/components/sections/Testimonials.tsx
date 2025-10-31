@@ -24,9 +24,9 @@ const Testimonials = () => {
     content: "Best for CAD & CAE training, got placed successfully! The practical experience gained here was invaluable for my career growth.",
     rating: 5
   }];
-  return <section className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-blue-50 to-purple-50">
+  return <section className="py-4 lg:py-6 bg-gradient-to-br from-blue-50 to-purple-50">
       <div className="container mx-auto px-4">
-        <motion.div className="text-center mb-8 md:mb-12" initial={{
+        <motion.div className="text-center mb-4 lg:mb-6" initial={{
         opacity: 0,
         y: 20
       }} whileInView={{
@@ -37,13 +37,13 @@ const Testimonials = () => {
       }} viewport={{
         once: true
       }}>
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">What Our Students Say</h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-2 lg:mb-3">What Our Students Say</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Success stories from our graduates who are now thriving in their careers
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
           {testimonials.map((testimonial, index) => <motion.div key={testimonial.name} initial={{
           opacity: 0,
           y: 20

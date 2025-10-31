@@ -33,6 +33,25 @@
     "projectMgmt": "Project Management",
     "projectDescription": "Professional project planning and management tools"
   },
+  "leadership": {
+    "title": "Our Leadership",
+    "subtitle": "Meet the visionary leaders who drive our mission of excellence in technical education and innovation.",
+    "bottomText": "Together, our leadership team brings decades of experience in technical education, industry expertise, and a shared commitment to student success.",
+    "leaders": [
+      {
+        "name": "Mahibub Tamboli",
+        "role": "CEO & HR",
+        "organization": "CADD Solutions",
+        "description": "Visionary leader driving excellence in technical education"
+      },
+      {
+        "name": "Mujahid Fulmamadi",
+        "role": "Manager",
+        "organization": "CADD Solutions",
+        "description": "Experienced manager ensuring operational excellence"
+      }
+    ]
+  },
   "footer": {
     "company": "CADD Solutions",
     "description": "Professional training institute for CAD, CAE, Programming, and Engineering design courses.",

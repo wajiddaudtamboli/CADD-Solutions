@@ -2,9 +2,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { motion } from 'framer-motion';
 import { Award, MapPin, Star, Users } from 'lucide-react';
 const ReviewSummary = () => {
-  return <section className="py-8 md:py-12 lg:py-16 bg-white">
+  return <section className="py-4 lg:py-6 bg-white">
       <div className="container mx-auto px-4">
-                <motion.div className="text-center mb-8 md:mb-12" initial={{
+                <motion.div className="text-center mb-4 lg:mb-6" initial={{
         opacity: 0,
         y: 20
       }} whileInView={{
@@ -15,10 +15,10 @@ const ReviewSummary = () => {
       }} viewport={{
         once: true
       }}>
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">📍 CADD SOLUTIONS - Location Review</h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-2 lg:mb-3">📍 CADD SOLUTIONS - Location Review</h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
           <motion.div className="space-y-6" initial={{
           opacity: 0,
           x: -50
@@ -43,7 +43,7 @@ const ReviewSummary = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <Users className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                    <span className="font-semibold text-gray-900 dark:text-white">500+ Students</span>
+                    <span className="font-semibold text-gray-900 dark:text-white">5000+ Students</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Award className="w-5 h-5 text-green-600 dark:text-green-400" />

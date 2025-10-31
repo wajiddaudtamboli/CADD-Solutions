@@ -9,9 +9,9 @@ const AboutCompany = () => {
   };
 
   return (
-    <section id="about" className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-red-50 via-pink-50 to-rose-50 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900 transition-colors duration-300">
+    <section id="about" className="py-4 lg:py-6 bg-gradient-to-br from-red-50 via-pink-50 to-rose-50 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900 transition-colors duration-300">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
           {/* Content Section */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -39,7 +39,7 @@ const AboutCompany = () => {
                   whileHover={{ scale: 1.05 }}
                 >
                   <Users className="w-8 h-8 mx-auto mb-2 text-red-600 dark:text-blue-400" />
-                  <div className="text-2xl font-bold text-red-600 dark:text-blue-400">500+</div>
+                  <div className="text-2xl font-bold text-red-600 dark:text-blue-400">5000+</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">Students Trained</div>
                 </motion.div>
 
@@ -48,7 +48,7 @@ const AboutCompany = () => {
                   whileHover={{ scale: 1.05 }}
                 >
                   <Award className="w-8 h-8 mx-auto mb-2 text-red-600 dark:text-blue-400" />
-                  <div className="text-2xl font-bold text-red-600 dark:text-blue-400">15+</div>
+                  <div className="text-2xl font-bold text-red-600 dark:text-blue-400">20+</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">Courses Offered</div>
                 </motion.div>
 
@@ -57,7 +57,7 @@ const AboutCompany = () => {
                   whileHover={{ scale: 1.05 }}
                 >
                   <Target className="w-8 h-8 mx-auto mb-2 text-red-600 dark:text-blue-400" />
-                  <div className="text-2xl font-bold text-red-600 dark:text-blue-400">95%</div>
+                  <div className="text-2xl font-bold text-red-600 dark:text-blue-400">99%</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">Success Rate</div>
                 </motion.div>
               </div>

@@ -123,9 +123,9 @@ const EnhancedServices = () => {
         </h4>
       </a>
     </motion.div>;
-    return <div className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-background via-primary/5 to-accent/5 transition-colors duration-500">
+    return <div className="py-4 lg:py-6 bg-gradient-to-br from-background via-primary/5 to-accent/5 transition-colors duration-500">
       {/* CAD Services Section */}
-      <section id="services" className="relative overflow-hidden">
+      <section id="services" className="relative overflow-hidden py-4 lg:py-6">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10"></div>
         <div className="professional-container relative z-10">
           <motion.div initial={{
@@ -138,21 +138,21 @@ const EnhancedServices = () => {
           duration: 0.6
         }} viewport={{
           once: true
-        }} className="text-center spacing-content">
-            <h2 className="professional-heading">
+        }} className="text-center spacing-content mb-4 lg:mb-6">
+            <h2 className="professional-heading mb-2 lg:mb-3">
               PROFESSIONAL CAD & ENGINEERING SERVICES
             </h2>
             <p className="professional-text">Industry-standard software training with hands-on experience</p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-6">
             {cadServices.map((service, index) => <ServiceCard key={service.name} service={service} index={index} />)}
           </div>
         </div>
       </section>
 
       {/* Software Development Section */}
-      <section id="software-courses" className="pb-8 md:pb-12 lg:pb-16 relative overflow-hidden">
+      <section id="software-courses" className="py-4 lg:py-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-primary/10"></div>
         <div className="professional-container relative z-10">
           <motion.div initial={{
@@ -165,14 +165,14 @@ const EnhancedServices = () => {
           duration: 0.6
         }} viewport={{
           once: true
-        }} className="text-center spacing-content">
-            <h2 className="professional-heading">
+        }} className="text-center spacing-content mb-4 lg:mb-6">
+            <h2 className="professional-heading mb-2 lg:mb-3">
               SOFTWARE DEVELOPMENT COURSES
             </h2>
             <p className="professional-text">Master programming languages & data science with real-world projects</p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 lg:gap-6">
             {softwareServices.map((service, index) => <ServiceCard key={service.name} service={service} index={index} />)}
           </div>
         </div>

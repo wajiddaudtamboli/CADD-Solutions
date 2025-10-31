@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { Award, Heart, Star, Target } from 'lucide-react';
 const OurValues = () => {
-  return <section className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-white via-red-50 to-pink-50 dark:from-gray-800 dark:via-blue-800 dark:to-indigo-800 transition-colors duration-300">
+  return <section className="py-4 lg:py-6 bg-gradient-to-br from-white via-red-50 to-pink-50 dark:from-gray-800 dark:via-blue-800 dark:to-indigo-800 transition-colors duration-300">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
           {/* Text Content */}
           <motion.div initial={{
           opacity: 0,
