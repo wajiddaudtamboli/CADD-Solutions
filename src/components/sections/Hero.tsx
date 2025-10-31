@@ -63,7 +63,7 @@ const Hero = () => {
               </span>
             ))}
           </motion.h1>          <motion.p
-            className="professional-text text-xl lg:text-2xl text-gray-700 dark:text-white"
+            className="professional-text text-xl lg:text-2xl text-gray-700 dark:text-white language-spacing text-overflow-wrap"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}

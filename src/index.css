@@ -1122,3 +1122,146 @@ iframe[title*='Training Center']:not([src]) {
     min-height: 350px !important;
   }
 }
+
+/* Text overflow handling utilities */
+.text-overflow-wrap {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.training-center-text {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  line-height: 1.6;
+}
+
+.training-center-phone {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  font-family: 'Inter', monospace;
+  letter-spacing: 0.5px;
+}
+
+.address-text {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+  display: block;
+}
+
+/* Responsive container for training centers */
+.training-center-container {
+  min-width: 0;
+  flex: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Better spacing for different languages */
+.language-spacing {
+  margin: 0.25rem 0;
+  line-height: 1.7;
+}
+
+/* Enhanced responsive text for mobile */
+@media (max-width: 640px) {
+  .training-center-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .training-center-phone {
+    font-size: 0.85rem;
+    letter-spacing: 0.3px;
+  }
+  
+  .address-text {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+}
+
+/* Desktop improvements */
+@media (min-width: 1024px) {
+  .training-center-text {
+    line-height: 1.7;
+  }
+  
+  .address-text {
+    max-width: 95%;
+    line-height: 1.6;
+  }
+}
+
+/* Text overflow and wrapping utilities */
+.overflow-wrap-anywhere {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.break-words {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.break-all {
+  word-break: break-all;
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Enhanced responsive text handling for training centers */
+.training-center-text {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  line-height: 1.6;
+}
+
+.training-center-phone {
+  word-break: break-all;
+  font-family: monospace;
+  letter-spacing: 0.5px;
+}
+
+/* Ensure proper spacing in multilingual content */
+.multilingual-spacing {
+  word-spacing: 0.2em;
+  letter-spacing: 0.02em;
+}
+
+/* Better handling for long addresses */
+.address-text {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.7;
+  text-align: left;
+}
+
+@media (max-width: 640px) {
+  .training-center-text {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  
+  .training-center-phone {
+    font-size: 0.8rem;
+  }
+}

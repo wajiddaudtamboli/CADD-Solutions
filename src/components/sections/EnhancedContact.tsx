@@ -89,20 +89,22 @@ const EnhancedContact = () => {
               <CardContent className="p-8 space-y-8">
                 {/* Solapur Location */}
                 <div className="bg-slate-50 dark:bg-slate-700/50 rounded-2xl p-6 border border-slate-200 dark:border-slate-600">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="p-3 bg-blue-100 dark:bg-blue-900/50 rounded-xl">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-4 mb-4">
+                    <div className="p-3 bg-blue-100 dark:bg-blue-900/50 rounded-xl flex-shrink-0">
                       <MapPin className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                     </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Solapur Training Center</h4>
-                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+                    <div className="flex-1 min-w-0 training-center-container">
+                      <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-3 training-center-text">
+                        Solapur Training Center
+                      </h4>
+                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 address-text training-center-text">
                         CADD Solutions, 42, 1st Floor, Apurva Building, Near Jumbo Xerox, Saat Rasta, Solapur - 413001
                       </p>
-                      <div className="flex items-center gap-2">
-                        <Phone className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                      <div className="flex items-start gap-2 mb-2">
+                        <Phone className="w-4 h-4 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-1" />
                         <a 
                           href="tel:+919689044025" 
-                          className="text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                          className="text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 transition-colors training-center-phone"
                         >
                           +91 96890 44025
                         </a>
@@ -122,20 +124,22 @@ const EnhancedContact = () => {
 
                 {/* Karad Location */}
                 <div className="bg-slate-50 dark:bg-slate-700/50 rounded-2xl p-6 border border-slate-200 dark:border-slate-600">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="p-3 bg-indigo-100 dark:bg-indigo-900/50 rounded-xl">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-4 mb-4">
+                    <div className="p-3 bg-indigo-100 dark:bg-indigo-900/50 rounded-xl flex-shrink-0">
                       <MapPin className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
                     </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Karad Training Center</h4>
-                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+                    <div className="flex-1 min-w-0 training-center-container">
+                      <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-3 training-center-text">
+                        Karad Training Center
+                      </h4>
+                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 address-text training-center-text">
                         CADD Solutions, Dargah Mohalla, Mangalwar Peth Karad, Karad, Maharashtra 415110
                       </p>
-                      <div className="flex items-center gap-2">
-                        <Phone className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                      <div className="flex items-start gap-2 mb-2">
+                        <Phone className="w-4 h-4 text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-1" />
                         <a 
                           href="tel:+917722082626" 
-                          className="text-indigo-600 dark:text-indigo-400 font-semibold hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
+                          className="text-indigo-600 dark:text-indigo-400 font-semibold hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors training-center-phone"
                         >
                           +91 77220 82626
                         </a>
