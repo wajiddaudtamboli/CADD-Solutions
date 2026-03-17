@@ -1,0 +1,5 @@
+[submodule "Human-Resource-Management-Laravel"]
+	path = Human-Resource-Management-Laravel
+	url = https://github.com/shamimcse1/Human-Resource-Management-Laravel.git
+	branch = main
+	ignore = dirty
