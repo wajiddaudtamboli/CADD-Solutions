@@ -21,11 +21,10 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       setIsDarkMode(false);
       document.documentElement.classList.remove('dark');
     } else {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setIsDarkMode(prefersDark);
-      if (prefersDark) {
-        document.documentElement.classList.add('dark');
-      }
+      // Default to light mode for first-time visitors.
+      setIsDarkMode(false);
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     }
   }, []);
 

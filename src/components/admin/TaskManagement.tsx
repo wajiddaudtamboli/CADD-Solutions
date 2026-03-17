@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { CheckSquare, Plus, Edit, Trash2, Calendar, User, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -29,11 +29,7 @@ export const TaskManagement: React.FC = () => {
     createdDate: new Date().toISOString().split('T')[0]
   });
 
-  useEffect(() => {
-    loadTasks();
-  }, []);
-
-  const loadTasks = async () => {
+  const loadTasks = useCallback(async () => {
     try {
       setLoading(true);
       const response = await ApiService.getTasks();
@@ -55,7 +51,11 @@ export const TaskManagement: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [toast]);
+
+  useEffect(() => {
+    loadTasks();
+  }, [loadTasks]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

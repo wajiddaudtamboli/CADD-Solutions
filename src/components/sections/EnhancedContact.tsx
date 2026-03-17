@@ -97,8 +97,10 @@ const EnhancedContact = () => {
                       <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-3 training-center-text">
                         Solapur Training Center
                       </h4>
-                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 address-text training-center-text">
-                        CADD Solutions, 42, 1st Floor, Apurva Building, Near Jumbo Xerox, Saat Rasta, Solapur - 413001
+                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 address-text training-center-text whitespace-normal [overflow-wrap:anywhere] max-w-full">
+                        <span className="block">CADD Solutions, 42, 1st Floor, Apurva Building,</span>
+                        <span className="block">Near Jumbo Xerox, Saat Rasta,</span>
+                        <span className="block">Solapur - 413001</span>
                       </p>
                       <div className="flex items-start gap-2 mb-2">
                         <Phone className="w-4 h-4 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-1" />
@@ -132,8 +134,10 @@ const EnhancedContact = () => {
                       <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-3 training-center-text">
                         Karad Training Center
                       </h4>
-                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 address-text training-center-text">
-                        CADD Solutions, Dargah Mohalla, Mangalwar Peth Karad, Karad, Maharashtra 415110
+                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4 address-text training-center-text whitespace-normal [overflow-wrap:anywhere] max-w-full">
+                        <span className="block">CADD Solutions, Dargah Mohalla,</span>
+                        <span className="block">Mangalwar Peth Karad, Karad,</span>
+                        <span className="block">Maharashtra 415110</span>
                       </p>
                       <div className="flex items-start gap-2 mb-2">
                         <Phone className="w-4 h-4 text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-1" />
@@ -221,43 +225,6 @@ const EnhancedContact = () => {
                   </div>
                 </div>
 
-                {/* Contact Information Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="flex items-center gap-3 p-4 bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800">
-                    <div className="p-2 bg-green-100 dark:bg-green-900/50 rounded-lg">
-                      <Phone className="w-5 h-5 text-green-600 dark:text-green-400" />
-                    </div>
-                    <div>
-                      <div className="text-xs text-green-600 dark:text-green-400 font-medium">Call Us</div>
-                      <a 
-                        href="tel:+919689044025" 
-                        className="text-sm font-semibold text-slate-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors cursor-pointer"
-                      >
-                        +91 96890 44025
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800">
-                    <div className="p-2 bg-purple-100 dark:bg-purple-900/50 rounded-lg">
-                      <Mail className="w-5 h-5 text-purple-600 dark:text-purple-400" />
-                    </div>
-                    <div>
-                      <div className="text-xs text-purple-600 dark:text-purple-400 font-medium">Email</div>
-                      <a href="mailto:tambolimahibub@gmail.com" className="text-sm font-semibold text-slate-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-                        Send Message
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 p-4 bg-orange-50 dark:bg-orange-900/20 rounded-xl border border-orange-200 dark:border-orange-800">
-                    <div className="p-2 bg-orange-100 dark:bg-orange-900/50 rounded-lg">
-                      <Clock className="w-5 h-5 text-orange-600 dark:text-orange-400" />
-                    </div>
-                    <div>
-                      <div className="text-xs text-orange-600 dark:text-orange-400 font-medium">Hours</div>
-                      <div className="text-sm font-semibold text-slate-900 dark:text-white">Mon-Sat 9AM-8PM</div>
-                    </div>
-                  </div>
-                </div>
               </CardContent>
             </Card>
           </motion.div>
@@ -336,6 +303,7 @@ const EnhancedContact = () => {
                       <label className="text-sm font-medium text-slate-700 dark:text-slate-300">Training Location</label>
                       <select
                         name="location"
+                        title="Training location"
                         required
                         value={formData.location}
                         onChange={handleInputChange}
@@ -353,6 +321,7 @@ const EnhancedContact = () => {
                       <label className="text-sm font-medium text-slate-700 dark:text-slate-300">Course Interest</label>
                       <select
                         name="inquiryCourse"
+                        title="Course interest"
                         required
                         value={formData.inquiryCourse}
                         onChange={handleInputChange}
@@ -366,6 +335,7 @@ const EnhancedContact = () => {
                       <label className="text-sm font-medium text-slate-700 dark:text-slate-300">Inquiry Type</label>
                       <select
                         name="inquiryType"
+                        title="Inquiry type"
                         required
                         value={formData.inquiryType}
                         onChange={handleInputChange}
@@ -422,6 +392,44 @@ const EnhancedContact = () => {
                     </motion.span>
                   </a>
                 </motion.div>
+
+                {/* Contact Information Grid */}
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="flex items-center gap-3 p-4 bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800">
+                    <div className="p-2 bg-green-100 dark:bg-green-900/50 rounded-lg">
+                      <Phone className="w-5 h-5 text-green-600 dark:text-green-400" />
+                    </div>
+                    <div>
+                      <div className="text-xs text-green-600 dark:text-green-400 font-medium">Call Us</div>
+                      <a
+                        href="tel:+919689044025"
+                        className="text-sm font-semibold text-slate-900 dark:text-white hover:text-green-600 dark:hover:text-green-400 transition-colors cursor-pointer"
+                      >
+                        +91 96890 44025
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800">
+                    <div className="p-2 bg-purple-100 dark:bg-purple-900/50 rounded-lg">
+                      <Mail className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                    </div>
+                    <div>
+                      <div className="text-xs text-purple-600 dark:text-purple-400 font-medium">Email</div>
+                      <a href="mailto:tambolimahibub@gmail.com" className="text-sm font-semibold text-slate-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                        Send Message
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-4 bg-orange-50 dark:bg-orange-900/20 rounded-xl border border-orange-200 dark:border-orange-800">
+                    <div className="p-2 bg-orange-100 dark:bg-orange-900/50 rounded-lg">
+                      <Clock className="w-5 h-5 text-orange-600 dark:text-orange-400" />
+                    </div>
+                    <div>
+                      <div className="text-xs text-orange-600 dark:text-orange-400 font-medium">Hours</div>
+                      <div className="text-sm font-semibold text-slate-900 dark:text-white">Mon-Sat 9AM-8PM</div>
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </motion.div>

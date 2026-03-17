@@ -152,14 +152,12 @@ export const AnalyticsDashboard: React.FC = () => {
                 >
                   <span className="font-medium">{dept.department}</span>
                   <div className="flex items-center gap-2">
-                    <div className="w-24 bg-muted rounded-full h-2">
-                      <div
-                        className="bg-primary h-2 rounded-full"
-                        style={{
-                          width: `${(dept.count / analytics.totalEmployees) * 100}%`
-                        }}
-                      />
-                    </div>
+                    <progress
+                      className="w-24 h-2 rounded-full overflow-hidden [&::-webkit-progress-bar]:bg-muted [&::-webkit-progress-value]:bg-primary [&::-moz-progress-bar]:bg-primary"
+                      value={dept.count}
+                      max={analytics.totalEmployees}
+                      aria-label={`${dept.department} employee share`}
+                    />
                     <span className="text-sm font-medium">{dept.count}</span>
                   </div>
                 </motion.div>
@@ -184,14 +182,12 @@ export const AnalyticsDashboard: React.FC = () => {
                 >
                   <span className="font-medium">{course.course}</span>
                   <div className="flex items-center gap-2">
-                    <div className="w-24 bg-muted rounded-full h-2">
-                      <div
-                        className="bg-secondary h-2 rounded-full"
-                        style={{
-                          width: `${(course.count / analytics.totalStudents) * 100}%`
-                        }}
-                      />
-                    </div>
+                    <progress
+                      className="w-24 h-2 rounded-full overflow-hidden [&::-webkit-progress-bar]:bg-muted [&::-webkit-progress-value]:bg-secondary [&::-moz-progress-bar]:bg-secondary"
+                      value={course.count}
+                      max={analytics.totalStudents}
+                      aria-label={`${course.course} enrollment share`}
+                    />
                     <span className="text-sm font-medium">{course.count}</span>
                   </div>
                 </motion.div>

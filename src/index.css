@@ -156,7 +156,6 @@
   h6 {
     @apply font-bold leading-tight;
     margin-bottom: 0.75rem;
-    text-wrap: balance;
     font-feature-settings: 'kern' 1;
     text-rendering: optimizeLegibility;
   }
@@ -552,12 +551,9 @@
 /* Scrollbar styling with red theme */
 
 .scrollbar-thin {
-  scrollbar-width: thin;
-  scrollbar-color: rgb(220 38 38) rgb(254 242 242);
 }
 
 .dark .scrollbar-thin {
-  scrollbar-color: rgb(185 28 28) rgb(127 29 29);
 }
 
 .scrollbar-thin::-webkit-scrollbar {
@@ -893,7 +889,7 @@ body.navigation-optimized {
 
   /* Remove min-height that creates unwanted space */
   .min-h-screen {
-    min-height: auto !important;
+    min-height: 0 !important;
   }
 
   /* Ensure tight stacking of main content areas */
@@ -942,7 +938,7 @@ body.navigation-optimized {
   .hero-section,
   #hero,
   #home {
-    min-height: auto !important;
+    min-height: 0 !important;
     padding-top: 1.5rem !important;
     padding-bottom: 1rem !important;
   }
@@ -992,18 +988,18 @@ body.navigation-optimized {
 
   /* Remove flex and items-center that add height */
   section.flex {
-    min-height: auto !important;
+    min-height: 0 !important;
   }
 
   /* Target framer-motion divs that wrap sections */
   .motion-div,
   [class*='motion'] {
-    min-height: auto !important;
+    min-height: 0 !important;
   }
 
   /* Specific targeting for all section wrappers */
   div[className*='min-h'] {
-    min-height: auto !important;
+    min-height: 0 !important;
   }
 
   /* Remove bottom padding from sections that stack */
@@ -1264,4 +1260,26 @@ iframe[title*='Training Center']:not([src]) {
   .training-center-phone {
     font-size: 0.8rem;
   }
+}
+
+.nav-safe-inline {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+.nav-mobile-header-bg {
+  background: var(--gradient-primary);
+}
+
+.hero-grid-bg {
+  background: var(--gradient-hero);
+}
+
+.hero-golden-cover {
+  background:
+    radial-gradient(90% 75% at 20% 20%, rgba(252, 211, 77, 0.45) 0%, rgba(252, 211, 77, 0) 70%),
+    linear-gradient(135deg, rgba(255, 215, 128, 0.38) 0%, rgba(255, 244, 204, 0.1) 40%, rgba(217, 119, 6, 0.3) 100%);
+  box-shadow:
+    0 10px 28px rgba(202, 138, 4, 0.28),
+    inset 0 0 0 1px rgba(255, 233, 169, 0.55);
 }

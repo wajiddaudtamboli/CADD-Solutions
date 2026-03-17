@@ -159,6 +159,7 @@ const Courses = () => {
             <div className="flex items-center gap-2">
               <Filter className="w-5 h-5 text-gray-600 dark:text-gray-400" />
               <select
+                title="Filter courses by category"
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
                 className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-red-500 dark:focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"

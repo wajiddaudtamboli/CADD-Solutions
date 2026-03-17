@@ -1,4 +1,4 @@
-import modernCadWorkspace from '@/assets/modern-cad-workspace.jpg';
+import caddSolutionsPreview from '@/assets/device-frames/cadd-solutions.png';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/context/LanguageContext';
 import { motion } from 'framer-motion';
@@ -51,7 +51,6 @@ const Hero = () => {
                   <>
                     <span
                       className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-gradient"
-                      style={{ backgroundSize: '200% 200%' }}
                     >
                       CAD
                     </span>
@@ -118,60 +117,42 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right Content - Enhanced Media Frame */}
+        {/* Right Content - Enhanced Laptop Showcase */}
         <motion.div
           className="flex justify-center lg:justify-end order-first lg:order-last"
           initial={{ opacity: 0, x: 50, scale: 0.9 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
-          <div className="relative w-full max-w-lg">
+          <div className="relative w-full max-w-2xl">
             {/* Laptop Frame */}
             <motion.div
-              className="relative"
+              className="relative group"
               whileHover={{ scale: 1.02, rotateY: 5 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
+              <div className="hero-golden-cover absolute -inset-2 sm:-inset-3 rounded-[1.75rem] -z-10" />
+
               {/* Device Frame Container */}
               <div className="professional-media-frame">
                 {/* Screen Bezel */}
-                <div className="relative bg-black rounded-xl p-3 shadow-inner">
+                <div className="relative bg-slate-900 rounded-2xl p-2 sm:p-3 shadow-inner">
                   {/* Screen Content */}
-                  <div className="relative bg-gradient-to-br from-background to-muted rounded-lg aspect-video overflow-hidden">
-                    {/* Media Content */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10">
-                      <video
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        className="w-full h-full object-cover rounded-lg"
-                        poster="https://res.cloudinary.com/duhhsnbwh/image/upload/v1760609576/caddposter_zbljby.jpg"
-                      >
-                        <source src="https://res.cloudinary.com/duhhsnbwh/image/upload/v1760609570/14_asxijz.jpg" type="video/mp4" />
-                      </video>
-
-                      {/* Training Image Overlay */}
-                      <motion.div
-                        className="absolute inset-0 rounded-lg overflow-hidden"
-                        whileHover={{ scale: 1.02 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <img
-                          src={modernCadWorkspace}
-                          alt="Modern CAD Engineering Workspace"
-                          className="w-full h-full object-cover rounded-lg shadow-elegant"
-                        />
-                      </motion.div>
-                    </div>
+                  <div className="relative bg-slate-100 rounded-xl aspect-[16/10] overflow-hidden">
+                    <img
+                      src={caddSolutionsPreview}
+                      alt="CADD Solutions training hero preview"
+                      className="w-full h-full object-cover object-top rounded-xl"
+                    />
 
                     {/* Screen Reflection */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 rounded-xl border border-amber-300/60 pointer-events-none" />
                   </div>
                 </div>
 
                 {/* Laptop Base */}
-                <div className="h-3 bg-gradient-to-b from-gray-700 to-gray-800 rounded-b-xl shadow-lg" />
+                <div className="h-3 sm:h-4 bg-gradient-to-b from-slate-400 to-slate-600 rounded-b-2xl shadow-lg" />
               </div>
 
               {/* Floating Elements */}
@@ -219,7 +200,7 @@ const Hero = () => {
             />
 
             {/* Grid Pattern Background */}
-            <div className="absolute inset-0 opacity-10 -z-20" style={{ background: 'var(--gradient-hero)' }} />
+            <div className="absolute inset-0 opacity-10 -z-20 hero-grid-bg" />
           </div>
         </motion.div>
       </div>
