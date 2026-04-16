@@ -202,17 +202,6 @@ const EnhancedContact = () => {
                           </div>
                         )}
 
-                        {/* Static map image for better compatibility */}
-                        <img
-                          src="https://res.cloudinary.com/dxgbxchqm/image/upload/v1729251032/solapur-map-static_q9xzlr.png"
-                          alt="Solapur Training Center Location Map"
-                          className={`absolute top-0 left-0 w-full h-full object-cover rounded-xl ${
-                            !mapLoaded && mapError ? 'opacity-100' : 'opacity-0 pointer-events-none'
-                          } transition-opacity duration-300`}
-                          onError={(e) => {
-                            e.currentTarget.style.display = 'none';
-                          }}
-                        />
                       </div>
                     </div>
                     <div className="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-700/50">

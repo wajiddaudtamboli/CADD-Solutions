@@ -1,14 +1,16 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { User, BookOpen, Calendar, Bell, LogOut, Menu, CheckSquare, FileText, Clock } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { User, BookOpen, Calendar, Bell, LogOut, Menu } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { useNavigate } from 'react-router-dom';
 
 const StudentPortal = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const navigate = useNavigate();
 
   const student = {
     name: 'Rajesh Patil',
@@ -45,10 +47,7 @@ const StudentPortal = () => {
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: User },
     { id: 'courses', label: 'My Courses', icon: BookOpen },
-    { id: 'attendance', label: 'Attendance', icon: CheckSquare },
-    { id: 'assignments', label: 'Assignments', icon: FileText },
-    { id: 'schedule', label: 'Class Schedule', icon: Calendar },
-    { id: 'notifications', label: 'Notifications', icon: Bell }
+    { id: 'schedule', label: 'Class Schedule', icon: Calendar }
   ];
 
   const renderContent = () => {
@@ -282,6 +281,7 @@ const StudentPortal = () => {
           <div className="absolute bottom-6 left-6 right-6">
             <Button
               variant="outline"
+              onClick={() => navigate('/')}
               className="w-full flex items-center gap-3 border-2 border-yellow-200 dark:border-yellow-600 text-yellow-600 dark:text-yellow-400 hover:bg-yellow-50 dark:hover:bg-yellow-900 text-lg py-4"
             >
               <LogOut className="w-5 h-5" />

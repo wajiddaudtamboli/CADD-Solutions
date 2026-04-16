@@ -1,7 +1,13 @@
 import React, { useEffect } from 'react';
 
 const ElfsightChatbot: React.FC = () => {
+  const enableElfsight = import.meta.env.PROD && import.meta.env.VITE_ENABLE_ELFSIGHT !== 'false';
+
   useEffect(() => {
+    if (!enableElfsight) {
+      return;
+    }
+
     // Ensure the Elfsight script is loaded
     const script = document.createElement('script');
     script.src = 'https://elfsightcdn.com/platform.js';
@@ -17,7 +23,11 @@ const ElfsightChatbot: React.FC = () => {
     return () => {
       // Don't remove the script as it might be needed for other Elfsight widgets
     };
-  }, []);
+  }, [enableElfsight]);
+
+  if (!enableElfsight) {
+    return null;
+  }
 
   return (
     <div

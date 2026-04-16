@@ -10,8 +10,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ElfsightChatbot from "./components/ElfsightChatbot";
 import About from "./pages/About";
 import Admin from "./pages/Admin";
-import CourseDetails from "./pages/CourseDetails";
-import Courses from "./pages/Courses";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Scholarship from "./pages/Scholarship";
@@ -40,8 +38,6 @@ const App = () => {
               <BrowserRouter>
                 <Routes>
                   <Route path="/" element={<Index />} />
-                  <Route path="/courses" element={<Courses />} />
-                  <Route path="/course/:id" element={<CourseDetails />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/student-portal" element={<StudentPortal />} />
                   <Route path="/admin" element={<Admin />} />

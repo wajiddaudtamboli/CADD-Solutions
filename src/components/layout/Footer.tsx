@@ -21,9 +21,9 @@ const Footer = () => {
         viewport={{ once: true }}
       >
         {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
-        <div className="max-w-5xl mx-auto px-3 sm:px-4 flex flex-col items-center justify-center text-center" style={{ paddingLeft: 'env(safe-area-inset-left)', paddingRight: 'env(safe-area-inset-right)' }}>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent pointer-events-none" />
+        <div className="relative z-10 max-w-5xl mx-auto px-3 sm:px-4 flex flex-col items-center justify-center text-center" style={{ paddingLeft: 'env(safe-area-inset-left)', paddingRight: 'env(safe-area-inset-right)' }}>
           {/* Company Logo & Info - Centered */}
           <motion.div
             className="flex flex-col items-center space-y-6 mb-8"
@@ -46,10 +46,18 @@ const Footer = () => {
               {translations.footer.description}
             </p>
             <div className="flex space-x-6">
-              <Facebook className="w-6 h-6 hover:text-blue-500 cursor-pointer transition-colors" />
-              <Twitter className="w-6 h-6 hover:text-blue-400 cursor-pointer transition-colors" />
-              <Linkedin className="w-6 h-6 hover:text-blue-600 cursor-pointer transition-colors" />
-              <Instagram className="w-6 h-6 hover:text-pink-500 cursor-pointer transition-colors" />
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <Facebook className="w-6 h-6 hover:text-blue-500 cursor-pointer transition-colors" />
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X">
+                <Twitter className="w-6 h-6 hover:text-blue-400 cursor-pointer transition-colors" />
+              </a>
+              <a href="https://www.linkedin.com/in/wajid-daud-tamboli-3217b031a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <Linkedin className="w-6 h-6 hover:text-blue-600 cursor-pointer transition-colors" />
+              </a>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <Instagram className="w-6 h-6 hover:text-pink-500 cursor-pointer transition-colors" />
+              </a>
             </div>
           </motion.div>
 
@@ -68,8 +76,22 @@ const Footer = () => {
               </div>
               <h3 className="text-lg font-semibold text-white">Our Locations</h3>
               <div className="text-gray-300 text-sm space-y-1">
-                <p>Solapur: Saat Rasta, Solapur - 413001</p>
-                <p>Karad: Mangalwar Peth, Karad - 415110</p>
+                <a
+                  href="https://www.google.com/maps/place/CADD+SOLUTIONS+SOLAPUR/@17.6612065,75.9064828,17z/data=!4m6!3m5!1s0x3bc5dbb20957843f:0xabcfbedec349e16a!8m2!3d17.661217!4d75.9063813!16s%2Fg%2F11fjm9zvqj?entry=ttu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block hover:text-blue-300 transition-colors"
+                >
+                  Solapur: Saat Rasta, Solapur - 413001
+                </a>
+                <a
+                  href="https://www.google.com/maps/place/CADD+Solutions+Karad/@17.2913639,74.1844106,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc18321c7051a65:0x628fcdffe489b228!8m2!3d17.2913639!4d74.1844106!16s%2Fg%2F11rmz88jc7?entry=ttu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block hover:text-blue-300 transition-colors"
+                >
+                  Karad: Mangalwar Peth, Karad - 415110
+                </a>
               </div>
             </div>
 
@@ -105,40 +127,7 @@ const Footer = () => {
                 <Mail className="w-6 h-6 text-purple-400" />
               </div>
               <h3 className="text-lg font-semibold text-white">Email Us</h3>
-              <p className="text-gray-300 text-sm">tambolimahibub@gmail.com</p>
-            </div>
-          </motion.div>
-
-          {/* Quick Links & Courses - Centered */}
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-2xl mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            {/* Quick Links */}
-            <div className="flex flex-col items-center space-y-4">
-              <h3 className="text-lg font-semibold">{translations.footer.quickLinks}</h3>
-              <ul className="space-y-2 text-center">
-                <li><a href="#home" className="text-gray-300 hover:text-white transition-colors">{translations.nav.home}</a></li>
-                <li><a href="#services" className="text-gray-300 hover:text-white transition-colors">{translations.nav.services}</a></li>
-                <li><a href="#products" className="text-gray-300 hover:text-white transition-colors">{translations.nav.products}</a></li>
-                <li><a href="#projects" className="text-gray-300 hover:text-white transition-colors">{translations.nav.projects}</a></li>
-                <li><a href="#contact" className="text-gray-300 hover:text-white transition-colors">{translations.nav.contact}</a></li>
-              </ul>
-            </div>
-
-            {/* Popular Courses */}
-            <div className="flex flex-col items-center space-y-4">
-              <h3 className="text-lg font-semibold">{translations.footer.popularCourses}</h3>
-              <ul className="space-y-2 text-center">
-                <li className="text-gray-300">AutoCAD</li>
-                <li className="python-training-text">Python Training & ML</li>
-                <li className="text-gray-300">SolidWorks</li>
-                <li className="text-gray-300">CATIA</li>
-                <li className="text-gray-300">ANSYS</li>
-              </ul>
+              <a href="mailto:tambolimahibub@gmail.com" className="text-gray-300 text-sm hover:text-purple-300 transition-colors">tambolimahibub@gmail.com</a>
             </div>
           </motion.div>
 

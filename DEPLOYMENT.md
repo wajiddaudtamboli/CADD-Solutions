@@ -46,9 +46,6 @@ git push origin main
 
    ```
    VITE_CLERK_PUBLISHABLE_KEY=your_clerk_key
-   VITE_SUPABASE_URL=your_supabase_url
-   VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_key
-   VITE_SUPABASE_PROJECT_ID=your_project_id
    ```
 
 5. **Deploy:** Click "Deploy"
@@ -61,7 +58,6 @@ After deployment, verify:
 - ✅ All pages accessible (SPA routing works)
 - ✅ Elfsight chatbot appears (small-medium size)
 - ✅ Responsive design works on all devices
-- ✅ Supabase integration works (if configured)
 - ✅ Clerk authentication works (if configured)
 
 ## 🎯 Expected Results

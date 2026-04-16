@@ -16,8 +16,31 @@ import EnhancedContact from '@/components/sections/EnhancedContact';
 import Footer from '@/components/layout/Footer';
 import Chatbot from '@/components/Chatbot';
 import { ScrollToTop } from '@/components/ui/scroll-to-top';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const Index = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) {
+      return;
+    }
+
+    const sectionId = location.hash.replace('#', '');
+    const target = document.getElementById(sectionId);
+    if (!target) {
+      return;
+    }
+
+    // Delay ensures the target section is mounted before scroll on route transitions.
+    const timer = window.setTimeout(() => {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 40);
+
+    return () => window.clearTimeout(timer);
+  }, [location.hash]);
+
   return (
     <motion.div
       className="bg-gradient-to-br from-background via-primary/5 to-accent/5 transition-colors duration-500"

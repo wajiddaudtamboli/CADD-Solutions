@@ -1,129 +1,110 @@
-# CADD Solutions Portal
+# CADD Solutions Training Portal
 
-A modern web application for CADD (Computer-Aided Design and Drafting) solutions, featuring course management, student portal, and administrative dashboard.
+## Project Overview
+This project is a production-style training institute portal for CADD Solutions. It combines a marketing website, course discovery experience, inquiry flows, scholarship information, and internal dashboards (admin/student mock modules) in one responsive React application.
 
-## Getting Started
+The focus of this build is practical usability: fast navigation, clear CTAs, multilingual support, and mobile-first accessibility for students and working professionals.
 
-### Prerequisites
+## Key Features
+- Route-based multi-page experience with section-aware navigation
+- Fully functional homepage anchors (Home, Services, Software Courses, Projects, Contact)
+- Course listing with search/filter and detail pages
+- Scholarship page with direct inquiry action
+- Contact form flow with WhatsApp message handoff
+- Admin dashboard module with local/mock API behavior
+- Student portal module with sidebar navigation
+- Dark/light theme support
+- Multi-language context integration (English, Hindi, Marathi)
 
-- Node.js (v18 or higher)
-- npm or yarn package manager
+## Tech Stack
+- Frontend: React 18, TypeScript, Vite
+- UI: Tailwind CSS, shadcn/ui, Framer Motion, Lucide Icons
+- State & Data: TanStack React Query, Context API
+- Routing: React Router v6
+- Auth Integration: Clerk (optional via environment variable)
+- Dev Tools: ESLint, PostCSS
 
-### Installation
+## Project Architecture / Folder Structure
+```text
+src/
+   components/
+      layout/       # Navigation, footer, shared layout blocks
+      sections/     # Landing page sections
+      ui/           # Reusable UI components
+      admin/        # Admin dashboard modules
+   context/        # Theme and language providers
+   pages/          # Route-level screens
+   services/       # Local/mock API service layer
+   hooks/          # Shared hooks
+   types/          # TypeScript interfaces
+   locales/        # Translation dictionaries
+```
 
-1. Clone the repository:
+## Setup & Installation Guide
+1. Clone the repository.
+2. Install dependencies.
+3. Configure environment variables.
+4. Start the development server.
 
 ```bash
 git clone https://github.com/wajiddaudtamboli/CADD-Solutions.git
 cd CADD-Solutions
-```
-
-2. Install dependencies:
-
-```bash
 npm install
 ```
 
-3. Set up environment variables:
+Create/update `.env`:
 
-   - Copy `.env.example` to `.env`
-   - Configure your Supabase credentials
+```bash
+VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+```
 
-4. Start the development server:
+Run locally:
 
 ```bash
 npm run dev
 ```
 
-The application will be available at `http://localhost:5173` (or another port if 5173 is in use).
-
-## Technologies Used
-
-This project is built with:
-
-- **Frontend**: React 18 with TypeScript
-- **Build Tool**: Vite
-- **UI Framework**: shadcn/ui components
-- **Styling**: Tailwind CSS
-- **Database**: Supabase (PostgreSQL)
-- **Authentication**: Clerk
-- **State Management**: React Query (TanStack Query)
-- **Routing**: React Router v6
-- **Animations**: Framer Motion
-
-## Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-
-## Features
-
-- 📚 Course management system
-- 👥 Student portal with dashboard
-- 🔐 Admin panel with analytics
-- 🌐 Multi-language support (English, Hindi, Marathi)
-- 🌙 Dark/Light theme toggle
-- 📱 Fully responsive design
-- 💬 Integrated Elfsight AI chatbot (optimized size)
-- 📝 Contact forms and testimonials
-- 🎓 Scholarship application system
-- 🎨 Professional UI with desktop spacing optimization
-
-## Project Structure
-
-```
-src/
-├── components/         # Reusable UI components
-├── pages/             # Application pages
-├── context/           # React context providers
-├── hooks/             # Custom React hooks
-├── lib/               # Utility functions
-├── services/          # API services
-├── types/             # TypeScript type definitions
-└── locales/           # Internationalization files
-```
-
-## Deployment
-
-The application can be deployed to any static hosting service like Vercel, Netlify, or AWS S3.
-
-For production deployment:
+Build for production:
 
 ```bash
 npm run build
 ```
 
-## Deployment
+## Usage Instructions
+- Open the app and navigate via top navbar or footer quick links.
+- Browse courses from the courses page and open detailed course views.
+- Use scholarship and course CTAs to jump directly to contact/inquiry flow.
+- Submit contact details to launch pre-filled WhatsApp inquiry.
+- Access admin and student modules from their dedicated routes:
+   - `/admin`
+   - `/student-portal`
 
-Primary: GitHub Pages (gh-pages branch)
+## Screenshots or UI Highlights
+- Home page hero with animated sections and responsive navigation
+- Service grids for CAD and software tracks
+- Project showcase gallery
+- Contact center with map embed and inquiry form
+- Admin dashboard and student portal mock workflows
 
-- Live URL: https://wajiddaudtamboli.github.io/CADD-Solutions/
-- The GitHub Action at `.github/workflows/deploy.yml` builds and publishes `./dist` to the `gh-pages` branch on every push to `main`.
-- Enable Pages: Settings → Pages → Deploy from a branch → Branch: `gh-pages`, Folder: `/`.
-- SPA routing: `404.html` is copied from `index.html` during deploy.
+If you want to include image previews in this README, you can place them under a `docs/screenshots/` directory and reference them here.
 
-Environment variables (optional but recommended):
+## Future Improvements
+- Replace mock API layer with production backend endpoints
+- Add form submission persistence and lead tracking dashboard
+- Add role-based route guards for admin/student areas
+- Add automated component and route-level tests
+- Improve Lighthouse performance score with media optimization
 
-- VITE_CLERK_PUBLISHABLE_KEY
-- VITE_SUPABASE_URL
-- VITE_SUPABASE_PUBLISHABLE_KEY
-- VITE_SUPABASE_PROJECT_ID (if used)
+## Developer Information
+Developer:
+Wajid Daud Tamboli  
+Full Stack Developer  
+Phone: +91 9667033839  
+Email: wajiddaudtamboli123@gmail.com  
 
-Secondary: Vercel
+Development Portfolio: https://tech-world-ai.vercel.app/  
+UI/UX Portfolio (Figma): https://jargon-savant-75370195.figma.site/  
+Framer Portfolio: https://portfolio-wajid-daud-tamboli.framer.website/  
 
-- Build Command: `npm run build`
-- Output Directory: `dist`
-- Environment Variables: same `VITE_*` as above.
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License.
+LinkedIn: https://www.linkedin.com/in/wajid-daud-tamboli-3217b031a/  
+GitHub: https://github.com/wajiddaudtamboli  

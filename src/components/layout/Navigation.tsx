@@ -4,13 +4,14 @@ import { useLanguage } from '@/context/LanguageContext';
 import { motion } from 'framer-motion';
 import { Mail, Menu, Phone, X } from 'lucide-react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const {
     translations
   } = useLanguage();
   const navigate = useNavigate();
+  const location = useLocation();
   const navItems = [{
     name: translations.nav.home,
     href: '#home',
@@ -21,26 +22,43 @@ const Navigation = () => {
     route: '/'
   }, {
     name: translations.nav.products,
-    href: '#products',
+    href: '#software-courses',
     route: '/'
   }, {
     name: translations.nav.projects,
-    href: '#projects',
+    href: '#portfolio',
     route: '/'
   }, {
     name: translations.nav.contact,
     href: '#contact',
     route: '/'
   }];
-  const handleNavClick = (item: any) => {
+
+  const scrollToSection = (sectionHash: string) => {
+    const element = document.querySelector(sectionHash);
+    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const handleNavClick = (item: { href: string; route: string }) => {
     if (item.route !== '/') {
       navigate(item.route);
-    } else if (item.href.startsWith('#')) {
-      const element = document.querySelector(item.href);
-      element?.scrollIntoView({
-        behavior: 'smooth'
-      });
+      setIsOpen(false);
+      return;
     }
+
+    if (!item.href.startsWith('#')) {
+      navigate('/');
+      setIsOpen(false);
+      return;
+    }
+
+    if (location.pathname === '/') {
+      scrollToSection(item.href);
+      window.history.replaceState(null, '', item.href);
+    } else {
+      navigate(`/${item.href}`);
+    }
+
     setIsOpen(false);
   };
   return <motion.nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-[#1a1a1a] border-b border-gray-200 dark:border-gray-700 transition-all duration-300" style={{

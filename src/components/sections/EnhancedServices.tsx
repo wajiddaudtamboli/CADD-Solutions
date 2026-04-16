@@ -69,7 +69,7 @@ const EnhancedServices = () => {
   }, {
     name: 'Building Estimation',
     icon: Calculator,
-    link: '#'
+    link: 'https://en.wikipedia.org/wiki/Construction_cost_estimate'
   }];
   const softwareServices = [{
     name: 'C Programming',
@@ -100,7 +100,7 @@ const EnhancedServices = () => {
     service,
     index
   }: {
-    service: any;
+    service: { name: string; icon: React.ComponentType<{ className?: string }>; link: string };
     index: number;
   }) => <motion.div initial={{
     opacity: 0,
@@ -114,7 +114,7 @@ const EnhancedServices = () => {
   }} viewport={{
     once: true
   }} className="group">
-      <a href={service.link} target="_blank" rel="noopener noreferrer" className="professional-card block p-6 text-center hover:-translate-y-2 border-2 border-transparent hover:border-primary/50 group h-32 flex flex-col items-center justify-center">
+      <a href={service.link} target="_blank" rel="noopener noreferrer" className="professional-card p-6 text-center hover:-translate-y-2 border-2 border-transparent hover:border-primary/50 group h-32 flex flex-col items-center justify-center">
         <div className="professional-icon group-hover:scale-110 transition-transform duration-300 mb-3">
           <service.icon className="w-8 h-8 text-white" />
         </div>

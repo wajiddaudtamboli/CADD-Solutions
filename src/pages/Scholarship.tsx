@@ -1,12 +1,12 @@
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { useLanguage } from '@/context/LanguageContext';
 import { motion } from 'framer-motion';
 import { Award, BookOpen, Clock, GraduationCap, Star, Users } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Scholarship = () => {
-  const { translations } = useLanguage();
+  const navigate = useNavigate();
 
   const scholarships = [
     {
@@ -171,7 +171,10 @@ const Scholarship = () => {
                     </ul>
                   </div>
 
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
+                  <Button
+                    onClick={() => navigate('/#contact')}
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                  >
                     Apply Now
                   </Button>
                 </CardContent>

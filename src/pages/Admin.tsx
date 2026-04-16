@@ -1,7 +1,7 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Upload, Image, FolderOpen, GraduationCap, Users, X, UserPlus, Calendar, ClipboardList, BarChart3, Settings, FileText, CheckSquare, ArrowLeft } from 'lucide-react';
+import { X, UserPlus, ClipboardList, BarChart3, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -76,12 +76,7 @@ const Admin = () => {
     <>
       {/* Admin Features Grid */}
       <div className="professional-grid professional-grid-3 gap-8">
-        {/* Employee Management */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-        >
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
           <Card className="professional-card hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
             <CardHeader>
               <CardTitle className="flex items-center gap-3 text-xl dark:text-white">
@@ -91,97 +86,14 @@ const Admin = () => {
               <CardDescription className="dark:text-gray-300 text-lg">Complete staff and trainer management system</CardDescription>
             </CardHeader>
             <CardContent>
-              <Button
-                onClick={() => handleFeatureAccess('Employee Management')}
-                className="professional-button w-full text-lg"
-              >
+              <Button onClick={() => handleFeatureAccess('Employee Management')} className="professional-button w-full text-lg">
                 👥 Manage Employees
               </Button>
             </CardContent>
           </Card>
         </motion.div>
 
-        {/* Attendance Management */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-        >
-          <Card className="professional-card hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-xl dark:text-white">
-                <CheckSquare className="professional-icon w-12 h-12" />
-                Attendance Management
-              </CardTitle>
-              <CardDescription className="dark:text-gray-300 text-lg">Track attendance and generate reports</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button
-                onClick={() => handleFeatureAccess('Attendance Management')}
-                className="professional-button w-full text-lg"
-              >
-                📊 Track Attendance
-              </Button>
-            </CardContent>
-          </Card>
-        </motion.div>
-
-        {/* Student Enrollment */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-        >
-          <Card className="professional-card hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-xl dark:text-white">
-                <Users className="professional-icon w-12 h-12" />
-                Student Enrollment
-              </CardTitle>
-              <CardDescription className="dark:text-gray-300 text-lg">Manage student registrations and profiles</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button
-                onClick={() => handleFeatureAccess('Student Enrollment')}
-                className="professional-button w-full text-lg"
-              >
-                🎓 Manage Students
-              </Button>
-            </CardContent>
-          </Card>
-        </motion.div>
-
-        {/* Certificate Management */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-        >
-          <Card className="professional-card hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-xl dark:text-white">
-                <GraduationCap className="professional-icon w-12 h-12" />
-                Certificate Dispatch
-              </CardTitle>
-              <CardDescription className="dark:text-gray-300 text-lg">Generate and manage certificates</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button
-                onClick={() => handleFeatureAccess('Certificate Management')}
-                className="professional-button w-full text-lg"
-              >
-                🏆 Manage Certificates
-              </Button>
-            </CardContent>
-          </Card>
-        </motion.div>
-
-        {/* Task Management */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-        >
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
           <Card className="professional-card hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
             <CardHeader>
               <CardTitle className="flex items-center gap-3 text-xl dark:text-white">
@@ -191,22 +103,14 @@ const Admin = () => {
               <CardDescription className="dark:text-gray-300 text-lg">Assign and track employee tasks</CardDescription>
             </CardHeader>
             <CardContent>
-              <Button
-                onClick={() => handleFeatureAccess('Task Assignment')}
-                className="professional-button w-full text-lg"
-              >
+              <Button onClick={() => handleFeatureAccess('Task Assignment')} className="professional-button w-full text-lg">
                 📋 Manage Tasks
               </Button>
             </CardContent>
           </Card>
         </motion.div>
 
-        {/* Reports & Analytics */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-        >
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
           <Card className="professional-card hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
             <CardHeader>
               <CardTitle className="flex items-center gap-3 text-xl dark:text-white">
@@ -216,86 +120,8 @@ const Admin = () => {
               <CardDescription className="dark:text-gray-300 text-lg">Comprehensive business analytics</CardDescription>
             </CardHeader>
             <CardContent>
-              <Button
-                onClick={() => handleFeatureAccess('Reports & Analytics')}
-                className="professional-button w-full text-lg"
-              >
+              <Button onClick={() => handleFeatureAccess('Reports & Analytics')} className="professional-button w-full text-lg">
                 📈 View Analytics
-              </Button>
-            </CardContent>
-          </Card>
-        </motion.div>
-
-        {/* Media Management */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
-        >
-          <Card className="professional-card hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-xl dark:text-white">
-                <Image className="professional-icon w-12 h-12" />
-                Media Management
-              </CardTitle>
-              <CardDescription className="dark:text-gray-300 text-lg">Upload and manage training materials</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button
-                onClick={() => handleFeatureAccess('Media Management')}
-                className="professional-button w-full text-lg"
-              >
-                🖼️ Manage Media
-              </Button>
-            </CardContent>
-          </Card>
-        </motion.div>
-
-        {/* Document Storage */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-        >
-          <Card className="professional-card hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-xl dark:text-white">
-                <FolderOpen className="professional-icon w-12 h-12" />
-                Document Storage
-              </CardTitle>
-              <CardDescription className="dark:text-gray-300 text-lg">Centralized document management</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button
-                onClick={() => handleFeatureAccess('Document Storage')}
-                className="professional-button w-full text-lg"
-              >
-                📁 Manage Documents
-              </Button>
-            </CardContent>
-          </Card>
-        </motion.div>
-
-        {/* System Settings */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9 }}
-        >
-          <Card className="professional-card hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-xl dark:text-white">
-                <Settings className="professional-icon w-12 h-12" />
-                System Settings
-              </CardTitle>
-              <CardDescription className="dark:text-gray-300 text-lg">Configure system preferences</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button
-                onClick={() => handleFeatureAccess('System Settings')}
-                className="professional-button w-full text-lg"
-              >
-                ⚙️ System Config
               </Button>
             </CardContent>
           </Card>
