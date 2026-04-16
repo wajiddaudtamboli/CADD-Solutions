@@ -5,6 +5,11 @@ This project is a production-style training institute portal for CADD Solutions.
 
 The focus of this build is practical usability: fast navigation, clear CTAs, multilingual support, and mobile-first accessibility for students and working professionals.
 
+## Live Deployment
+Deployed Website: https://cadd-solutions.vercel.app/
+
+![CADD Solutions Website Launch](Cadd%20Solutions%20Mockup.png)
+
 ## Key Features
 - Route-based multi-page experience with section-aware navigation
 - Fully functional homepage anchors (Home, Services, Software Courses, Projects, Contact)
@@ -85,8 +90,7 @@ npm run build
 - Project showcase gallery
 - Contact center with map embed and inquiry form
 - Admin dashboard and student portal mock workflows
-
-If you want to include image previews in this README, you can place them under a `docs/screenshots/` directory and reference them here.
+- Website launch poster is included above with the live deployment link for direct sharing.
 
 ## Future Improvements
 - Replace mock API layer with production backend endpoints
